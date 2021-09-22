@@ -13,6 +13,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     onBrokenMarkdownLinks: "warn",
     organizationName: "marcusolsson", // Usually your GitHub org/user name.
     projectName: "obsidian-plugin-docs", // Usually your repo name.
+    trailingSlash: false,
     presets: [
       [
         "@docusaurus/preset-classic",
