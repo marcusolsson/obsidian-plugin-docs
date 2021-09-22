@@ -21,7 +21,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
           docs: {
             sidebarPath: require.resolve("./sidebars.js"),
             editUrl:
-              "https://github.com/marcusolsson/obsidian-plugin-docs/edit/main/website/",
+              "https://github.com/marcusolsson/obsidian-plugin-docs/edit/main/",
             routeBasePath: "/",
           },
           theme: {
