@@ -89,4 +89,4 @@ A plugin is an NodeJS package, which is configured in the `package.json`. You sh
 
 Congratulations! 🎉 You've successfully loaded and changed a custom plugin for Obsidian. 🚀
 
-Feel free to modify the code from the sample plugin to see what it does. Once you're ready, learn more about the [anatomy of a plugin](./plugin-anatomy.md).
+Feel free to modify the code from the sample plugin to see what it does. Once you're ready, learn more about the [anatomy of a plugin](plugin-anatomy.md).
