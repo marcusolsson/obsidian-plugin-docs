@@ -8,25 +8,25 @@ You can create a custom view by extending the `ItemView` interface.
 ```ts
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
-const VIEW_TYPE_SAMPLE = "sample-view";
+const VIEW_TYPE_EXAMPLE = "example-view";
 
-class SampleView extends ItemView {
+class ExampleView extends ItemView {
   constructor(leaf: WorkspaceLeaf) {
     super(leaf);
   }
 
   getViewType() {
-    return VIEW_TYPE_SAMPLE;
+    return VIEW_TYPE_EXAMPLE;
   }
 
   getDisplayText() {
-    return "Sample view";
+    return "Example view";
   }
 
   async onOpen() {
     const container = this.containerEl.children[1];
     container.empty();
-    container.createEl("h4", { text: "My custom view" });
+    container.createEl("h4", { text: "Example view" });
   }
 
   async onClose() {
@@ -35,7 +35,7 @@ class SampleView extends ItemView {
 }
 ```
 
-Each view is uniquely identified by a text string and many operations require that you specify the view you'd like to modify. Extracting it to a constant, `VIEW_TYPE_SAMPLE`, is a good idea—as you will see later in this guide.
+Each view is uniquely identified by a text string and many operations require that you specify the view you'd like to modify. Extracting it to a constant, `VIEW_TYPE_EXAMPLE`, is a good idea—as you will see later in this guide.
 
 - `getViewType` returns a unique identier for the view
 - `getDisplayText` returns a human-friendly name for the view
@@ -49,18 +49,18 @@ Let's look at an example of how to register a custom view for your plugin.
 ```ts title="main.ts" {4,7,11-15}
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
-  view: SampleView;
+export default class ExamplePlugin extends Plugin {
+  view: ExampleView;
 
   async onload() {
-    this.registerView(VIEW_TYPE_SAMPLE, (leaf) => (this.view = new SampleView(leaf)));
+    this.registerView(VIEW_TYPE_EXAMPLE, (leaf) => (this.view = new ExampleView(leaf)));
   }
 
   async onunload() {
     await this.view.onClose();
 
     this.app.workspace
-      .getLeavesOfType(VIEW_TYPE_SAMPLE)
+      .getLeavesOfType(VIEW_TYPE_EXAMPLE)
       .forEach((leaf) => leaf.detach());
   }
 }
@@ -70,12 +70,12 @@ To create a custom view, call the `registerView` inside `onload`. The second arg
 
 ```ts
 async onload() {
-  this.registerView(VIEW_TYPE_SAMPLE, (leaf) => (this.view = new SampleView(leaf)));
+  this.registerView(VIEW_TYPE_EXAMPLE, (leaf) => (this.view = new ExampleView(leaf)));
 }
 ```
 
 :::tip
-`(leaf) => (this.view = new SampleView(leaf))` lets us return the view instance _and_ save the instance so that we can reference it later. Neat! 👌
+`(leaf) => (this.view = new ExampleView(leaf))` lets us return the view instance _and_ save the instance so that we can reference it later. Neat! 👌
 :::
 
 We need to make sure that we clean up the view when the plugin is disabled. In this case, we need to:
@@ -88,7 +88,7 @@ async onunload() {
   await this.view.onClose();
 
   this.app.workspace
-    .getLeavesOfType(VIEW_TYPE_SAMPLE)
+    .getLeavesOfType(VIEW_TYPE_EXAMPLE)
     .forEach((leaf) => leaf.detach());
 }
 ```
@@ -100,20 +100,20 @@ Now that we've registered a custom view for our plugin, we need to give the user
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
 
   // ...
 
   async activateView() {
-    this.app.workspace.detachLeavesOfType(VIEW_TYPE_SAMPLE);
+    this.app.workspace.detachLeavesOfType(VIEW_TYPE_EXAMPLE);
 
     await this.app.workspace.getRightLeaf(false).setViewState({
-      type: VIEW_TYPE_SAMPLE,
+      type: VIEW_TYPE_EXAMPLE,
       active: true,
     });
 
     this.app.workspace.revealLeaf(
-      this.app.workspace.getLeavesOfType(VIEW_TYPE_SAMPLE)[0]
+      this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE)[0]
     );
   }
 }

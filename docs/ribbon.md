@@ -11,9 +11,9 @@ To add a plugin action to the app ribbon, use the `addRibbonIcon` method.
 ```ts title="main.ts" {5-7}
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
   async onload() {
-    this.addRibbonIcon("dice", "Sample Plugin", () => {
+    this.addRibbonIcon("dice", "Print to console", () => {
       console.log("Hello, you!");
     });
   }

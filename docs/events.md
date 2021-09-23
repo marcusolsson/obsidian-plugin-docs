@@ -11,7 +11,7 @@ Any registered event handlers need to be detached whenever the plugin unloads. T
 ```ts title="main.ts" {5-7}
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
   async onload() {
     this.registerEvent(this.app.vault.on('create', () => {
       console.log('a new file has entered the arena')

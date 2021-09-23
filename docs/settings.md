@@ -11,16 +11,16 @@ The main reason to add settings to a plugin is to store configuration that persi
 ```ts title="main.ts"
 import { App, Plugin } from "obsidian";
 
-interface SamplePluginSettings {
+interface ExamplePluginSettings {
   dateFormat: string;
 }
 
-const DEFAULT_SETTINGS: Partial<SamplePluginSettings> = {
+const DEFAULT_SETTINGS: Partial<ExamplePluginSettings> = {
   dateFormat: "YYYY-MM-DD",
 };
 
-export default class SamplePlugin extends Plugin {
-  settings: SamplePluginSettings;
+export default class ExamplePlugin extends Plugin {
+  settings: ExamplePluginSettings;
 
   async onload() {
     await this.loadSettings();
@@ -40,15 +40,15 @@ There's a lot going on here 🤯, so let's look closer at each part.
 
 ## Create a settings definition
 
-First, we need to create a definition, `SamplePluginSettings`, for what settings we'd like the user to be able to configure. While the plugin is enabled, we can access the settings from the `settings` member variable.
+First, we need to create a definition, `ExamplePluginSettings`, for what settings we'd like the user to be able to configure. While the plugin is enabled, we can access the settings from the `settings` member variable.
 
 ```ts
-interface SamplePluginSettings {
+interface ExamplePluginSettings {
   dateFormat: string;
 }
 
-export default class SamplePlugin extends Plugin {
-  settings: SamplePluginSettings;
+export default class ExamplePlugin extends Plugin {
+  settings: ExamplePluginSettings;
 
   // ...
 }
@@ -59,7 +59,7 @@ export default class SamplePlugin extends Plugin {
 The `Plugin` class exposes two methods that can help us: `loadData`, and `saveData`. Together they provide an easy way to store and retrieve data from disk. Here, we've created two helper methods that'll make it easier to use them from other parts of the plugin.
 
 ```ts
-export default class SamplePlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
 
   // ...
 
@@ -86,7 +86,7 @@ Object.assign(DEFAULT_SETTINGS, await this.loadData())
 `Object.assign()` is a JavaScript function that copies all properties from one object to another. Any properties that are returned by `loadData()` override the properties in `DEFAULT_SETTINGS`.
 
 ```ts
-const DEFAULT_SETTINGS: Partial<SamplePluginSettings> = {
+const DEFAULT_SETTINGS: Partial<ExamplePluginSettings> = {
   dateFormat: "YYYY-MM-DD",
 };
 ```
@@ -102,10 +102,10 @@ Our plugin can now save and load plugin configuration, but the user doesn't yet 
 ```ts title="main.ts"
 import { App, PluginSettingTab, Setting } from "obsidian";
 
-class SampleSettingTab extends PluginSettingTab {
-  plugin: SamplePlugin;
+class ExampleSettingTab extends PluginSettingTab {
+  plugin: ExamplePlugin;
 
-  constructor(app: App, plugin: SamplePlugin) {
+  constructor(app: App, plugin: ExamplePlugin) {
     super(app, plugin);
     this.plugin = plugin;
   }
@@ -148,7 +148,7 @@ Once we're happy with our settings tab, we need to register it in our `Plugin` c
 
 ```ts
 async onload() {
-  this.addSettingTab(new SampleSettingTab(this.app, this));
+  this.addSettingTab(new ExampleSettingTab(this.app, this));
 }
 ```
 

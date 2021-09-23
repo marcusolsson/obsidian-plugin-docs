@@ -11,11 +11,11 @@ To register a new command for your plugin, call the `addCommand` method inside t
 ```ts title="main.ts" {5-11}
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
   async onload() {
     this.addCommand({
-      id: 'my-sample-command',
-      name: 'My sample command',
+      id: 'example-command',
+      name: 'Example command',
       callback: () => {
         console.log('Hey, you!');
       },
@@ -35,8 +35,8 @@ When using the `checkCallback`, Obsidian first performs a _check_ to see whether
 
 ```ts {4,6-8,11,15}
 this.addCommand({
-  id: 'my-sample-command',
-  name: 'My sample command',
+  id: 'example-command',
+  name: 'Example command',
   checkCallback: (checking: boolean) => {
     if (isCommandPossible()) {
       if (!checking) {
@@ -59,8 +59,8 @@ If your command needs access to the editor, you can also use the `editorCallback
 
 ```ts {4}
 this.addCommand({
-  id: 'my-sample-command',
-  name: 'My sample command',
+  id: 'example-command',
+  name: 'Example command',
   editorCallback: (editor: Editor, view: MarkdownView) => {
     const sel = editor.getSelection()
 
@@ -77,8 +77,8 @@ If the editor callback can only run given under certain conditions, consider usi
 
 ```ts {4}
 this.addCommand({
-  id: 'my-sample-command',
-  name: 'My sample command',
+  id: 'example-command',
+  name: 'Example command',
   editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
     if (isCommandPossible()) {
       if (!checking) {
@@ -103,8 +103,8 @@ In this example, the user can run the command by pressing and holding Ctrl and S
 
 ```ts {4}
 this.addCommand({
-  id: 'my-sample-command',
-  name: 'My sample command',
+  id: 'example-command',
+  name: 'Example command',
   hotkeys: [{ modifiers: ["Ctrl", "Shift"], key: "a" }],
   callback: () => {
     console.log('Hey, you!');

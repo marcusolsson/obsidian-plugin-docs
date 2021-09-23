@@ -9,7 +9,7 @@ The `Plugin` interface defines the lifecycle of a plugin and exposes the operati
 ```ts {1,3} title="main.ts"
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
   async onload() {
     // Configure resources needed by the plugin.
   }
@@ -30,7 +30,7 @@ To better understand when these methods are called, you can print a message to t
 ```ts {5,8} title="main.ts"
 import { Plugin } from "obsidian";
 
-export default class MyPlugin extends Plugin {
+export default class ExamplePlugin extends Plugin {
   async onload() {
     console.log('loading plugin')
   }
