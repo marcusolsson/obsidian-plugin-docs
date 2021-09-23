@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Commands are actions that the user can perform from the [Command Palette](https://help.obsidian.md/Plugins/Command+palette) or by using a hot key.
 
-To register a new command for your plugin, call the `addCommand` method inside the `onload` method:
+To register a new command for your plugin, call the `addCommand()` method inside the `onload()` method:
 
 ```ts title="main.ts" {5-11}
 import { Plugin } from "obsidian";

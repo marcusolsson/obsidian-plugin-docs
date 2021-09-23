@@ -6,7 +6,7 @@ sidebar_position: 6
 
 Many of the interfaces in the Obsidian lets you subscribe to events throughout the application, for example when the user makes changes to a file.
 
-Any registered event handlers need to be detached whenever the plugin unloads. The safest way to make sure this happens is to use the `registerEvent` method.
+Any registered event handlers need to be detached whenever the plugin unloads. The safest way to make sure this happens is to use the `registerEvent()` method.
 
 ```ts title="main.ts" {5-7}
 import { Plugin } from "obsidian";

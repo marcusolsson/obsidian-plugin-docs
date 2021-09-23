@@ -60,7 +60,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Save and load the settings object
 
-The `Plugin` class exposes two methods that can help: `loadData`, and `saveData`. Together they provide an easy way to store and retrieve data from disk. The example has two helper methods that'll make it easier to use them from other parts of the plugin.
+The `Plugin` class exposes two methods that can help: `loadData()`, and `saveData()`. Together they provide an easy way to store and retrieve data from disk. The example has two helper methods that'll make it easier to use them from other parts of the plugin.
 
 ```ts
 export default class ExamplePlugin extends Plugin {
@@ -137,7 +137,7 @@ class ExampleSettingTab extends PluginSettingTab {
 
 `display()` is where you build the content for the settings tab.
 
-`new Setting(containerEl)` appends a setting to the container element. This example uses a text field using `addText`, but there are several other setting types available.
+`new Setting(containerEl)` appends a setting to the container element. This example uses a text field using `addText()`, but there are several other setting types available.
 
 Update the settings object whenever the value of the text field changes, and then save it to disk:
 
