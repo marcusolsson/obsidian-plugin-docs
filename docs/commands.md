@@ -6,6 +6,8 @@ sidebar_position: 40
 
 Commands are actions that the user can perform from the [Command Palette](https://help.obsidian.md/Plugins/Command+palette) or by using a hot key.
 
+![Command](../static/img/command.png)
+
 To register a new command for your plugin, call the `addCommand()` method inside the `onload()` method:
 
 ```ts title="main.ts" {5-11}
@@ -14,10 +16,10 @@ import { Plugin } from "obsidian";
 export default class ExamplePlugin extends Plugin {
   async onload() {
     this.addCommand({
-      id: 'example-command',
-      name: 'Example command',
+      id: "print-greeting-to-console",
+      name: "Print greeting to console",
       callback: () => {
-        console.log('Hey, you!');
+        console.log("Hey, you!");
       },
     });
   }
