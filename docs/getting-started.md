@@ -30,7 +30,7 @@ You've now created your own repository based on the Obsidian sample plugin. Next
    ```
 1. Download the source code into the plugins folder.
    ```bash
-   git clone https://github.com/marcusolsson/obsidian-instant-coffee.git
+   git clone https://github.com/username/obsidian-instant-coffee.git
    ```
 
 ## Step 2: Build the plugin
