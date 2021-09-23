@@ -6,6 +6,8 @@ By adding custom views, you can display content in a way that makes sense for yo
 You can create a custom view by extending the `ItemView` interface.
 
 ```ts
+import { ItemView, WorkspaceLeaf } from "obsidian";
+
 const VIEW_TYPE_SAMPLE = "sample-view";
 
 class SampleView extends ItemView {
