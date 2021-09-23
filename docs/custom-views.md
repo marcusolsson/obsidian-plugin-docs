@@ -1,3 +1,7 @@
+---
+sidebar_position: 9
+---
+
 # Custom views
 
 Views determine how content is visualized in Obsidian, for example as a file explorer or as a graph.
@@ -44,7 +48,7 @@ Each view is uniquely identified by a text string and many operations require th
 
 ## Register a custom view
 
-Let's look at an example of how to register a custom view for your plugin.
+Here's an example of how to register a custom view for your plugin.
 
 ```ts title="main.ts" {4,7,11-15}
 import { Plugin } from "obsidian";
@@ -75,10 +79,10 @@ async onload() {
 ```
 
 :::tip
-`(leaf) => (this.view = new ExampleView(leaf))` lets us return the view instance _and_ save the instance so that we can reference it later. Neat! 👌
+`(leaf) => (this.view = new ExampleView(leaf))` lets you return the view instance _and_ save the instance so that you can reference it later. Neat! 👌
 :::
 
-We need to make sure that we clean up the view when the plugin is disabled. In this case, we need to:
+You need to make sure to clean up the view when the plugin is disabled. In particular, you need to:
 
 - Allow the view clean up after itself by calling `onClose`
 - Detach all leaves that are using the view
@@ -95,7 +99,7 @@ async onunload() {
 
 ## Activate a custom view
 
-Now that we've registered a custom view for our plugin, we need to give the user a way to activate it. The following example is a convienient function that lets us activate our custom view.
+Now that you've registered a custom view for the plugin, you should to give the user a way to activate it. The following example is a convienient function that lets the user activate the custom view.
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
@@ -121,9 +125,9 @@ export default class ExamplePlugin extends Plugin {
 
 Here, `activateView` does three things:
 
-- Detaches all leaves with our custom view
-- Adds our custom view on the right leaf
-- Reveals the leaf that contains our custom view
+- Detaches all leaves with the custom view
+- Adds the custom view on the right leaf
+- Reveals the leaf that contains the custom view
 
 :::tip
 The `activateView` restricts your plugin to at most one leaf at a time. Try commenting out the call to `detachLeavesOfType` to create multiple leaves. One for every call to `activateView`.

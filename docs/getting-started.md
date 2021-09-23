@@ -64,7 +64,7 @@ The plugin manifest, `manifest.json` is a file that contains information about y
 1. Change `name` to the human-friendly name of the plugin, e.g. `Instant coffee`.
 1. If you'd like, then update `description`, `author`, and `authorUrl` as well.
 
-A plugin is an NodeJS package, which is configured in the `package.json`. You shouldn't need to worry much about it for now. For now, we'll only update it to match the properties in the plugin manifest.
+A plugin is an NodeJS package, which is configured in the `package.json`. You shouldn't need to worry much about it for now. For now, only update it to match the properties in the plugin manifest.
 
 1. Open `package.json` in your editor.
 1. Change `name` to match the `id` in `manifest.json`.
