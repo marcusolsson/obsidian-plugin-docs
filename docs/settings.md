@@ -114,7 +114,6 @@ class SampleSettingTab extends PluginSettingTab {
     let { containerEl } = this;
 
     containerEl.empty();
-    containerEl.createEl("h2", { text: "Settings for my awesome plugin." });
 
     new Setting(containerEl)
       .setName("Date format")
