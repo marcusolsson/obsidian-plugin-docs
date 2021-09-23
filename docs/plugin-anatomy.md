@@ -39,7 +39,3 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-## What's next?
-
-- Add [commands](commands.md) to let your users perform actions from the Command Palette
