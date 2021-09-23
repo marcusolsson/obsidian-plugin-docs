@@ -4,7 +4,7 @@ sidebar_position: 15
 
 # Development workflow
 
-Whenever you make a change to the plugin source code, the plugin needs to be reloaded. You can reload the plugin by quitting Obsidian and starting it again, but that quickly gets tiring.
+Whenever you make a change to the plugin source code, the plugin needs to be reloaded. You can reload the plugin by quitting Obsidian and starting it again, but that gets tiring quickly.
 
 ## Re-enable plugin inside Obsidian
 
