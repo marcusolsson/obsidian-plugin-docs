@@ -4,10 +4,9 @@ sidebar_position: 9
 
 # Custom views
 
-Views determine how content is visualized in Obsidian, for example as a file explorer or as a graph.
-By adding custom views, you can display content in a way that makes sense for your plugin.
+Views determine how Obsidian displays content. The file explorer, graph view, and the Markdown view are all examples of views. You can create your own custom custom views that display content in a way that makes sense for your plugin.
 
-You can create a custom view by extending the `ItemView` interface.
+To create a custom view, create a class that extends the `ItemView` interface:
 
 ```ts
 import { ItemView, WorkspaceLeaf } from "obsidian";
@@ -43,12 +42,12 @@ Each view is uniquely identified by a text string and many operations require th
 
 - `getViewType()` returns a unique identier for the view
 - `getDisplayText()` returns a human-friendly name for the view
-- `onOpen()` is called when the view is opened within a new leaf. Use this method to build the content of your view.
-- `onClose()` is called when the view should close and is responsible for cleaning up any resources used by the view.
+- `onOpen()` is called when the view is opened within a new leaf and is responsible for building the content of your view
+- `onClose()` is called when the view should close and is responsible for cleaning up any resources used by the view
 
 ## Register a custom view
 
-Here's an example of how to register a custom view for your plugin.
+Custom views need to be registered by the plugin before they can be used.
 
 ```ts title="main.ts" {4,7,11-15}
 import { Plugin } from "obsidian";
@@ -70,19 +69,13 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-To create a custom view, call the `registerView()` inside `onload()`. The second argument to `registerView()` is a callback that returns an instance of the view you want to register.
-
-```ts
-async onload() {
-  this.registerView(VIEW_TYPE_EXAMPLE, (leaf) => (this.view = new ExampleView(leaf)));
-}
-```
+The second argument to `registerView()` is a callback that returns an instance of the view you want to register.
 
 :::tip
 `(leaf) => (this.view = new ExampleView(leaf))` lets you return the view instance _and_ save the instance so that you can reference it later. Neat! 👌
 :::
 
-You need to make sure to clean up the view when the plugin is disabled. In particular, you need to:
+To make sure that you clean up the view whenever the plugin is disabled:
 
 - Allow the view clean up after itself by calling `onClose()`
 - Detach all leaves that are using the view
@@ -99,7 +92,7 @@ async onunload() {
 
 ## Activate a custom view
 
-Now that you've registered a custom view for the plugin, you should to give the user a way to activate it. The following example is a convienient function that lets the user activate the custom view.
+Now that you've registered a custom view for the plugin, you should to give the user a way to activate it. The following example gives you a convienient function that lets you activate the view:
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";

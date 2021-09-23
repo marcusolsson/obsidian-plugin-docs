@@ -10,7 +10,7 @@ In this guide, you'll learn how to create a settings page like this 👇
 
 ![Settings](./../static/img/settings.png)
 
-The main reason to add settings to a plugin is to store configuration that persists even after the user quits Obsidian. Here's how you can do that:
+The main reason to add settings to a plugin is to store configuration that persists even after the user quits Obsidian. The following example demonstrates how to save and load settings from disk:
 
 ```ts title="main.ts"
 import { App, Plugin } from "obsidian";
@@ -60,7 +60,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Save and load the settings object
 
-The `Plugin` class exposes two methods that can help: `loadData()`, and `saveData()`. Together they provide an easy way to store and retrieve data from disk. The example has two helper methods that'll make it easier to use them from other parts of the plugin.
+`loadData()` and `saveData()` provide an easy way to store and retrieve data from disk. The example also introduces two helper methods that makes it easier to use `loadData()` and `saveData()` from other parts of the plugin.
 
 ```ts
 export default class ExamplePlugin extends Plugin {
@@ -79,9 +79,9 @@ export default class ExamplePlugin extends Plugin {
 
 ## Provide default values
 
-When the user enables the plugin for the first time, none of the settings will have been configured yet. You can handle that by providing default values for any missing settings.
+When the user enables the plugin for the first time, none of the settings will have been configured yet. The example above provides default values for any missing settings.
 
-To understand how the example does this, let's look a little closer at this code:
+To understand how this work, let's look a little closer at this code:
 
 ```ts
 Object.assign(DEFAULT_SETTINGS, await this.loadData())
@@ -148,7 +148,7 @@ Update the settings object whenever the value of the text field changes, and the
 })
 ```
 
-Once you're happy with the settings tab, you need to register it in the `Plugin` class.
+Once you're happy with it, register the settings tab in the `Plugin` class.
 
 ```ts
 async onload() {
