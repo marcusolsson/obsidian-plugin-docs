@@ -12,4 +12,4 @@ There's a link at the bottom of every page that says **Edit this page**. If you 
 
 This site uses the [Google developer documentation style guide](https://developers.google.com/style) and the [Microsoft Style Guide](https://docs.microsoft.com/style-guide/welcome/).
 
-If you see anything that violates any of these style guide, please let me know by [creating an issue on GitHub](https://github.com/marcusolsson/obsidian-plugin-docs/issues/new).
+If you see anything that violates any of these style guides, please let me know by [creating an issue on GitHub](https://github.com/marcusolsson/obsidian-plugin-docs/issues/new).

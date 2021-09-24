@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # Getting started
 
-This guide walks you through the steps needed with plugin development for Obsidian.
+This guide walks you through the steps needed to develop a plugin for Obsidian.
 
 > If you prefer a video walkthrough, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
 
