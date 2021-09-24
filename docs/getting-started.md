@@ -8,6 +8,10 @@ This guide walks you through the steps needed with plugin development for Obsidi
 
 > If you prefer a video walkthrough, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
 
+:::warning Before you start
+**Don't develop plugins in your main vault.** When you develop a plugin, one simple mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
+:::
+
 ## Prerequisites
 
 - [Git](https://git-scm.com/)
