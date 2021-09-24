@@ -19,3 +19,40 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+
+## Timing events
+
+If you want repeatedly call a function with a fixed delay, use the [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) function with the `registerInterval()` method.
+
+The following example displays the current time in the status bar, updated every second:
+
+```ts {11-13}
+import { moment, Plugin } from "obsidian";
+
+export default class ExamplePlugin extends Plugin {
+  statusBar: HTMLElement;
+
+  async onload() {
+    this.statusBar = this.addStatusBarItem();
+
+    this.updateStatusBar();
+
+    this.registerInterval(
+      window.setInterval(() => this.updateStatusBar(), 1000)
+    );
+  }
+
+  updateStatusBar() {
+    this.statusBar.setText(moment().format("H:mm:ss"));
+  }
+}
+```
+
+:::tip
+[Moment](https://momentjs.com/) is a popular JavaScript library for working with dates and time. Obsidian uses Moment internally, so you don't need to install it yourself. You can import it from the Obsidian API instead:
+
+```ts
+import { moment } from "obsidian";
+```
+
+:::
