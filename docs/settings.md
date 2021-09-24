@@ -125,7 +125,7 @@ class ExampleSettingTab extends PluginSettingTab {
       .addText((text) =>
         text
           .setPlaceholder("MMMM dd, yyyy")
-          .setValue(this.plugins.settings.dateFormat)
+          .setValue(this.plugin.settings.dateFormat)
           .onChange(async (value) => {
             this.plugin.settings.dateFormat = value;
             await this.plugin.saveSettings();
@@ -135,7 +135,7 @@ class ExampleSettingTab extends PluginSettingTab {
 }
 ```
 
-`display()` is where you build the content for the settings tab.
+`display()` is where you build the content for the settings tab. For more information, refer to [HTML elements](html-elements.md).
 
 `new Setting(containerEl)` appends a setting to the container element. This example uses a text field using `addText()`, but there are several other setting types available.
 

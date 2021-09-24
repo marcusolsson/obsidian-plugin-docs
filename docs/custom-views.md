@@ -38,12 +38,16 @@ class ExampleView extends ItemView {
 }
 ```
 
+:::note
+For more information on how to use the `createEl()` method, refer to [HTML elements](html-elements.md).
+:::
+
 Each view is uniquely identified by a text string and many operations require that you specify the view you'd like to modify. Extracting it to a constant, `VIEW_TYPE_EXAMPLE`, is a good idea—as you will see later in this guide.
 
-- `getViewType()` returns a unique identier for the view
-- `getDisplayText()` returns a human-friendly name for the view
-- `onOpen()` is called when the view is opened within a new leaf and is responsible for building the content of your view
-- `onClose()` is called when the view should close and is responsible for cleaning up any resources used by the view
+- `getViewType()` returns a unique identier for the view.
+- `getDisplayText()` returns a human-friendly name for the view.
+- `onOpen()` is called when the view is opened within a new leaf and is responsible for building the content of your view.
+- `onClose()` is called when the view should close and is responsible for cleaning up any resources used by the view.
 
 ## Register a custom view
 
@@ -77,8 +81,8 @@ The second argument to `registerView()` is a callback that returns an instance o
 
 To make sure that you clean up the view whenever the plugin is disabled:
 
-- Allow the view clean up after itself by calling `onClose()`
-- Detach all leaves that are using the view
+- Allow the view clean up after itself by calling `onClose()`.
+- Detach all leaves that are using the view.
 
 ```ts
 async onunload() {
@@ -118,9 +122,9 @@ export default class ExamplePlugin extends Plugin {
 
 Here, `activateView()` does three things:
 
-- Detaches all leaves with the custom view
-- Adds the custom view on the right leaf
-- Reveals the leaf that contains the custom view
+- Detaches all leaves with the custom view.
+- Adds the custom view on the right leaf.
+- Reveals the leaf that contains the custom view.
 
 :::tip
 The `activateView()` restricts your plugin to at most one leaf at a time. Try commenting out the call to `detachLeavesOfType()` to create multiple leaves. One for every call to `activateView()`.

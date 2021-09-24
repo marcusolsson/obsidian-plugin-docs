@@ -10,11 +10,11 @@ Whenever you make a change to the plugin source code, the plugin needs to be rel
 
 To re-enable the plugin from within Obsidian:
 
-1. Open **Preferences**
-1. Click **Community plugins**
-1. Find your plugin under **Installed plugins**
-1. Toggle the switch off to disable the plugin
-1. Toggle the switch on to enable the plugin
+1. Open **Preferences**.
+1. Click **Community plugins**.
+1. Find your plugin under **Installed plugins**.
+1. Toggle the switch off to disable the plugin.
+1. Toggle the switch on to enable the plugin.
 
 You're now running the updated version of your plugin.
 

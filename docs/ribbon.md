@@ -2,11 +2,11 @@
 sidebar_position: 30
 ---
 
-# Ribbon actions
+# Ribbon
 
-On the left side of the Obsidian interface, you find the sidebar, or the _app ribbon_. In addition to system operations, such as opening the preferences or another vault, the app ribbon can also host actions defined by plugins.
+The sidebar on the left side of the Obsidian interface is mainly known as the _ribbon_. In addition to system operations, such as opening the preferences or another vault, the ribbon can also host actions defined by plugins.
 
-To add a plugin action to the app ribbon, use the `addRibbonIcon()` method:
+To add a action to the ribbon, use the `addRibbonIcon()` method:
 
 ```ts title="main.ts" {5-7}
 import { Plugin } from "obsidian";
