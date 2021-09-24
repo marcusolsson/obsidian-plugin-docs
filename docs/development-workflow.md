@@ -8,7 +8,7 @@ Whenever you make a change to the plugin source code, the plugin needs to be rel
 
 ## Reload plugin inside Obsidian
 
-You can reload the plugin by re-enabling in the list of installed plugins:
+You can reload the plugin by re-enabling it in the list of installed plugins:
 
 1. Open **Preferences**.
 2. Click **Community plugins**.
