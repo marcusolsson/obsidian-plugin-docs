@@ -2,7 +2,7 @@
 sidebar_position: 30
 ---
 
-# Ribbon
+# Ribbon actions
 
 The sidebar on the left side of the Obsidian interface is mainly known as the _ribbon_. In addition to system operations, such as opening the preferences or another vault, the ribbon can also host actions defined by plugins.
 
