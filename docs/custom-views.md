@@ -130,7 +130,7 @@ Here, `activateView()` does three things:
 The `activateView()` restricts your plugin to at most one leaf at a time. Try commenting out the call to `detachLeavesOfType()` to create multiple leaves. One for every call to `activateView()`.
 :::
 
-How you want the user to activate the custom view is up to you. Here's an example of using a [ribbon action](./ribbon.md), but you can also use a [command](./commands.md).
+How you want the user to activate the custom view is up to you. Here's an example of using a [ribbon action](./ribbon-action.md), but you can also use a [command](./commands.md).
 
 ```ts
 async onload() {
