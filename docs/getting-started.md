@@ -29,10 +29,13 @@ You've now created your own repository based on the Obsidian sample plugin. Next
 1. Browse to the repository you just created.
 1. Click **Code**, and copy the path to your repository.
 1. Open a terminal and navigate to the vault.
+
    ```bash
    cd path/to/vault/.obsidian/plugins
    ```
+
 1. Download the source code into the plugins folder.
+
    ```bash
    git clone https://github.com/username/obsidian-instant-coffee.git
    ```
@@ -40,10 +43,13 @@ You've now created your own repository based on the Obsidian sample plugin. Next
 ## Step 2: Build the plugin
 
 1. Install dependencies.
+
    ```bash
    npm install
    ```
+
 1. Compile the source code. The following command generates a `main.js` that contains the compiled version of your plugin.
+
    ```bash
    npm run dev
    ```
@@ -80,14 +86,18 @@ A plugin is an NodeJS package, which is configured in the `package.json`. You sh
 
 1. Open `main.ts` in your editor.
 1. Find the lines of code that adds a _ribbon icon_.
+
    ```ts
    this.addRibbonIcon('dice', 'Sample Plugin', () => {
      new Notice('This is a notice!');
    });
+
 1. Change the text for the notice. Feel free to come up with a text of your own.
+
    ```ts
    new Notice('Hello, you!');
    ```
+
 1. Restart Obsidian to reload your plugin.
 1. Click the die icon in the sidebar. Make sure it says "Sample Plugin" when you hover it.
 

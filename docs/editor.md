@@ -1,3 +1,7 @@
+---
+sidebar_position: 80
+---
+
 # Editor
 
 The `Editor` interface exposes operations for reading and manipulating an active Markdown document in edit mode.
