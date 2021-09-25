@@ -99,17 +99,18 @@ this.addCommand({
 
 ## Hot keys
 
-The user can run commands using a keyboard shortcut, or _hot key_. While they can configure this themselves, you can also provide a default hot key.
+The user can run commands using a keyboard shortcut, or _hot key_. While they can configure this themselves, you can also provide a default hot key.  (Note: it is generally not recommended that you do this in plugins intended for other people to use, as the likelihood of conflict with other plugins or user-defined keys is high.)
 
-In this example, the user can run the command by pressing and holding Ctrl and Shift together, and then pressing the letter `a` on their keyboard.
+In this example, the user can run the command by pressing and holding Ctrl (or Cmd on Mac) and Shift together, and then pressing the letter `a` on their keyboard.  ("Mod" is Obsidian lingo for "Ctrl on PC, Cmd on Mac".)
 
 ```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
-  hotkeys: [{ modifiers: ["Ctrl", "Shift"], key: "a" }],
+  hotkeys: [{ modifiers: ["Mod", "Shift"], key: "a" }],
   callback: () => {
     console.log('Hey, you!');
   },
 });
 ```
+
