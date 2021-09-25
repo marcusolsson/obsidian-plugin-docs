@@ -103,3 +103,57 @@ new ExampleModal(this.app, (result) => {
   new Notice(`Hello, ${result}!`);
 }).open();
 ```
+
+## Select from list of suggestions
+
+`SuggestModal` is a special modal that lets you display a list of suggestions to the user.
+
+![Modal with suggestions](../static/img/suggest-modal.gif)
+
+```ts
+import { App, Notice, SuggestModal } from "obsidian";
+
+interface Book {
+  title: string;
+  author: string;
+}
+
+const ALL_BOOKS = [
+  {
+    title: "How to Take Smart Notes",
+    author: "Sönke Ahrens",
+  },
+  {
+    title: "Thinking, Fast and Slow",
+    author: "Daniel Kahneman",
+  },
+  {
+    title: "Deep Work",
+    author: "Cal Newport",
+  },
+];
+
+export class ExampleModal extends SuggestModal<Book> {
+  constructor(app: App) {
+    super(app);
+  }
+
+  // Returns all available suggestions.
+  getSuggestions(query: string): Book[] {
+    return ALL_BOOKS.filter((book) =>
+      book.title.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
+  // Renders each suggestion item.
+  renderSuggestion(book: Book, el: HTMLElement) {
+    el.createEl("div", { text: book.title });
+    el.createEl("small", { text: book.author });
+  }
+
+  // Perform action on the selected suggestion.
+  onChooseSuggestion(book: Book, evt: MouseEvent | KeyboardEvent) {
+    new Notice(`Selected ${book.title}`);
+  }
+}
+```
