@@ -45,6 +45,8 @@ this.addCommand({
     }
 
     doCommand();
+
+    return true;
   },
 });
 ```
@@ -81,6 +83,8 @@ this.addCommand({
     }
 
     doCommand();
+
+    return true;
   },
 });
 ```
