@@ -40,17 +40,11 @@ this.addCommand({
   id: 'example-command',
   name: 'Example command',
   checkCallback: (checking: boolean) => {
-    if (isCommandPossible()) {
-      if (!checking) {
-        // Perform the command.
-      }
-
-      // Check passed.
-      return true;
+    if (checking) {
+      return isCommandPossible();
     }
 
-    // Check failed. Hide the command.
-    return false;
+    doCommand();
   },
 });
 ```
@@ -82,17 +76,11 @@ this.addCommand({
   id: 'example-command',
   name: 'Example command',
   editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
-    if (isCommandPossible()) {
-      if (!checking) {
-        // Perform the command.
-      }
-
-      // Check passed.
-      return true;
+    if (checking) {
+      return isCommandPossible();
     }
 
-    // Check failed. Hide the command.
-    return false;
+    doCommand();
   },
 });
 ```
