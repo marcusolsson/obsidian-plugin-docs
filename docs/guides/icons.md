@@ -11,7 +11,7 @@ If you'd like to see all available icons and their corresponding names, you can 
 
 If you'd like to use icons in your custom interfaces, use the `setIcon` utility function to add an icon to an [HTML element](html-elements.md). The following example adds icon to the status bar:
 
-```ts
+```ts title="main.ts"
 import { Plugin, setIcon } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
