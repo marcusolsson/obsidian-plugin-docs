@@ -35,7 +35,7 @@ When using the `checkCallback`, Obsidian first performs a _check_ to see whether
 - If `checking` is set to `true`, perform a check.
 - If `checking` is set to `false`, perform an action.
 
-```ts {4,6-8,11,15}
+```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
