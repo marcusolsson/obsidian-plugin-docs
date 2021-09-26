@@ -13,7 +13,8 @@ In this guide, you'll learn how to create a settings page like this 👇
 The main reason to add settings to a plugin is to store configuration that persists even after the user quits Obsidian. The following example demonstrates how to save and load settings from disk:
 
 ```ts title="main.ts"
-import { App, Plugin } from "obsidian";
+import { Plugin } from "obsidian";
+import { ExampleSettingTab } from "./settings";
 
 interface ExamplePluginSettings {
   dateFormat: string;
@@ -28,6 +29,8 @@ export default class ExamplePlugin extends Plugin {
 
   async onload() {
     await this.loadSettings();
+
+    this.addSettingTab(new ExampleSettingTab(this.app, this));
   }
 
   async loadSettings() {
@@ -77,6 +80,16 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
+Finally, make sure to load the settings when the plugin loads:
+
+```ts
+async onload() {
+  await this.loadSettings();
+
+  // ...
+}
+```
+
 ## Provide default values
 
 When the user enables the plugin for the first time, none of the settings will have been configured yet. The example above provides default values for any missing settings.
@@ -101,12 +114,19 @@ const DEFAULT_SETTINGS: Partial<ExamplePluginSettings> = {
 
 ## Register a settings tab
 
-The plugin can now save and load plugin configuration, but the user doesn't yet have any way of changing any of the settings. Let's change that by creating a _settings tab_.
+The plugin can now save and load plugin configuration, but the user doesn't yet have any way of changing any of the settings. By adding a settings tab you can provide an easy-to-use interface for the user to update their plugin settings:
 
-```ts title="main.ts"
+```ts
+this.addSettingTab(new ExampleSettingTab(this.app, this));
+```
+
+Here, the `ExampleSettingTab` is a class that extends `PluginSettingTab`:
+
+```ts title="settings.ts"
+import ExamplePlugin from "main";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
-class ExampleSettingTab extends PluginSettingTab {
+export class ExampleSettingTab extends PluginSettingTab {
   plugin: ExamplePlugin;
 
   constructor(app: App, plugin: ExamplePlugin) {
@@ -146,14 +166,6 @@ Update the settings object whenever the value of the text field changes, and the
   this.plugin.settings.dateFormat = value;
   await this.plugin.saveSettings();
 })
-```
-
-Once you're happy with it, register the settings tab in the `Plugin` class.
-
-```ts
-async onload() {
-  this.addSettingTab(new ExampleSettingTab(this.app, this));
-}
 ```
 
 Nice work! 💪 Your users will thank you for giving them a way to customize how they interact with your plugin. Before heading to the next guide, experiment with what you've leared by adding another setting.
