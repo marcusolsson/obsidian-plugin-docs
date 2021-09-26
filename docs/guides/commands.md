@@ -6,7 +6,7 @@ sidebar_position: 40
 
 Commands are actions that the user can perform from the [Command Palette](https://help.obsidian.md/Plugins/Command+palette) or by using a hot key.
 
-![Command](../static/img/command.png)
+![Command](../../static/img/command.png)
 
 To register a new command for your plugin, call the `addCommand()` method inside the `onload()` method:
 

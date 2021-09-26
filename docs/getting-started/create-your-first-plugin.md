@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Getting started
+# Create your first plugin
 
 This guide walks you through the steps needed to develop a plugin for Obsidian.
 

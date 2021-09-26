@@ -41,4 +41,4 @@ export default class ExamplePlugin extends Plugin {
 
 The example above results in the following status bar:
 
-![Status bar](../static/img/status-bar.png)
+![Status bar](../../static/img/status-bar.png)

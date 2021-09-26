@@ -8,7 +8,7 @@ If you want users to be able to configure parts of your plugin themselves, you c
 
 In this guide, you'll learn how to create a settings page like this 👇
 
-![Settings](./../static/img/settings.png)
+![Settings](../../static/img/settings.png)
 
 The main reason to add settings to a plugin is to store configuration that persists even after the user quits Obsidian. The following example demonstrates how to save and load settings from disk:
 

@@ -52,7 +52,7 @@ export default class ExamplePlugin extends Plugin {
 
 The modal in the previous example only displayed some text. Let's look at a little more complex example that handles input from the user.
 
-![Modal with user input](../static/img/modal-input.png)
+![Modal with user input](../../static/img/modal-input.png)
 
 ```ts title="modal.ts" {21,30-31}
 import { App, Modal, Setting } from "obsidian";
@@ -108,7 +108,7 @@ new ExampleModal(this.app, (result) => {
 
 `SuggestModal` is a special modal that lets you display a list of suggestions to the user.
 
-![Modal with suggestions](../static/img/suggest-modal.gif)
+![Modal with suggestions](../../static/img/suggest-modal.gif)
 
 ```ts
 import { App, Notice, SuggestModal } from "obsidian";

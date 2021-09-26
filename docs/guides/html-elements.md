@@ -78,7 +78,7 @@ book.createEl("small", { text: "Sönke Ahrens", cls: "book__author" });
 
 Now it looks much better! 🎉
 
-![Styled book item](../static/img/styles.png)
+![Styled book item](../../static/img/styles.png)
 
 ### Conditional styles
 
