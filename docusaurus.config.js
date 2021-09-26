@@ -49,8 +49,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
             title: "Docs",
             items: [
               {
-                label: "Getting started",
-                to: "/getting-started",
+                label: "Create your first plugin",
+                to: "/getting-started/create-your-first-plugin",
               },
             ],
           },
