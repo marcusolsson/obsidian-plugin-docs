@@ -6,7 +6,7 @@ sidebar_position: 45
 
 To create a new block in the status bar, call the `addStatusBarItem()` in the `onload()` method. The `addStatusBarItem()` method returns an HTML element that you can add your own elements to.
 
-```ts
+```ts title="main.ts"
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -23,7 +23,7 @@ For more information on how to use the `createEl()` method, refer to [HTML eleme
 
 You can add multiple status bar items by calling `addStatusBarItem()` multiple times. Since Obsidian adds a gap between of them, you need to create multiple HTML element on the same status bar item if you need more control of spacing.
 
-```ts
+```ts title="main.ts"
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
