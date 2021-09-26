@@ -110,7 +110,7 @@ new ExampleModal(this.app, (result) => {
 
 ![Modal with suggestions](../../static/img/suggest-modal.gif)
 
-```ts
+```ts title="modal.ts"
 import { App, Notice, SuggestModal } from "obsidian";
 
 interface Book {
@@ -134,10 +134,6 @@ const ALL_BOOKS = [
 ];
 
 export class ExampleModal extends SuggestModal<Book> {
-  constructor(app: App) {
-    super(app);
-  }
-
   // Returns all available suggestions.
   getSuggestions(query: string): Book[] {
     return ALL_BOOKS.filter((book) =>
@@ -153,6 +149,26 @@ export class ExampleModal extends SuggestModal<Book> {
 
   // Perform action on the selected suggestion.
   onChooseSuggestion(book: Book, evt: MouseEvent | KeyboardEvent) {
+    new Notice(`Selected ${book.title}`);
+  }
+}
+```
+
+In addition to `SuggestModal`, the Obsidian API provides an even more specialized type of modal for suggestions: the `FuzzySuggestModal`. While it doesn't give you the same control of how each item is rendered, you get [fuzzy string search](https://en.wikipedia.org/wiki/Approximate_string_matching) out-of-the-box.
+
+![Fuzzy string search](../../static/img/fuzzy-suggestion-modal.png)
+
+```ts
+export class ExampleModal extends FuzzySuggestModal<Book> {
+  getItems(): Book[] {
+    return ALL_BOOKS;
+  }
+
+  getItemText(book: Book): string {
+    return book.title;
+  }
+
+  onChooseItem(book: Book, evt: MouseEvent | KeyboardEvent) {
     new Notice(`Selected ${book.title}`);
   }
 }
