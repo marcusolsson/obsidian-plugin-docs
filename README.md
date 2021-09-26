@@ -1,4 +1,4 @@
-# Obsidian plugin development
+# Docs for Obsidian plugin development
 
 [![Documentation](https://github.com/marcusolsson/obsidian-plugin-docs/actions/workflows/documentation.yml/badge.svg)](https://github.com/marcusolsson/obsidian-plugin-docs/actions/workflows/documentation.yml)
 
