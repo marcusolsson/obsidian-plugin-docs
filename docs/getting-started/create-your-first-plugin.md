@@ -9,7 +9,7 @@ This guide walks you through the steps needed to develop a plugin for Obsidian.
 > If you prefer a video walkthrough, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
 
 :::warning Before you start
-**Don't develop plugins in your main vault.** When you develop a plugin, one simple mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
+**Don't develop plugins in your main vault.** When you develop a plugin, one mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
 :::
 
 ## Prerequisites
@@ -70,8 +70,8 @@ The plugin manifest, `manifest.json` is a file that contains information about y
 
 1. Open the `obsidian-instant-coffee` directory that has been created, in a code editor, such as [Visual Studio Code](https://code.visualstudio.com/).
 1. Open `manifest.json` in your editor.
-1. Change `id` to your plugin ID, e.g. `obsidian-instant-coffee`.
-1. Change `name` to the human-friendly name of the plugin, e.g. `Instant coffee`.
+1. Change `id` to your plugin ID, for example `obsidian-instant-coffee`.
+1. Change `name` to the human-friendly name of the plugin, for example `Instant coffee`.
 1. If you'd like, then update `description`, `author`, and `authorUrl` as well.
 
 A plugin is an NodeJS package, which is configured in the `package.json`. You shouldn't need to worry much about it for now. For now, only update it to match the properties in the plugin manifest.
