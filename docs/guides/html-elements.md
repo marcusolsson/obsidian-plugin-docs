@@ -47,7 +47,7 @@ book.createEl("small", { text: "Sönke Ahrens" });
 
 ## Style your elements
 
-You can add custom CSS styles to your plugin by adding a `styles.css` file in the plugin root directory. Let's add some styles for the previous book example:
+You can add custom CSS styles to your plugin by adding a `styles.css` file in the plugin root directory. To add some styles for the previous book example:
 
 ```css title="styles.css"
 .book {

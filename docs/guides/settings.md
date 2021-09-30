@@ -92,9 +92,9 @@ async onload() {
 
 ## Provide default values
 
-When the user enables the plugin for the first time, none of the settings will have been configured yet. The example above provides default values for any missing settings.
+When the user enables the plugin for the first time, none of the settings have been configured yet. The preceding example provides default values for any missing settings.
 
-To understand how this work, let's look a little closer at this code:
+To understand how this work, let's look at the following code:
 
 ```ts
 Object.assign(DEFAULT_SETTINGS, await this.loadData())
@@ -168,4 +168,4 @@ Update the settings object whenever the value of the text field changes, and the
 })
 ```
 
-Nice work! 💪 Your users will thank you for giving them a way to customize how they interact with your plugin. Before heading to the next guide, experiment with what you've leared by adding another setting.
+Nice work! 💪 Your users will thank you for giving them a way to customize how they interact with your plugin. Before heading to the next guide, experiment with what you've learned by adding another setting.

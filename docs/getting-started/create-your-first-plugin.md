@@ -6,7 +6,7 @@ sidebar_position: 10
 
 This guide walks you through the steps needed to develop a plugin for Obsidian.
 
-> If you prefer a video walkthrough, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
+> If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
 
 :::warning Before you start
 **Don't develop plugins in your main vault.** When you develop a plugin, one mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
@@ -68,13 +68,13 @@ Though "Sample Plugin" is probably not the name you had in mind for your plugin.
 
 The plugin manifest, `manifest.json` is a file that contains information about your plugin, such as its name and version.
 
-1. Open the `obsidian-instant-coffee` directory that has been created, in a code editor, such as [Visual Studio Code](https://code.visualstudio.com/).
+1. Open the `obsidian-instant-coffee` directory in a code editor, such as [Visual Studio Code](https://code.visualstudio.com/).
 1. Open `manifest.json` in your editor.
 1. Change `id` to your plugin ID, for example `obsidian-instant-coffee`.
 1. Change `name` to the human-friendly name of the plugin, for example `Instant coffee`.
 1. If you'd like, then update `description`, `author`, and `authorUrl` as well.
 
-A plugin is an NodeJS package, which is configured in the `package.json`. You shouldn't need to worry much about it for now. For now, only update it to match the properties in the plugin manifest.
+A plugin is also a NodeJS package, which you can configure in the `package.json`. You shouldn't need to worry much about it for now. For now, update it to match the properties in the plugin manifest.
 
 1. Open `package.json` in your editor.
 1. Change `name` to match the `id` in `manifest.json`.
@@ -103,4 +103,4 @@ A plugin is an NodeJS package, which is configured in the `package.json`. You sh
 
 Congratulations! 🎉 You've successfully loaded and changed a custom plugin for Obsidian. 🚀
 
-Feel free to modify the code from the sample plugin to see what it does. Once you're ready, learn more about the [anatomy of a plugin](plugin-anatomy).
+Feel free to change the code from the sample plugin to see what it does. Once you're ready, learn more about the [anatomy of a plugin](plugin-anatomy).

@@ -4,7 +4,7 @@ sidebar_position: 70
 
 # Custom views
 
-Views determine how Obsidian displays content. The file explorer, graph view, and the Markdown view are all examples of views, but you can also create your own custom custom views that display content in a way that makes sense for your plugin.
+Views determine how Obsidian displays content. The file explorer, graph view, and the Markdown view are all examples of views, but you can also create your own custom views that display content in a way that makes sense for your plugin.
 
 To create a custom view, create a class that extends the `ItemView` interface:
 
@@ -42,9 +42,9 @@ export class ExampleView extends ItemView {
 For more information on how to use the `createEl()` method, refer to [HTML elements](html-elements.md).
 :::
 
-Each view is uniquely identified by a text string and many operations require that you specify the view you'd like to modify. Extracting it to a constant, `VIEW_TYPE_EXAMPLE`, is a good idea—as you will see later in this guide.
+Each view is uniquely identified by a text string and several operations require that you specify the view you'd like to use. Extracting it to a constant, `VIEW_TYPE_EXAMPLE`, is a good idea—as you will see later in this guide.
 
-- `getViewType()` returns a unique identier for the view.
+- `getViewType()` returns a unique identifier for the view.
 - `getDisplayText()` returns a human-friendly name for the view.
 - `onOpen()` is called when the view is opened within a new leaf and is responsible for building the content of your view.
 - `onClose()` is called when the view should close and is responsible for cleaning up any resources used by the view.
@@ -110,7 +110,7 @@ After you've registered a custom view for the plugin, you should to give the use
 - Reveals the leaf that contains the custom view.
 
 :::tip
-The `activateView()` restricts your plugin to at most one leaf at a time. Try commenting out the call to `detachLeavesOfType()` to allow the user to create multiple leaves. One for every call to `activateView()`.
+The `activateView()` restricts your plugin to at most one leaf at a time. Try commenting out the call to `detachLeavesOfType()` to allow the user to create more than one leaf. One for every call to `activateView()`.
 :::
 
 How you want the user to activate the custom view is up to you. The example uses a [ribbon action](./ribbon-actions.md), but you can also use a [command](./commands.md).

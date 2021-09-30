@@ -1,11 +1,11 @@
 # Icons
 
-Many of the UI components in the Obsidian API lets you configure an accompanying icon. You can choose from one of the many built-in icons, or you can add your own.
+Several of the UI components in the Obsidian API lets you configure an accompanying icon. You can choose from one of the built-in icons, or you can add your own.
 
 ## Browse available icons
 
 If you'd like to see all available icons and their corresponding names, you can install the
-[Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) plugin by mgmeyers. While its main purpose is to replace the built-in icons with custom ones, it also serves as a directory of what icons are included in Obsidian.
+[Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) plugin by mgmeyers. While its main purpose is to replace the built-in icons with custom ones, it also serves as a list of what icons are available in Obsidian.
 
 ## Draw icons
 

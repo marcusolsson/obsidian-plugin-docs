@@ -53,7 +53,7 @@ this.addCommand({
 
 ## Editor commands
 
-If your command needs access to the editor, you can also use the `editorCallback`, which provides the currently active editor and its view as arguments.
+If your command needs access to the editor, you can also use the `editorCallback`, which provides the active editor and its view as arguments.
 
 ```ts {4}
 this.addCommand({
@@ -94,7 +94,7 @@ this.addCommand({
 The user can run commands using a keyboard shortcut, or _hot key_. While they can configure this themselves, you can also provide a default hot key.
 
 :::warning
-Avoid setting default hot keys for plugins that are intended to be used by people other than yourself. Hot keys are highly likely to conflict with those defined by other plugins or by the user themselves.
+Avoid setting default hot keys for plugins that you intend for others to use. Hot keys are highly likely to conflict with those defined by other plugins or by the user themselves.
 :::
 
 In this example, the user can run the command by pressing and holding Ctrl (or Cmd on Mac) and Shift together, and then pressing the letter `a` on their keyboard.

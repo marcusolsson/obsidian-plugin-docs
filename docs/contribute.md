@@ -21,9 +21,9 @@ Each guide should have the following structure:
 1. Full code example
 1. Detailed explanation of the code example
 
-The code block for the full code example must have a title with the file name, for example `title="main.ts"`.
+The code block for the full code example must have a title with the filename, for example `title="main.ts"`.
 
-The example must be complete: The reader can copy-paste it into their own editor and run it without modifications.
+The example must be complete: the reader can copy-paste it into their own editor and run it without modifications.
 
 For simpler code examples, use [line highlighting](https://docusaurus.io/docs/markdown-features/code-blocks#line-highlighting) to draw the reader's attention to the important parts.
 
