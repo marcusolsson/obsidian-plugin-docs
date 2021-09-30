@@ -41,3 +41,43 @@ If you need more control of where the menu appears, you can use `menu.showAtPosi
 :::
 
 For more information on what icons you can use, refer to [Icons](icons.md).
+
+You can also add an item to the file menu, or the editor menu, by subscribing to the `file-menu` and `editor-menu` workspace events:
+
+![Context menu positions](../../static/img/context-menu-positions.png)
+
+```ts
+import { Notice, Plugin } from "obsidian";
+
+export default class ExamplePlugin extends Plugin {
+  async onload() {
+    this.registerEvent(
+      this.app.workspace.on("file-menu", (menu, file) => {
+        menu.addItem((item) => {
+          item
+            .setTitle("Print file path 👈")
+            .setIcon("document")
+            .onClick(async () => {
+              new Notice(file.path);
+            });
+        });
+      })
+    );
+
+  this.registerEvent(
+      this.app.workspace.on("editor-menu", (menu, editor, view) => {
+        menu.addItem((item) => {
+          item
+            .setTitle("Print file path 👈")
+            .setIcon("document")
+            .onClick(async () => {
+              new Notice(view.file.path);
+            });
+        });
+      })
+    );
+  }
+}
+```
+
+For more information on handling events, refer to [Events](events.md).
