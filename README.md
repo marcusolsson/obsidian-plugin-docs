@@ -1,7 +1,7 @@
 # Docs for Obsidian plugin development
 
 [![Documentation](https://github.com/marcusolsson/obsidian-plugin-docs/actions/workflows/documentation.yml/badge.svg)](https://github.com/marcusolsson/obsidian-plugin-docs/actions/workflows/documentation.yml) 
-[![Donate](https://img.shields.io/badge/donate-paypal-blue)](https://www.paypal.com/donate/?hosted_button_id=NT93NXBDFWH6J)
+[![Buy me a coffee](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-gray?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/marcusolsson)
 
 This is an **unofficial** documentation page for Obsidian plugin development, written using [Docusaurus](https://docusaurus.io/).
 
