@@ -12,7 +12,7 @@ export default class ExamplePlugin extends Plugin {
   async onload() {
     this.registerMarkdownPostProcessor((element, context) => {
       const codeblocks = element.querySelectorAll("code");
-	  
+
       for (let index = 0; index < codeblocks.length; index++) {
         const codeblock = codeblocks.item(index);
         const text = codeblock.innerText.trim();
@@ -60,10 +60,12 @@ export class Emoji extends MarkdownRenderChild {
 
 Did you know that you can create [Mermaid](https://mermaid-js.github.io/) diagrams in Obsidian by creating a `mermaid` code block with a text definition like this one?:
 
-    ```mermaid
-	flowchart LR
-	    Start --> Stop
-	```
+````md
+```mermaid
+flowchart LR
+    Start --> Stop
+```
+````
 
 If you change to Preview mode, the text in the code block becomes the following diagram:
 
@@ -74,7 +76,7 @@ flowchart LR
 
 If you want to add your own custom code blocks like the Mermaid one, you can use `registerMarkdownCodeBlockProcessor`. The following example renders a code block with CSV data, as a table:
 
-```ts
+```ts title="main.ts"
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
