@@ -8,7 +8,7 @@ Commands are actions that the user can perform from the [Command Palette](https:
 
 ![Command](../../static/img/command.png)
 
-To register a new command for your plugin, call the `addCommand()` method inside the `onload()` method:
+To register a new command for your plugin, call the [`addCommand()`](../api/classes/Plugin_2.md#addcommand) method inside the `onload()` method:
 
 ```ts title="main.ts" {5-11}
 import { Plugin } from "obsidian";

@@ -4,7 +4,7 @@ sidebar_position: 45
 
 # Status bar
 
-To create a new block in the status bar, call the `addStatusBarItem()` in the `onload()` method. The `addStatusBarItem()` method returns an HTML element that you can add your own elements to.
+To create a new block in the status bar, call the [`addStatusBarItem()`](../api/classes/Plugin_2.md#addstatusbaritem) in the `onload()` method. The `addStatusBarItem()` method returns an [HTML element](html-elements.md) that you can add your own elements to.
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
