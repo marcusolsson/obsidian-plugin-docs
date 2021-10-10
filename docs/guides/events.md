@@ -22,7 +22,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Timing events
 
-If you want repeatedly call a function with a fixed delay, use the [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) function with the [`registerInterval()`](../api/classes/Component.md#registerinterval) method.
+If you want to repeatedly call a function with a fixed delay, use the [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) function with the [`registerInterval()`](../api/classes/Component.md#registerinterval) method.
 
 The following example displays the current time in the status bar, updated every second:
 

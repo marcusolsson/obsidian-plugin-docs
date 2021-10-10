@@ -21,7 +21,7 @@ export default class ExamplePlugin extends Plugin {
 For more information on how to use the `createEl()` method, refer to [HTML elements](html-elements.md).
 :::
 
-You can add multiple status bar items by calling `addStatusBarItem()` multiple times. Since Obsidian adds a gap between of them, you need to create multiple HTML element on the same status bar item if you need more control of spacing.
+You can add multiple status bar items by calling `addStatusBarItem()` multiple times. Since Obsidian adds a gap between them, you need to create multiple HTML element on the same status bar item if you need more control of spacing.
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
