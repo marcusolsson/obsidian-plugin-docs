@@ -13,7 +13,7 @@ I'm **not** affiliated with Obsidian. I learn by writing and documenting, so thi
 If this site has been useful to you, you can buy me a coffee to support its continued development:
 
 <a href="https://buymeacoffee.com/marcusolsson">
-  <img src="/static/img/default-violet.webp" width="200"  />
+  <img src="/obsidian-plugin-docs/img/default-violet.webp" width="200"  />
 </a>
 
 If this site doesn't help you, maybe one of these resources might:
