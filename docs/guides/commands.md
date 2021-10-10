@@ -28,7 +28,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Conditional commands
 
-If your command is only able to run under certain conditions, then consider using `checkCallback` instead.
+If your command is only able to run under certain conditions, then consider using [`checkCallback`](../api/interfaces/Command.md#checkcallback) instead.
 
 When using the `checkCallback`, Obsidian first performs a _check_ to see whether the command can run. To determine whether the callback should perform a check or an action, a `checking` argument is passed to the callback.
 
@@ -53,7 +53,7 @@ this.addCommand({
 
 ## Editor commands
 
-If your command needs access to the editor, you can also use the `editorCallback`, which provides the active editor and its view as arguments.
+If your command needs access to the editor, you can also use the [`editorCallback`](../api/interfaces/Command.md#editorcallback), which provides the active editor and its view as arguments.
 
 ```ts {4}
 this.addCommand({
@@ -71,7 +71,7 @@ this.addCommand({
 Editor commands only appear in the Command Palette when there's an active editor available.
 :::
 
-If the editor callback can only run given under certain conditions, consider using the `editorCheckCallback` instead. For more information, refer to [conditional commands](#conditional-commands).
+If the editor callback can only run given under certain conditions, consider using the [`editorCheckCallback`](../api/interfaces/Command.md#editorcheckcallback) instead. For more information, refer to [conditional commands](#conditional-commands).
 
 ```ts {4}
 this.addCommand({
