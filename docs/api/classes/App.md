@@ -1,6 +1,10 @@
 # App
 
+## Constructor
 
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,15 +14,11 @@
 workspace: Workspace
 ```
 
-
-
 ### vault
 
 ```ts
 vault: Vault
 ```
-
-
 
 ### metadataCache
 
@@ -26,15 +26,11 @@ vault: Vault
 metadataCache: MetadataCache
 ```
 
-
-
 ### fileManager
 
 ```ts
 fileManager: FileManager
 ```
-
-
 
 ### lastEvent
 
@@ -43,4 +39,3 @@ lastEvent: UserEvent
 ```
 
 The last known user interaction event, to help commands find out what modifier keys are pressed.
-

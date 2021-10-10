@@ -1,6 +1,12 @@
 # WorkspaceMobileDrawer
 
+Extends `WorkspaceParent`
 
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 collapsed: boolean
 ```
 
-
-
-
 ## Methods
 
 ### expand
@@ -21,21 +24,14 @@ collapsed: boolean
 expand(): void;
 ```
 
-
-
 ### collapse
 
 ```ts
 collapse(): void;
 ```
 
-
-
 ### toggle
 
 ```ts
 toggle(): void;
 ```
-
-
-

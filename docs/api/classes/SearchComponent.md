@@ -1,6 +1,12 @@
 # SearchComponent
 
+Extends `AbstractTextComponent<HTMLInputElement>`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 clearButtonEl: HTMLElement
 ```
 
-
-
-
 ## Methods
 
 ### onChanged
@@ -20,6 +23,3 @@ clearButtonEl: HTMLElement
 ```ts
 onChanged(): void;
 ```
-
-
-

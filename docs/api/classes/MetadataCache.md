@@ -1,8 +1,16 @@
 # MetadataCache
 
+Extends `Events`
+
 Linktext is any internal link that is composed of a path and a subpath, such as "My note#Heading"
 Linkpath (or path) is the path part of a linktext
 Subpath is the heading/block ID part of a linktext.
+
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -24,7 +32,6 @@ unresolvedLinks: Record<string, Record<string, number>>
 Contains all unresolved links. This object maps each source file to an object of unknown destinations with count.
 Source paths are all vault absolute paths, similar to `resolvedLinks`.
 
-
 ## Methods
 
 ### getFirstLinkpathDest
@@ -41,15 +48,11 @@ Get the best match for a linkpath.
 getFileCache(file: TFile): CachedMetadata | null;
 ```
 
-
-
 ### getCache
 
 ```ts
 getCache(path: string): CachedMetadata;
 ```
-
-
 
 ### fileToLinktext
 
@@ -94,4 +97,3 @@ Called when a file has been indexed, and its (updated) cache is now available.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
 This happens sometimes after a file has been indexed.
 Called when all files has been resolved. This will be fired each time files get modified after the initial load.
-

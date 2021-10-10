@@ -1,6 +1,10 @@
 # MenuItem
 
+## Constructor
 
+```ts
+constructor(menu: Menu);
+```
 
 ## Methods
 
@@ -10,15 +14,11 @@
 setTitle(title: string | DocumentFragment): this;
 ```
 
-
-
 ### setIcon
 
 ```ts
 setIcon(icon: string | null, size?: number): this;
 ```
-
-
 
 ### setActive
 
@@ -26,15 +26,11 @@ setIcon(icon: string | null, size?: number): this;
 setActive(active: boolean): this;
 ```
 
-
-
 ### setDisabled
 
 ```ts
 setDisabled(disabled: boolean): this;
 ```
-
-
 
 ### setIsLabel
 
@@ -42,13 +38,8 @@ setDisabled(disabled: boolean): this;
 setIsLabel(isLabel: boolean): this;
 ```
 
-
-
 ### onClick
 
 ```ts
 onClick(callback: (evt: MouseEvent | KeyboardEvent) => any): this;
 ```
-
-
-

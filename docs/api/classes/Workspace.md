@@ -1,6 +1,12 @@
 # Workspace
 
+Extends `Events`
 
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,15 +16,11 @@
 leftSplit: WorkspaceSidedock | WorkspaceMobileDrawer
 ```
 
-
-
 ### rightSplit
 
 ```ts
 rightSplit: WorkspaceSidedock | WorkspaceMobileDrawer
 ```
-
-
 
 ### leftRibbon
 
@@ -26,15 +28,11 @@ rightSplit: WorkspaceSidedock | WorkspaceMobileDrawer
 leftRibbon: WorkspaceRibbon
 ```
 
-
-
 ### rightRibbon
 
 ```ts
 rightRibbon: WorkspaceRibbon
 ```
-
-
 
 ### rootSplit
 
@@ -42,15 +40,11 @@ rightRibbon: WorkspaceRibbon
 rootSplit: WorkspaceSplit
 ```
 
-
-
 ### activeLeaf
 
 ```ts
 activeLeaf: WorkspaceLeaf
 ```
-
-
 
 ### containerEl
 
@@ -58,15 +52,11 @@ activeLeaf: WorkspaceLeaf
 containerEl: HTMLElement
 ```
 
-
-
 ### layoutReady
 
 ```ts
 layoutReady: boolean
 ```
-
-
 
 ### requestSaveLayout
 
@@ -74,16 +64,11 @@ layoutReady: boolean
 requestSaveLayout: () => void
 ```
 
-
-
 ### requestSaveHistory
 
 ```ts
 requestSaveHistory: () => void
 ```
-
-
-
 
 ## Methods
 
@@ -102,15 +87,11 @@ or push it to a queue to be called later when layout is ready.
 changeLayout(workspace: any): Promise<void>;
 ```
 
-
-
 ### getLayout
 
 ```ts
 getLayout(): any;
 ```
-
-
 
 ### createLeafInParent
 
@@ -118,15 +99,11 @@ getLayout(): any;
 createLeafInParent(parent: WorkspaceSplit, index: number): WorkspaceLeaf;
 ```
 
-
-
 ### splitLeaf
 
 ```ts
 splitLeaf(source: WorkspaceItem, newLeaf: WorkspaceItem, direction?: SplitDirection, before?: boolean): void;
 ```
-
-
 
 ### createLeafBySplit
 
@@ -134,15 +111,11 @@ splitLeaf(source: WorkspaceItem, newLeaf: WorkspaceItem, direction?: SplitDirect
 createLeafBySplit(leaf: WorkspaceLeaf, direction?: SplitDirection, before?: boolean): WorkspaceLeaf;
 ```
 
-
-
 ### splitActiveLeaf
 
 ```ts
 splitActiveLeaf(direction?: SplitDirection): WorkspaceLeaf;
 ```
-
-
 
 ### splitLeafOrActive
 
@@ -150,15 +123,11 @@ splitActiveLeaf(direction?: SplitDirection): WorkspaceLeaf;
 splitLeafOrActive(leaf?: WorkspaceLeaf, direction?: SplitDirection): WorkspaceLeaf;
 ```
 
-
-
 ### duplicateLeaf
 
 ```ts
 duplicateLeaf(leaf: WorkspaceLeaf, direction?: SplitDirection): Promise<void>;
 ```
-
-
 
 ### getUnpinnedLeaf
 
@@ -166,23 +135,17 @@ duplicateLeaf(leaf: WorkspaceLeaf, direction?: SplitDirection): Promise<void>;
 getUnpinnedLeaf(type?: string): WorkspaceLeaf;
 ```
 
-
-
 ### getLeaf
 
 ```ts
 getLeaf(newLeaf?: boolean): WorkspaceLeaf;
 ```
 
-
-
 ### openLinkText
 
 ```ts
 openLinkText(linktext: string, sourcePath: string, newLeaf?: boolean, openViewState?: OpenViewState): Promise<void>;
 ```
-
-
 
 ### setActiveLeaf
 
@@ -198,15 +161,11 @@ Sets the active leaf
 getLeafById(id: string): WorkspaceLeaf;
 ```
 
-
-
 ### getGroupLeaves
 
 ```ts
 getGroupLeaves(group: string): WorkspaceLeaf[];
 ```
-
-
 
 ### getMostRecentLeaf
 
@@ -214,15 +173,11 @@ getGroupLeaves(group: string): WorkspaceLeaf[];
 getMostRecentLeaf(): WorkspaceLeaf;
 ```
 
-
-
 ### getLeftLeaf
 
 ```ts
 getLeftLeaf(split: boolean): WorkspaceLeaf;
 ```
-
-
 
 ### getRightLeaf
 
@@ -230,15 +185,11 @@ getLeftLeaf(split: boolean): WorkspaceLeaf;
 getRightLeaf(split: boolean): WorkspaceLeaf;
 ```
 
-
-
 ### getActiveViewOfType
 
 ```ts
 getActiveViewOfType<T extends View>(type: Constructor<T>): T | null;
 ```
-
-
 
 ### getActiveFile
 
@@ -246,15 +197,11 @@ getActiveViewOfType<T extends View>(type: Constructor<T>): T | null;
 getActiveFile(): TFile | null;
 ```
 
-
-
 ### iterateRootLeaves
 
 ```ts
 iterateRootLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
 ```
-
-
 
 ### iterateAllLeaves
 
@@ -262,15 +209,11 @@ iterateRootLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
 iterateAllLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
 ```
 
-
-
 ### getLeavesOfType
 
 ```ts
 getLeavesOfType(viewType: string): WorkspaceLeaf[];
 ```
-
-
 
 ### detachLeavesOfType
 
@@ -278,15 +221,11 @@ getLeavesOfType(viewType: string): WorkspaceLeaf[];
 detachLeavesOfType(viewType: string): void;
 ```
 
-
-
 ### revealLeaf
 
 ```ts
 revealLeaf(leaf: WorkspaceLeaf): void;
 ```
-
-
 
 ### getLastOpenFiles
 
@@ -294,15 +233,11 @@ revealLeaf(leaf: WorkspaceLeaf): void;
 getLastOpenFiles(): string[];
 ```
 
-
-
 ### iterateCodeMirrors
 
 ```ts
 iterateCodeMirrors(callback: (cm: CodeMirror.Editor) => any): void;
 ```
-
-
 
 ### on
 
@@ -569,4 +504,3 @@ Check for `evt.defaultPrevented` before attempting to handle this event, and ret
 Use `evt.preventDefault()` to indicate that you've handled the event.
 Triggered when the app is about to quit. Not guaranteed to actually run.
 Perform some best effort cleanup here.
-

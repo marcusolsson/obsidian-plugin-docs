@@ -1,6 +1,12 @@
 # PopoverSuggest
 
+Implements `ISuggestOwner<T>`, `CloseableComponent`
 
+## Constructor
+
+```ts
+constructor(app: App,scope: Scope);
+```
 
 ## Methods
 
@@ -10,15 +16,11 @@
 open(): void;
 ```
 
-
-
 ### close
 
 ```ts
 close(): void;
 ```
-
-
 
 ### renderSuggestion
 
@@ -35,4 +37,3 @@ abstract selectSuggestion(value: T, evt: MouseEvent | KeyboardEvent): void;
 ```
 
 Called when the user makes a selection.
-

@@ -1,6 +1,10 @@
 # BaseComponent
 
+## Constructor
 
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -9,9 +13,6 @@
 ```ts
 disabled: boolean
 ```
-
-
-
 
 ## Methods
 
@@ -28,6 +29,3 @@ Facilitates chaining
 ```ts
 setDisabled(disabled: boolean): this;
 ```
-
-
-

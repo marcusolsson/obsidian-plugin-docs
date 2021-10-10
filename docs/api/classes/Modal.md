@@ -1,6 +1,12 @@
 # Modal
 
+Implements `CloseableComponent`
 
+## Constructor
+
+```ts
+constructor(app: App);
+```
 
 ## Properties
 
@@ -10,15 +16,11 @@
 app: App
 ```
 
-
-
 ### scope
 
 ```ts
 scope: Scope
 ```
-
-
 
 ### containerEl
 
@@ -26,15 +28,11 @@ scope: Scope
 containerEl: HTMLElement
 ```
 
-
-
 ### modalEl
 
 ```ts
 modalEl: HTMLElement
 ```
-
-
 
 ### titleEl
 
@@ -42,24 +40,17 @@ modalEl: HTMLElement
 titleEl: HTMLElement
 ```
 
-
-
 ### contentEl
 
 ```ts
 contentEl: HTMLElement
 ```
 
-
-
 ### shouldRestoreSelection
 
 ```ts
 shouldRestoreSelection: boolean
 ```
-
-
-
 
 ## Methods
 
@@ -69,15 +60,11 @@ shouldRestoreSelection: boolean
 open(): void;
 ```
 
-
-
 ### close
 
 ```ts
 close(): void;
 ```
-
-
 
 ### onOpen
 
@@ -85,13 +72,8 @@ close(): void;
 onOpen(): void;
 ```
 
-
-
 ### onClose
 
 ```ts
 onClose(): void;
 ```
-
-
-

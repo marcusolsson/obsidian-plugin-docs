@@ -1,6 +1,12 @@
 # MarkdownView
 
+Extends `TextFileView`
 
+## Constructor
+
+```ts
+constructor(leaf: WorkspaceLeaf);
+```
 
 ## Properties
 
@@ -10,24 +16,17 @@
 editor: Editor
 ```
 
-
-
 ### previewMode
 
 ```ts
 previewMode: MarkdownPreviewView
 ```
 
-
-
 ### currentMode
 
 ```ts
 currentMode: MarkdownSubView
 ```
-
-
-
 
 ## Methods
 
@@ -37,15 +36,11 @@ currentMode: MarkdownSubView
 getViewType(): string;
 ```
 
-
-
 ### getMode
 
 ```ts
 getMode(): MarkdownViewModeType;
 ```
-
-
 
 ### getViewData
 
@@ -82,6 +77,3 @@ clearing mechanism given the new data to be set.
 ```ts
 showSearch(replace?: boolean): void;
 ```
-
-
-

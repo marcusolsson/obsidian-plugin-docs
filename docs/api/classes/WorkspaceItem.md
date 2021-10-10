@@ -1,6 +1,12 @@
 # WorkspaceItem
 
+Extends `Events`
 
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Methods
 
@@ -9,6 +15,3 @@
 ```ts
 getRoot(): WorkspaceItem;
 ```
-
-
-

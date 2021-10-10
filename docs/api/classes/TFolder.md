@@ -1,6 +1,12 @@
 # TFolder
 
+Extends `TAbstractFile`
 
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 children: TAbstractFile[]
 ```
 
-
-
-
 ## Methods
 
 ### isRoot
@@ -20,6 +23,3 @@ children: TAbstractFile[]
 ```ts
 isRoot(): boolean;
 ```
-
-
-

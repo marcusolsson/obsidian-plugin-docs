@@ -1,6 +1,10 @@
 # Setting
 
+## Constructor
 
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,15 +14,11 @@
 settingEl: HTMLElement
 ```
 
-
-
 ### infoEl
 
 ```ts
 infoEl: HTMLElement
 ```
-
-
 
 ### nameEl
 
@@ -26,15 +26,11 @@ infoEl: HTMLElement
 nameEl: HTMLElement
 ```
 
-
-
 ### descEl
 
 ```ts
 descEl: HTMLElement
 ```
-
-
 
 ### controlEl
 
@@ -42,16 +38,11 @@ descEl: HTMLElement
 controlEl: HTMLElement
 ```
 
-
-
 ### components
 
 ```ts
 components: BaseComponent[]
 ```
-
-
-
 
 ## Methods
 
@@ -61,15 +52,11 @@ components: BaseComponent[]
 setName(name: string | DocumentFragment): this;
 ```
 
-
-
 ### setDesc
 
 ```ts
 setDesc(desc: string | DocumentFragment): this;
 ```
-
-
 
 ### setClass
 
@@ -77,15 +64,11 @@ setDesc(desc: string | DocumentFragment): this;
 setClass(cls: string): this;
 ```
 
-
-
 ### setTooltip
 
 ```ts
 setTooltip(tooltip: string): this;
 ```
-
-
 
 ### setHeading
 
@@ -93,15 +76,11 @@ setTooltip(tooltip: string): this;
 setHeading(): this;
 ```
 
-
-
 ### setDisabled
 
 ```ts
 setDisabled(disabled: boolean): this;
 ```
-
-
 
 ### addButton
 
@@ -109,15 +88,11 @@ setDisabled(disabled: boolean): this;
 addButton(cb: (component: ButtonComponent) => any): this;
 ```
 
-
-
 ### addExtraButton
 
 ```ts
 addExtraButton(cb: (component: ExtraButtonComponent) => any): this;
 ```
-
-
 
 ### addToggle
 
@@ -125,15 +100,11 @@ addExtraButton(cb: (component: ExtraButtonComponent) => any): this;
 addToggle(cb: (component: ToggleComponent) => any): this;
 ```
 
-
-
 ### addText
 
 ```ts
 addText(cb: (component: TextComponent) => any): this;
 ```
-
-
 
 ### addSearch
 
@@ -141,15 +112,11 @@ addText(cb: (component: TextComponent) => any): this;
 addSearch(cb: (component: SearchComponent) => any): this;
 ```
 
-
-
 ### addTextArea
 
 ```ts
 addTextArea(cb: (component: TextAreaComponent) => any): this;
 ```
-
-
 
 ### addMomentFormat
 
@@ -157,23 +124,17 @@ addTextArea(cb: (component: TextAreaComponent) => any): this;
 addMomentFormat(cb: (component: MomentFormatComponent) => any): this;
 ```
 
-
-
 ### addDropdown
 
 ```ts
 addDropdown(cb: (component: DropdownComponent) => any): this;
 ```
 
-
-
 ### addSlider
 
 ```ts
 addSlider(cb: (component: SliderComponent) => any): this;
 ```
-
-
 
 ### then
 
@@ -182,4 +143,3 @@ then(cb: (setting: this) => any): this;
 ```
 
 Facilitates chaining
-

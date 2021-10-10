@@ -1,6 +1,12 @@
 # Plugin_2
 
+Extends `Component`
 
+## Constructor
+
+```ts
+constructor(app: App,manifest: PluginManifest);
+```
 
 ## Properties
 
@@ -10,16 +16,11 @@
 app: App
 ```
 
-
-
 ### manifest
 
 ```ts
 manifest: PluginManifest
 ```
-
-
-
 
 ## Methods
 
@@ -37,8 +38,6 @@ Adds a ribbon icon to the left bar.
 addStatusBarItem(): HTMLElement;
 ```
 
-
-
 ### addCommand
 
 ```ts
@@ -53,15 +52,11 @@ Register a command globally. The command id and name will be automatically prefi
 addSettingTab(settingTab: PluginSettingTab): void;
 ```
 
-
-
 ### registerView
 
 ```ts
 registerView(type: string, viewCreator: ViewCreator): void;
 ```
-
-
 
 ### registerExtensions
 
@@ -69,15 +64,11 @@ registerView(type: string, viewCreator: ViewCreator): void;
 registerExtensions(extensions: string[], viewType: string): void;
 ```
 
-
-
 ### registerMarkdownPostProcessor
 
 ```ts
 registerMarkdownPostProcessor(postProcessor: MarkdownPostProcessor): MarkdownPostProcessor;
 ```
-
-
 
 ### registerMarkdownCodeBlockProcessor
 
@@ -120,13 +111,8 @@ Register an EditorSuggest which can provide live suggestions while the user is t
 loadData(): Promise<any>;
 ```
 
-
-
 ### saveData
 
 ```ts
 saveData(data: any): Promise<void>;
 ```
-
-
-

@@ -1,6 +1,12 @@
 # ExtraButtonComponent
 
+Extends `BaseComponent`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 extraSettingsEl: HTMLElement
 ```
 
-
-
-
 ## Methods
 
 ### setDisabled
@@ -21,15 +24,11 @@ extraSettingsEl: HTMLElement
 setDisabled(disabled: boolean): this;
 ```
 
-
-
 ### setTooltip
 
 ```ts
 setTooltip(tooltip: string): this;
 ```
-
-
 
 ### setIcon
 
@@ -37,13 +36,8 @@ setTooltip(tooltip: string): this;
 setIcon(icon: string): this;
 ```
 
-
-
 ### onClick
 
 ```ts
 onClick(callback: () => any): this;
 ```
-
-
-

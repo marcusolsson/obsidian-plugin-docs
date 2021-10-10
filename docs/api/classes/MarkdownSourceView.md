@@ -1,6 +1,12 @@
 # MarkdownSourceView
 
+Implements `MarkdownSubView`, `HoverParent`
 
+## Constructor
+
+```ts
+constructor(view: MarkdownView);
+```
 
 ## Properties
 
@@ -10,16 +16,11 @@
 cmEditor: Editor
 ```
 
-
-
 ### hoverPopover
 
 ```ts
 hoverPopover: HoverPopover
 ```
-
-
-
 
 ## Methods
 
@@ -29,15 +30,11 @@ hoverPopover: HoverPopover
 clear(): void;
 ```
 
-
-
 ### get
 
 ```ts
 get(): string;
 ```
-
-
 
 ### set
 
@@ -45,15 +42,11 @@ get(): string;
 set(data: string, clear: boolean): void;
 ```
 
-
-
 ### getSelection
 
 ```ts
 getSelection(): string;
 ```
-
-
 
 ### getScroll
 
@@ -61,13 +54,8 @@ getSelection(): string;
 getScroll(): number;
 ```
 
-
-
 ### applyScroll
 
 ```ts
 applyScroll(scroll: number): void;
 ```
-
-
-

@@ -2,6 +2,12 @@
 
 A common interface that bridges the gap between CodeMirror 5 and CodeMirror 6.
 
+## Constructor
+
+```ts
+constructor();
+```
+
 ## Methods
 
 ### getDoc
@@ -10,15 +16,11 @@ A common interface that bridges the gap between CodeMirror 5 and CodeMirror 6.
 getDoc(): this;
 ```
 
-
-
 ### refresh
 
 ```ts
 abstract refresh(): void;
 ```
-
-
 
 ### getValue
 
@@ -26,15 +28,11 @@ abstract refresh(): void;
 abstract getValue(): string;
 ```
 
-
-
 ### setValue
 
 ```ts
 abstract setValue(content: string): void;
 ```
-
-
 
 ### getLine
 
@@ -50,8 +48,6 @@ Get the text at line (0-indexed)
 setLine(n: number, text: string): void;
 ```
 
-
-
 ### lineCount
 
 ```ts
@@ -66,15 +62,11 @@ Gets the number of lines in the document
 abstract lastLine(): number;
 ```
 
-
-
 ### getSelection
 
 ```ts
 abstract getSelection(): string;
 ```
-
-
 
 ### somethingSelected
 
@@ -82,15 +74,11 @@ abstract getSelection(): string;
 somethingSelected(): boolean;
 ```
 
-
-
 ### getRange
 
 ```ts
 abstract getRange(from: EditorPosition, to: EditorPosition): string;
 ```
-
-
 
 ### replaceSelection
 
@@ -98,15 +86,11 @@ abstract getRange(from: EditorPosition, to: EditorPosition): string;
 abstract replaceSelection(replacement: string, origin?: string): void;
 ```
 
-
-
 ### replaceRange
 
 ```ts
 abstract replaceRange(replacement: string, from: EditorPosition, to?: EditorPosition, origin?: string): void;
 ```
-
-
 
 ### getCursor
 
@@ -114,15 +98,11 @@ abstract replaceRange(replacement: string, from: EditorPosition, to?: EditorPosi
 abstract getCursor(string?: "from" | "to" | "head" | "anchor"): EditorPosition;
 ```
 
-
-
 ### listSelections
 
 ```ts
 abstract listSelections(): EditorSelection[];
 ```
-
-
 
 ### setCursor
 
@@ -130,15 +110,11 @@ abstract listSelections(): EditorSelection[];
 setCursor(pos: EditorPosition | number, ch?: number): void;
 ```
 
-
-
 ### setSelection
 
 ```ts
 abstract setSelection(anchor: EditorPosition, head?: EditorPosition): void;
 ```
-
-
 
 ### setSelections
 
@@ -146,15 +122,11 @@ abstract setSelection(anchor: EditorPosition, head?: EditorPosition): void;
 abstract setSelections(ranges: EditorSelectionOrCaret[], main?: number): void;
 ```
 
-
-
 ### focus
 
 ```ts
 abstract focus(): void;
 ```
-
-
 
 ### blur
 
@@ -162,15 +134,11 @@ abstract focus(): void;
 abstract blur(): void;
 ```
 
-
-
 ### hasFocus
 
 ```ts
 abstract hasFocus(): boolean;
 ```
-
-
 
 ### getScrollInfo
 
@@ -181,15 +149,11 @@ abstract getScrollInfo(): {
 };
 ```
 
-
-
 ### scrollTo
 
 ```ts
 abstract scrollTo(x?: number | null, y?: number | null): void;
 ```
-
-
 
 ### scrollIntoView
 
@@ -197,15 +161,11 @@ abstract scrollTo(x?: number | null, y?: number | null): void;
 abstract scrollIntoView(range: EditorRange, margin?: number): void;
 ```
 
-
-
 ### undo
 
 ```ts
 abstract undo(): void;
 ```
-
-
 
 ### redo
 
@@ -213,15 +173,11 @@ abstract undo(): void;
 abstract redo(): void;
 ```
 
-
-
 ### exec
 
 ```ts
 abstract exec(command: EditorCommandName): void;
 ```
-
-
 
 ### transaction
 
@@ -229,21 +185,14 @@ abstract exec(command: EditorCommandName): void;
 abstract transaction(tx: EditorTransaction): void;
 ```
 
-
-
 ### posToOffset
 
 ```ts
 abstract posToOffset(pos: EditorPosition): number;
 ```
 
-
-
 ### offsetToPos
 
 ```ts
 abstract offsetToPos(offset: number): EditorPosition;
 ```
-
-
-

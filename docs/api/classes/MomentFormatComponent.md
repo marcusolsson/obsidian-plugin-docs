@@ -1,6 +1,12 @@
 # MomentFormatComponent
 
+Extends `TextComponent`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -9,9 +15,6 @@
 ```ts
 sampleEl: HTMLElement
 ```
-
-
-
 
 ## Methods
 
@@ -29,15 +32,11 @@ Sets the default format when input is cleared. Also used for placeholder.
 setSampleEl(sampleEl: HTMLElement): this;
 ```
 
-
-
 ### setValue
 
 ```ts
 setValue(value: string): this;
 ```
-
-
 
 ### onChanged
 
@@ -45,13 +44,8 @@ setValue(value: string): this;
 onChanged(): void;
 ```
 
-
-
 ### updateSample
 
 ```ts
 updateSample(): void;
 ```
-
-
-

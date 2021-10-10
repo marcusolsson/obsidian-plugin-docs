@@ -1,6 +1,12 @@
 # FuzzySuggestModal
 
+Extends `SuggestModal<FuzzyMatch<T>>`
 
+## Constructor
+
+```ts
+constructor(app: App);
+```
 
 ## Methods
 
@@ -9,8 +15,6 @@
 ```ts
 getSuggestions(query: string): FuzzyMatch<T>[];
 ```
-
-
 
 ### renderSuggestion
 
@@ -26,15 +30,11 @@ Render the suggestion item into DOM.
 onChooseSuggestion(item: FuzzyMatch<T>, evt: MouseEvent | KeyboardEvent): void;
 ```
 
-
-
 ### getItems
 
 ```ts
 abstract getItems(): T[];
 ```
-
-
 
 ### getItemText
 
@@ -42,13 +42,8 @@ abstract getItems(): T[];
 abstract getItemText(item: T): string;
 ```
 
-
-
 ### onChooseItem
 
 ```ts
 abstract onChooseItem(item: T, evt: MouseEvent | KeyboardEvent): void;
 ```
-
-
-

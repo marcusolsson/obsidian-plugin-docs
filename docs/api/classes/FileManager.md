@@ -2,6 +2,12 @@
 
 Manage the creation, deletion and renaming of files from the UI.
 
+## Constructor
+
+```ts
+constructor();
+```
+
 ## Methods
 
 ### getNewFileParent
@@ -27,4 +33,3 @@ generateMarkdownLink(file: TFile, sourcePath: string, subpath?: string, alias?: 
 ```
 
 Generate a markdown link based on the user's preferences.
-

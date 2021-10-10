@@ -1,6 +1,14 @@
 # MarkdownPreviewView
 
+Extends `MarkdownRenderer`
 
+Implements `MarkdownSubView`, `MarkdownPreviewEvents`
+
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +18,6 @@
 containerEl: HTMLElement
 ```
 
-
-
-
 ## Methods
 
 ### get
@@ -21,15 +26,11 @@ containerEl: HTMLElement
 get(): string;
 ```
 
-
-
 ### set
 
 ```ts
 set(data: string, clear: boolean): void;
 ```
-
-
 
 ### clear
 
@@ -37,15 +38,11 @@ set(data: string, clear: boolean): void;
 clear(): void;
 ```
 
-
-
 ### rerender
 
 ```ts
 rerender(full?: boolean): void;
 ```
-
-
 
 ### getScroll
 
@@ -53,13 +50,8 @@ rerender(full?: boolean): void;
 getScroll(): number;
 ```
 
-
-
 ### applyScroll
 
 ```ts
 applyScroll(scroll: number): void;
 ```
-
-
-

@@ -1,6 +1,12 @@
 # ButtonComponent
 
+Extends `BaseComponent`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 buttonEl: HTMLButtonElement
 ```
 
-
-
-
 ## Methods
 
 ### setDisabled
@@ -21,15 +24,11 @@ buttonEl: HTMLButtonElement
 setDisabled(disabled: boolean): this;
 ```
 
-
-
 ### setCta
 
 ```ts
 setCta(): this;
 ```
-
-
 
 ### removeCta
 
@@ -37,15 +36,11 @@ setCta(): this;
 removeCta(): this;
 ```
 
-
-
 ### setWarning
 
 ```ts
 setWarning(): this;
 ```
-
-
 
 ### setTooltip
 
@@ -53,15 +48,11 @@ setWarning(): this;
 setTooltip(tooltip: string): this;
 ```
 
-
-
 ### setButtonText
 
 ```ts
 setButtonText(name: string): this;
 ```
-
-
 
 ### setIcon
 
@@ -69,21 +60,14 @@ setButtonText(name: string): this;
 setIcon(icon: string): this;
 ```
 
-
-
 ### setClass
 
 ```ts
 setClass(cls: string): this;
 ```
 
-
-
 ### onClick
 
 ```ts
 onClick(callback: (evt: MouseEvent) => any): this;
 ```
-
-
-

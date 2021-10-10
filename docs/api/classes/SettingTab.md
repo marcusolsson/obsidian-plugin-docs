@@ -1,6 +1,10 @@
 # SettingTab
 
+## Constructor
 
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,16 +14,11 @@
 app: App
 ```
 
-
-
 ### containerEl
 
 ```ts
 containerEl: HTMLElement
 ```
-
-
-
 
 ## Methods
 
@@ -29,13 +28,8 @@ containerEl: HTMLElement
 abstract display(): any;
 ```
 
-
-
 ### hide
 
 ```ts
 hide(): any;
 ```
-
-
-

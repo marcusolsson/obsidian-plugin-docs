@@ -1,6 +1,10 @@
 # Notice
 
+## Constructor
 
+```ts
+constructor(message: string,timeout: number);
+```
 
 ## Methods
 
@@ -17,6 +21,3 @@ Change the message of this notice.
 ```ts
 hide(): void;
 ```
-
-
-

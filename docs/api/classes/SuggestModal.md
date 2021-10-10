@@ -1,6 +1,14 @@
 # SuggestModal
 
+Extends `Modal`
 
+Implements `ISuggestOwner<T>`
+
+## Constructor
+
+```ts
+constructor(app: App);
+```
 
 ## Properties
 
@@ -10,15 +18,11 @@
 limit: number
 ```
 
-
-
 ### emptyStateText
 
 ```ts
 emptyStateText: string
 ```
-
-
 
 ### inputEl
 
@@ -26,16 +30,11 @@ emptyStateText: string
 inputEl: HTMLInputElement
 ```
 
-
-
 ### resultContainerEl
 
 ```ts
 resultContainerEl: HTMLElement
 ```
-
-
-
 
 ## Methods
 
@@ -45,23 +44,17 @@ resultContainerEl: HTMLElement
 setPlaceholder(placeholder: string): void;
 ```
 
-
-
 ### setInstructions
 
 ```ts
 setInstructions(instructions: Instruction[]): void;
 ```
 
-
-
 ### onNoSuggestion
 
 ```ts
 onNoSuggestion(): void;
 ```
-
-
 
 ### selectSuggestion
 
@@ -77,8 +70,6 @@ Called when the user makes a selection.
 abstract getSuggestions(query: string): T[];
 ```
 
-
-
 ### renderSuggestion
 
 ```ts
@@ -92,6 +83,3 @@ Render the suggestion item into DOM.
 ```ts
 abstract onChooseSuggestion(item: T, evt: MouseEvent | KeyboardEvent): any;
 ```
-
-
-

@@ -1,6 +1,12 @@
 # DropdownComponent
 
+Extends `ValueComponent<string>`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 selectEl: HTMLSelectElement
 ```
 
-
-
-
 ## Methods
 
 ### setDisabled
@@ -21,15 +24,11 @@ selectEl: HTMLSelectElement
 setDisabled(disabled: boolean): this;
 ```
 
-
-
 ### addOption
 
 ```ts
 addOption(value: string, display: string): this;
 ```
-
-
 
 ### addOptions
 
@@ -37,15 +36,11 @@ addOption(value: string, display: string): this;
 addOptions(options: Record<string, string>): this;
 ```
 
-
-
 ### getValue
 
 ```ts
 getValue(): string;
 ```
-
-
 
 ### setValue
 
@@ -53,13 +48,8 @@ getValue(): string;
 setValue(value: string): this;
 ```
 
-
-
 ### onChange
 
 ```ts
 onChange(callback: (value: string) => any): this;
 ```
-
-
-

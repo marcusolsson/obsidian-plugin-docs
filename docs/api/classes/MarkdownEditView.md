@@ -1,6 +1,14 @@
 # MarkdownEditView
 
+Implements `MarkdownSubView`, `HoverParent`
+
 This is the editor for Obsidian Mobile as well as the upcoming WYSIWYG editor.
+
+## Constructor
+
+```ts
+constructor(view: MarkdownView);
+```
 
 ## Properties
 
@@ -10,9 +18,6 @@ This is the editor for Obsidian Mobile as well as the upcoming WYSIWYG editor.
 hoverPopover: HoverPopover
 ```
 
-
-
-
 ## Methods
 
 ### clear
@@ -21,15 +26,11 @@ hoverPopover: HoverPopover
 clear(): void;
 ```
 
-
-
 ### get
 
 ```ts
 get(): string;
 ```
-
-
 
 ### set
 
@@ -37,15 +38,11 @@ get(): string;
 set(data: string, clear: boolean): void;
 ```
 
-
-
 ### getSelection
 
 ```ts
 getSelection(): string;
 ```
-
-
 
 ### getScroll
 
@@ -53,13 +50,8 @@ getSelection(): string;
 getScroll(): number;
 ```
 
-
-
 ### applyScroll
 
 ```ts
 applyScroll(scroll: number): void;
 ```
-
-
-

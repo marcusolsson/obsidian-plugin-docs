@@ -1,6 +1,12 @@
 # FileSystemAdapter
 
+Implements `DataAdapter`
 
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Methods
 
@@ -10,15 +16,11 @@
 getName(): string;
 ```
 
-
-
 ### getBasePath
 
 ```ts
 getBasePath(): string;
 ```
-
-
 
 ### mkdir
 
@@ -26,15 +28,11 @@ getBasePath(): string;
 mkdir(normalizedPath: string): Promise<void>;
 ```
 
-
-
 ### trashSystem
 
 ```ts
 trashSystem(normalizedPath: string): Promise<boolean>;
 ```
-
-
 
 ### trashLocal
 
@@ -42,15 +40,11 @@ trashSystem(normalizedPath: string): Promise<boolean>;
 trashLocal(normalizedPath: string): Promise<void>;
 ```
 
-
-
 ### rmdir
 
 ```ts
 rmdir(normalizedPath: string, recursive: boolean): Promise<void>;
 ```
-
-
 
 ### read
 
@@ -58,15 +52,11 @@ rmdir(normalizedPath: string, recursive: boolean): Promise<void>;
 read(normalizedPath: string): Promise<string>;
 ```
 
-
-
 ### readBinary
 
 ```ts
 readBinary(normalizedPath: string): Promise<ArrayBuffer>;
 ```
-
-
 
 ### write
 
@@ -74,15 +64,11 @@ readBinary(normalizedPath: string): Promise<ArrayBuffer>;
 write(normalizedPath: string, data: string, options?: DataWriteOptions): Promise<void>;
 ```
 
-
-
 ### writeBinary
 
 ```ts
 writeBinary(normalizedPath: string, data: ArrayBuffer, options?: DataWriteOptions): Promise<void>;
 ```
-
-
 
 ### getResourcePath
 
@@ -90,15 +76,11 @@ writeBinary(normalizedPath: string, data: ArrayBuffer, options?: DataWriteOption
 getResourcePath(normalizedPath: string): string;
 ```
 
-
-
 ### remove
 
 ```ts
 remove(normalizedPath: string): Promise<void>;
 ```
-
-
 
 ### rename
 
@@ -106,15 +88,11 @@ remove(normalizedPath: string): Promise<void>;
 rename(normalizedPath: string, normalizedNewPath: string): Promise<void>;
 ```
 
-
-
 ### copy
 
 ```ts
 copy(normalizedPath: string, normalizedNewPath: string): Promise<void>;
 ```
-
-
 
 ### exists
 
@@ -122,15 +100,11 @@ copy(normalizedPath: string, normalizedNewPath: string): Promise<void>;
 exists(normalizedPath: string, sensitive?: boolean): Promise<boolean>;
 ```
 
-
-
 ### stat
 
 ```ts
 stat(normalizedPath: string): Promise<Stat | null>;
 ```
-
-
 
 ### list
 
@@ -138,15 +112,11 @@ stat(normalizedPath: string): Promise<Stat | null>;
 list(normalizedPath: string): Promise<ListedFiles>;
 ```
 
-
-
 ### getFullPath
 
 ```ts
 getFullPath(normalizedPath: string): string;
 ```
-
-
 
 ### readLocalFile
 
@@ -154,13 +124,8 @@ getFullPath(normalizedPath: string): string;
 static readLocalFile(path: string): Promise<ArrayBuffer>;
 ```
 
-
-
 ### mkdir
 
 ```ts
 static mkdir(path: string): Promise<void>;
 ```
-
-
-

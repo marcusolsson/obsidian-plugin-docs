@@ -1,6 +1,12 @@
 # MarkdownRenderChild
 
+Extends `Component`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -9,6 +15,3 @@
 ```ts
 containerEl: HTMLElement
 ```
-
-
-

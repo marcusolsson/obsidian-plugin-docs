@@ -1,6 +1,12 @@
 # SliderComponent
 
+Extends `ValueComponent<number>`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 sliderEl: HTMLInputElement
 ```
 
-
-
-
 ## Methods
 
 ### setDisabled
@@ -21,15 +24,11 @@ sliderEl: HTMLInputElement
 setDisabled(disabled: boolean): this;
 ```
 
-
-
 ### setLimits
 
 ```ts
 setLimits(min: number, max: number, step: number | "any"): this;
 ```
-
-
 
 ### getValue
 
@@ -37,15 +36,11 @@ setLimits(min: number, max: number, step: number | "any"): this;
 getValue(): number;
 ```
 
-
-
 ### setValue
 
 ```ts
 setValue(value: number): this;
 ```
-
-
 
 ### getValuePretty
 
@@ -53,15 +48,11 @@ setValue(value: number): this;
 getValuePretty(): string;
 ```
 
-
-
 ### setDynamicTooltip
 
 ```ts
 setDynamicTooltip(): this;
 ```
-
-
 
 ### showTooltip
 
@@ -69,13 +60,8 @@ setDynamicTooltip(): this;
 showTooltip(): void;
 ```
 
-
-
 ### onChange
 
 ```ts
 onChange(callback: (value: number) => any): this;
 ```
-
-
-

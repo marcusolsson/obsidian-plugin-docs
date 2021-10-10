@@ -1,6 +1,10 @@
 # TAbstractFile
 
+## Constructor
 
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,15 +14,11 @@
 vault: Vault
 ```
 
-
-
 ### path
 
 ```ts
 path: string
 ```
-
-
 
 ### name
 
@@ -26,13 +26,8 @@ path: string
 name: string
 ```
 
-
-
 ### parent
 
 ```ts
 parent: TFolder
 ```
-
-
-

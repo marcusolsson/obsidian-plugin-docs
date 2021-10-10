@@ -1,6 +1,10 @@
 # Tasks
 
+## Constructor
 
+```ts
+constructor();
+```
 
 ## Methods
 
@@ -10,15 +14,11 @@
 add(callback: () => Promise<any>): void;
 ```
 
-
-
 ### addPromise
 
 ```ts
 addPromise(promise: Promise<any>): void;
 ```
-
-
 
 ### isEmpty
 
@@ -26,13 +26,8 @@ addPromise(promise: Promise<any>): void;
 isEmpty(): boolean;
 ```
 
-
-
 ### promise
 
 ```ts
 promise(): Promise<any>;
 ```
-
-
-

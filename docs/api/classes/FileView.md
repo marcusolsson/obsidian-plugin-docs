@@ -1,6 +1,12 @@
 # FileView
 
+Extends `ItemView`
 
+## Constructor
+
+```ts
+constructor(leaf: WorkspaceLeaf);
+```
 
 ## Properties
 
@@ -10,16 +16,11 @@
 allowNoFile: boolean
 ```
 
-
-
 ### file
 
 ```ts
 file: TFile
 ```
-
-
-
 
 ## Methods
 
@@ -28,8 +29,6 @@ file: TFile
 ```ts
 getDisplayText(): string;
 ```
-
-
 
 ### onload
 
@@ -45,15 +44,11 @@ Override this to load your component
 getState(): any;
 ```
 
-
-
 ### setState
 
 ```ts
 setState(state: any, result: ViewStateResult): Promise<void>;
 ```
-
-
 
 ### onLoadFile
 
@@ -61,15 +56,11 @@ setState(state: any, result: ViewStateResult): Promise<void>;
 onLoadFile(file: TFile): Promise<void>;
 ```
 
-
-
 ### onUnloadFile
 
 ```ts
 onUnloadFile(file: TFile): Promise<void>;
 ```
-
-
 
 ### onMoreOptionsMenu
 
@@ -77,21 +68,14 @@ onUnloadFile(file: TFile): Promise<void>;
 onMoreOptionsMenu(menu: Menu): void;
 ```
 
-
-
 ### onHeaderMenu
 
 ```ts
 onHeaderMenu(menu: Menu): void;
 ```
 
-
-
 ### canAcceptExtension
 
 ```ts
 canAcceptExtension(extension: string): boolean;
 ```
-
-
-

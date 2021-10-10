@@ -1,6 +1,12 @@
 # ToggleComponent
 
+Extends `ValueComponent<boolean>`
 
+## Constructor
+
+```ts
+constructor(containerEl: HTMLElement);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 toggleEl: HTMLElement
 ```
 
-
-
-
 ## Methods
 
 ### setDisabled
@@ -21,15 +24,11 @@ toggleEl: HTMLElement
 setDisabled(disabled: boolean): this;
 ```
 
-
-
 ### getValue
 
 ```ts
 getValue(): boolean;
 ```
-
-
 
 ### setValue
 
@@ -37,15 +36,11 @@ getValue(): boolean;
 setValue(on: boolean): this;
 ```
 
-
-
 ### setTooltip
 
 ```ts
 setTooltip(tooltip: string): this;
 ```
-
-
 
 ### onClick
 
@@ -53,13 +48,8 @@ setTooltip(tooltip: string): this;
 onClick(): void;
 ```
 
-
-
 ### onChange
 
 ```ts
 onChange(callback: (value: boolean) => any): this;
 ```
-
-
-

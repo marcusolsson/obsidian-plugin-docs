@@ -1,6 +1,12 @@
 # WorkspaceSidedock
 
+Extends `WorkspaceSplit`
 
+## Constructor
+
+```ts
+constructor();
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 collapsed: boolean
 ```
 
-
-
-
 ## Methods
 
 ### toggle
@@ -21,21 +24,14 @@ collapsed: boolean
 toggle(): void;
 ```
 
-
-
 ### collapse
 
 ```ts
 collapse(): void;
 ```
 
-
-
 ### expand
 
 ```ts
 expand(): void;
 ```
-
-
-

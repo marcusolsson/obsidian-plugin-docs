@@ -1,6 +1,12 @@
 # EditorSuggest
 
+Extends `PopoverSuggest<T>`
 
+## Constructor
+
+```ts
+constructor(app: App);
+```
 
 ## Properties
 
@@ -20,7 +26,6 @@ limit: number
 ```
 
 Override this to use a different limit for suggestion items
-
 
 ## Methods
 
@@ -45,4 +50,3 @@ abstract getSuggestions(context: EditorSuggestContext): T[] | Promise<T[]>;
 
 Generate suggestion items based on this context. Can be async, but preferably sync.
 When generating async suggestions, you should pass the context along.
-

@@ -1,6 +1,10 @@
 # Keymap
 
+## Constructor
 
+```ts
+constructor();
+```
 
 ## Methods
 
@@ -19,4 +23,3 @@ static isModEvent(evt?: UserEvent | null): boolean;
 ```
 
 Returns true if the modifier key Cmd/Ctrl is pressed OR if this is a middle-click MouseEvent.
-

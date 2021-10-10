@@ -1,6 +1,12 @@
 # AbstractTextComponent
 
+Extends `ValueComponent<string>`
 
+## Constructor
+
+```ts
+constructor(inputEl: T);
+```
 
 ## Properties
 
@@ -10,9 +16,6 @@
 inputEl: T
 ```
 
-
-
-
 ## Methods
 
 ### setDisabled
@@ -21,15 +24,11 @@ inputEl: T
 setDisabled(disabled: boolean): this;
 ```
 
-
-
 ### getValue
 
 ```ts
 getValue(): string;
 ```
-
-
 
 ### setValue
 
@@ -37,15 +36,11 @@ getValue(): string;
 setValue(value: string): this;
 ```
 
-
-
 ### setPlaceholder
 
 ```ts
 setPlaceholder(placeholder: string): this;
 ```
-
-
 
 ### onChanged
 
@@ -53,13 +48,8 @@ setPlaceholder(placeholder: string): this;
 onChanged(): void;
 ```
 
-
-
 ### onChange
 
 ```ts
 onChange(callback: (value: string) => any): this;
 ```
-
-
-
