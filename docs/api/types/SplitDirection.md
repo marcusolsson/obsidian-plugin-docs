@@ -1,7 +1,7 @@
 # SplitDirection
 
 ```ts
-export type SplitDirection = "vertical" | "horizontal";
+export type SplitDirection = 'vertical' | 'horizontal';
 ```
 
 

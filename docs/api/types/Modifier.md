@@ -1,7 +1,7 @@
 # Modifier
 
 ```ts
-export type Modifier = "Mod" | "Ctrl" | "Meta" | "Shift" | "Alt";
+export type Modifier = 'Mod' | 'Ctrl' | 'Meta' | 'Shift' | 'Alt';
 ```
 
 Mod = Cmd on MacOS and Ctrl on other OS

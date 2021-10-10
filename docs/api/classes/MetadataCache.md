@@ -68,7 +68,7 @@ If not unique, use full path.
 ### on
 
 ```ts
-on(name: "changed", callback: (file: TFile) => any, ctx?: any): EventRef;
+on(name: 'changed', callback: (file: TFile) => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
@@ -79,7 +79,7 @@ Called when all files has been resolved. This will be fired each time files get 
 ### on
 
 ```ts
-on(name: "resolve", callback: (file: TFile) => any, ctx?: any): EventRef;
+on(name: 'resolve', callback: (file: TFile) => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
@@ -90,7 +90,7 @@ Called when all files has been resolved. This will be fired each time files get 
 ### on
 
 ```ts
-on(name: "resolved", callback: () => any, ctx?: any): EventRef;
+on(name: 'resolved', callback: () => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.

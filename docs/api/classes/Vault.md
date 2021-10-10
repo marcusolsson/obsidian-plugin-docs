@@ -154,29 +154,29 @@ getFiles(): TFile[];
 ### on
 
 ```ts
-on(name: "create", callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
+on(name: 'create', callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
 ```
 
 ### on
 
 ```ts
-on(name: "modify", callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
+on(name: 'modify', callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
 ```
 
 ### on
 
 ```ts
-on(name: "delete", callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
+on(name: 'delete', callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
 ```
 
 ### on
 
 ```ts
-on(name: "rename", callback: (file: TAbstractFile, oldPath: string) => any, ctx?: any): EventRef;
+on(name: 'rename', callback: (file: TAbstractFile, oldPath: string) => any, ctx?: any): EventRef;
 ```
 
 ### on
 
 ```ts
-on(name: "closed", callback: () => any, ctx?: any): EventRef;
+on(name: 'closed', callback: () => any, ctx?: any): EventRef;
 ```

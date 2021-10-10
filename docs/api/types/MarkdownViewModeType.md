@@ -1,7 +1,7 @@
 # MarkdownViewModeType
 
 ```ts
-export type MarkdownViewModeType = "source" | "preview" | "live";
+export type MarkdownViewModeType = 'source' | 'preview' | 'live';
 ```
 
 

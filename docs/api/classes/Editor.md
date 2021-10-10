@@ -95,7 +95,7 @@ abstract replaceRange(replacement: string, from: EditorPosition, to?: EditorPosi
 ### getCursor
 
 ```ts
-abstract getCursor(string?: "from" | "to" | "head" | "anchor"): EditorPosition;
+abstract getCursor(string?: 'from' | 'to' | 'head' | 'anchor'): EditorPosition;
 ```
 
 ### listSelections

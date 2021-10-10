@@ -27,7 +27,7 @@ setDisabled(disabled: boolean): this;
 ### setLimits
 
 ```ts
-setLimits(min: number, max: number, step: number | "any"): this;
+setLimits(min: number, max: number, step: number | 'any'): this;
 ```
 
 ### getValue

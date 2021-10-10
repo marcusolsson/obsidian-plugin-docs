@@ -242,7 +242,7 @@ iterateCodeMirrors(callback: (cm: CodeMirror.Editor) => any): void;
 ### on
 
 ```ts
-on(name: "quick-preview", callback: (file: TFile, data: string) => any, ctx?: any): EventRef;
+on(name: 'quick-preview', callback: (file: TFile, data: string) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -261,7 +261,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "resize", callback: () => any, ctx?: any): EventRef;
+on(name: 'resize', callback: () => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -280,7 +280,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "click", callback: () => any, ctx?: any): EventRef;
+on(name: 'click', callback: () => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -299,7 +299,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "active-leaf-change", callback: (leaf: WorkspaceLeaf | null) => any, ctx?: any): EventRef;
+on(name: 'active-leaf-change', callback: (leaf: WorkspaceLeaf | null) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -318,7 +318,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "file-open", callback: (file: TFile | null) => any, ctx?: any): EventRef;
+on(name: 'file-open', callback: (file: TFile | null) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -337,7 +337,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "layout-change", callback: () => any, ctx?: any): EventRef;
+on(name: 'layout-change', callback: () => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -356,7 +356,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "css-change", callback: () => any, ctx?: any): EventRef;
+on(name: 'css-change', callback: () => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -375,7 +375,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "file-menu", callback: (menu: Menu, file: TAbstractFile, source: string, leaf?: WorkspaceLeaf) => any, ctx?: any): EventRef;
+on(name: 'file-menu', callback: (menu: Menu, file: TAbstractFile, source: string, leaf?: WorkspaceLeaf) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -394,7 +394,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "editor-menu", callback: (menu: Menu, editor: Editor, view: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-menu', callback: (menu: Menu, editor: Editor, view: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -413,7 +413,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "editor-change", callback: (editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-change', callback: (editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -432,7 +432,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "editor-paste", callback: (evt: ClipboardEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-paste', callback: (evt: ClipboardEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -451,7 +451,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "editor-drop", callback: (evt: DragEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-drop', callback: (evt: DragEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -470,7 +470,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "codemirror", callback: (cm: CodeMirror.Editor) => any, ctx?: any): EventRef;
+on(name: 'codemirror', callback: (cm: CodeMirror.Editor) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -489,7 +489,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: "quit", callback: (tasks: Tasks) => any, ctx?: any): EventRef;
+on(name: 'quit', callback: (tasks: Tasks) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.

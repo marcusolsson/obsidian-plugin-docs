@@ -105,11 +105,11 @@ onResize(): void;
 ### on
 
 ```ts
-on(name: "pinned-change", callback: (pinned: boolean) => any, ctx?: any): EventRef;
+on(name: 'pinned-change', callback: (pinned: boolean) => any, ctx?: any): EventRef;
 ```
 
 ### on
 
 ```ts
-on(name: "group-change", callback: (group: string) => any, ctx?: any): EventRef;
+on(name: 'group-change', callback: (group: string) => any, ctx?: any): EventRef;
 ```
