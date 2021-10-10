@@ -5,7 +5,7 @@ Extends `Component`
 ## Constructor
 
 ```ts
-constructor(app: App,manifest: PluginManifest);
+constructor(app: App, manifest: PluginManifest);
 ```
 
 ## Properties

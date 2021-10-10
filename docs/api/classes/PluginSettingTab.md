@@ -5,5 +5,5 @@ Extends `SettingTab`
 ## Constructor
 
 ```ts
-constructor(app: App,plugin: Plugin_2);
+constructor(app: App, plugin: Plugin_2);
 ```

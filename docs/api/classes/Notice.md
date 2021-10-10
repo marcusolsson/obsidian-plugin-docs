@@ -3,7 +3,7 @@
 ## Constructor
 
 ```ts
-constructor(message: string,timeout: number);
+constructor(message: string, timeout: number);
 ```
 
 ## Methods

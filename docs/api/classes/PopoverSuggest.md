@@ -5,7 +5,7 @@ Implements `ISuggestOwner<T>`, `CloseableComponent`
 ## Constructor
 
 ```ts
-constructor(app: App,scope: Scope);
+constructor(app: App, scope: Scope);
 ```
 
 ## Methods
