@@ -1,7 +1,5 @@
 # EditorPosition
 
-
-
 ## Properties
 
 ### line
@@ -10,13 +8,8 @@
 line: number
 ```
 
-
-
 ### ch
 
 ```ts
 ch: number
 ```
-
-
-

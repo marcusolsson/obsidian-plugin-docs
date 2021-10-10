@@ -1,7 +1,5 @@
 # KeymapInfo
 
-
-
 ## Properties
 
 ### modifiers
@@ -10,13 +8,8 @@
 modifiers: string
 ```
 
-
-
 ### key
 
 ```ts
 key: string
 ```
-
-
-

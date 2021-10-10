@@ -1,7 +1,5 @@
 # SearchResult
 
-
-
 ## Properties
 
 ### score
@@ -10,13 +8,8 @@
 score: number
 ```
 
-
-
 ### matches
 
 ```ts
 matches: SearchMatches
 ```
-
-
-

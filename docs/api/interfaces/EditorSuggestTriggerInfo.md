@@ -1,7 +1,5 @@
 # EditorSuggestTriggerInfo
 
-
-
 ## Properties
 
 ### start
@@ -27,4 +25,3 @@ query: string
 ```
 
 They query string (usually the text between start and end) that will be used to generate the suggestion content.
-

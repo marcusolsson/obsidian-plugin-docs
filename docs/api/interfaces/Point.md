@@ -1,7 +1,5 @@
 # Point
 
-
-
 ## Properties
 
 ### x
@@ -10,13 +8,8 @@
 x: number
 ```
 
-
-
 ### y
 
 ```ts
 y: number
 ```
-
-
-

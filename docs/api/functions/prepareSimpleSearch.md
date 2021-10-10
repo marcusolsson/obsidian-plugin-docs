@@ -10,4 +10,4 @@ Construct a simple search callback that runs on a target string.
 
 | Parameter | Description |
 |-----------|-------------|
-| <code>query</code> | the space-separated words |
+| `query` | the space-separated words |

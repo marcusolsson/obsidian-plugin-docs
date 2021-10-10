@@ -1,7 +1,5 @@
 # EditorRangeOrCaret
 
-
-
 ## Properties
 
 ### from
@@ -10,13 +8,8 @@
 from: EditorPosition
 ```
 
-
-
 ### to
 
 ```ts
 to: EditorPosition
 ```
-
-
-

@@ -1,7 +1,5 @@
 # PluginManifest
 
-
-
 ## Properties
 
 ### dir
@@ -10,15 +8,11 @@
 dir: string
 ```
 
-
-
 ### id
 
 ```ts
 id: string
 ```
-
-
 
 ### name
 
@@ -26,15 +20,11 @@ id: string
 name: string
 ```
 
-
-
 ### author
 
 ```ts
 author: string
 ```
-
-
 
 ### version
 
@@ -42,15 +32,11 @@ author: string
 version: string
 ```
 
-
-
 ### minAppVersion
 
 ```ts
 minAppVersion: string
 ```
-
-
 
 ### description
 
@@ -58,21 +44,14 @@ minAppVersion: string
 description: string
 ```
 
-
-
 ### authorUrl
 
 ```ts
 authorUrl: string
 ```
 
-
-
 ### isDesktopOnly
 
 ```ts
 isDesktopOnly: boolean
 ```
-
-
-

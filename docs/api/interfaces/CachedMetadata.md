@@ -1,7 +1,5 @@
 # CachedMetadata
 
-
-
 ## Properties
 
 ### links
@@ -10,15 +8,11 @@
 links: LinkCache[]
 ```
 
-
-
 ### embeds
 
 ```ts
 embeds: EmbedCache[]
 ```
-
-
 
 ### tags
 
@@ -26,15 +20,11 @@ embeds: EmbedCache[]
 tags: TagCache[]
 ```
 
-
-
 ### headings
 
 ```ts
 headings: HeadingCache[]
 ```
-
-
 
 ### sections
 
@@ -50,21 +40,14 @@ Sections are root level markdown blocks, which can be used to divide the documen
 listItems: ListItemCache[]
 ```
 
-
-
 ### frontmatter
 
 ```ts
 frontmatter: FrontMatterCache
 ```
 
-
-
 ### blocks
 
 ```ts
 blocks: Record<string, BlockCache>
 ```
-
-
-

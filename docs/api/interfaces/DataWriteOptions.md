@@ -1,7 +1,5 @@
 # DataWriteOptions
 
-
-
 ## Properties
 
 ### ctime
@@ -10,13 +8,8 @@
 ctime: number
 ```
 
-
-
 ### mtime
 
 ```ts
 mtime: number
 ```
-
-
-

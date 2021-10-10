@@ -1,7 +1,5 @@
 # BlockSubpathResult
 
-
-
 ## Properties
 
 ### type
@@ -10,13 +8,8 @@
 type: "block"
 ```
 
-
-
 ### block
 
 ```ts
 block: BlockCache
 ```
-
-
-

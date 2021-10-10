@@ -1,7 +1,5 @@
 # Instruction
 
-
-
 ## Properties
 
 ### command
@@ -10,13 +8,8 @@
 command: string
 ```
 
-
-
 ### purpose
 
 ```ts
 purpose: string
 ```
-
-
-

@@ -1,7 +1,5 @@
 # RequestParam
 
-
-
 ## Properties
 
 ### url
@@ -10,15 +8,11 @@
 url: string
 ```
 
-
-
 ### method
 
 ```ts
 method: string
 ```
-
-
 
 ### contentType
 
@@ -26,21 +20,14 @@ method: string
 contentType: string
 ```
 
-
-
 ### body
 
 ```ts
 body: string
 ```
 
-
-
 ### headers
 
 ```ts
 headers: Record<string, string>
 ```
-
-
-

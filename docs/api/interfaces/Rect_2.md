@@ -1,7 +1,5 @@
 # Rect_2
 
-
-
 ## Properties
 
 ### x
@@ -10,15 +8,11 @@
 x: number
 ```
 
-
-
 ### y
 
 ```ts
 y: number
 ```
-
-
 
 ### w
 
@@ -26,13 +20,8 @@ y: number
 w: number
 ```
 
-
-
 ### h
 
 ```ts
 h: number
 ```
-
-
-

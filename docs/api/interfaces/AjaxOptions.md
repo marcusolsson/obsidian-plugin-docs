@@ -1,7 +1,5 @@
 # AjaxOptions
 
-
-
 ## Properties
 
 ### method
@@ -10,15 +8,11 @@
 method: "GET" | "POST"
 ```
 
-
-
 ### url
 
 ```ts
 url: string
 ```
-
-
 
 ### success
 
@@ -26,15 +20,11 @@ url: string
 success: (response: any, req: XMLHttpRequest) => any
 ```
 
-
-
 ### error
 
 ```ts
 error: (error: any, req: XMLHttpRequest) => any
 ```
-
-
 
 ### data
 
@@ -42,21 +32,14 @@ error: (error: any, req: XMLHttpRequest) => any
 data: string | object | ArrayBuffer
 ```
 
-
-
 ### headers
 
 ```ts
 headers: Record<string, string>
 ```
 
-
-
 ### withCredentials
 
 ```ts
 withCredentials: boolean
 ```
-
-
-

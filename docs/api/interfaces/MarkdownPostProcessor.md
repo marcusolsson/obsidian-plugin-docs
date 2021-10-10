@@ -16,4 +16,3 @@ sortOrder: number
 ```
 
 An optional integer sort order. Defaults to 0. Lower number runs before higher numbers.
-

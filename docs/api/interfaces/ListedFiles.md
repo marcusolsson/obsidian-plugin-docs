@@ -1,7 +1,5 @@
 # ListedFiles
 
-
-
 ## Properties
 
 ### files
@@ -10,13 +8,8 @@
 files: string[]
 ```
 
-
-
 ### folders
 
 ```ts
 folders: string[]
 ```
-
-
-

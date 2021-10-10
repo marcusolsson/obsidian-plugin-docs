@@ -1,7 +1,5 @@
 # FuzzyMatch
 
-
-
 ## Properties
 
 ### item
@@ -10,13 +8,8 @@
 item: T
 ```
 
-
-
 ### match
 
 ```ts
 match: SearchResult
 ```
-
-
-

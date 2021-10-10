@@ -1,7 +1,5 @@
 # HeadingCache
 
-
-
 ## Properties
 
 ### heading
@@ -10,13 +8,8 @@
 heading: string
 ```
 
-
-
 ### level
 
 ```ts
 level: number
 ```
-
-
-

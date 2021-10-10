@@ -1,7 +1,5 @@
 # EventListenerInfo
 
-
-
 ## Properties
 
 ### selector
@@ -10,15 +8,11 @@
 selector: string
 ```
 
-
-
 ### listener
 
 ```ts
 listener: Function
 ```
-
-
 
 ### options
 
@@ -26,13 +20,8 @@ listener: Function
 options: boolean | AddEventListenerOptions
 ```
 
-
-
 ### callback
 
 ```ts
 callback: Function
 ```
-
-
-

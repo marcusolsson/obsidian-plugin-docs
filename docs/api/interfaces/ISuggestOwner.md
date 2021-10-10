@@ -1,7 +1,5 @@
 # ISuggestOwner
 
-
-
 ## Methods
 
 ### renderSuggestion
@@ -19,4 +17,3 @@ selectSuggestion: (value: T, evt: MouseEvent | KeyboardEvent) => void
 ```
 
 Called when the user makes a selection.
-

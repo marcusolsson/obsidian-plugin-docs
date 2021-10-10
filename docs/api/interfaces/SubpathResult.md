@@ -1,7 +1,5 @@
 # SubpathResult
 
-
-
 ## Properties
 
 ### start
@@ -10,13 +8,8 @@
 start: Loc
 ```
 
-
-
 ### end
 
 ```ts
 end: Loc
 ```
-
-
-

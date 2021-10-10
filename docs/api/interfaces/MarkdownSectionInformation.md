@@ -1,7 +1,5 @@
 # MarkdownSectionInformation
 
-
-
 ## Properties
 
 ### text
@@ -10,21 +8,14 @@
 text: string
 ```
 
-
-
 ### lineStart
 
 ```ts
 lineStart: number
 ```
 
-
-
 ### lineEnd
 
 ```ts
 lineEnd: number
 ```
-
-
-

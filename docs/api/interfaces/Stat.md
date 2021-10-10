@@ -1,7 +1,5 @@
 # Stat
 
-
-
 ## Properties
 
 ### type
@@ -10,15 +8,11 @@
 type: "file" | "folder"
 ```
 
-
-
 ### ctime
 
 ```ts
 ctime: number
 ```
-
-
 
 ### mtime
 
@@ -26,13 +20,8 @@ ctime: number
 mtime: number
 ```
 
-
-
 ### size
 
 ```ts
 size: number
 ```
-
-
-

@@ -12,6 +12,6 @@ A standard debounce function.
 
 | Parameter | Description |
 |-----------|-------------|
-| <code>cb</code> | The function to call. |
-| <code>timeout</code> | The timeout to wait. |
-| <code>resetTimer</code> | Whether to reset the timeout when the debouncer is called again. |
+| `cb` | The function to call. |
+| `timeout` | The timeout to wait. |
+| `resetTimer` | Whether to reset the timeout when the debouncer is called again. |

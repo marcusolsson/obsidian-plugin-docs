@@ -1,7 +1,5 @@
 # MarkdownPostProcessorContext
 
-
-
 ## Properties
 
 ### docId
@@ -10,24 +8,17 @@
 docId: string
 ```
 
-
-
 ### sourcePath
 
 ```ts
 sourcePath: string
 ```
 
-
-
 ### frontmatter
 
 ```ts
 frontmatter: any
 ```
-
-
-
 
 ## Methods
 
@@ -51,4 +42,3 @@ getSectionInfo: (el: HTMLElement) => MarkdownSectionInformation
 Gets the section information of this element at this point in time.
 Only call this function right before you need this information to get the most up-to-date version.
 This function may also return null in many circumstances; if you use it, you must be prepared to deal with nulls.
-

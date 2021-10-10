@@ -12,4 +12,4 @@ If performance is a problem, consider using `prepareSimpleSearch` instead.
 
 | Parameter | Description |
 |-----------|-------------|
-| <code>query</code> | the fuzzy query. |
+| `query` | the fuzzy query. |

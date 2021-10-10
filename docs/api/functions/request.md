@@ -4,4 +4,8 @@
 export function request(request: RequestParam): Promise<string>;
 ```
 
+## Parameters
 
+| Parameter | Description |
+|-----------|-------------|
+| `request` | |

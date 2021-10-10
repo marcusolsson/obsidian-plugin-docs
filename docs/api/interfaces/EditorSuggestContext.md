@@ -1,7 +1,5 @@
 # EditorSuggestContext
 
-
-
 ## Properties
 
 ### editor
@@ -10,13 +8,8 @@
 editor: Editor
 ```
 
-
-
 ### file
 
 ```ts
 file: TFile
 ```
-
-
-

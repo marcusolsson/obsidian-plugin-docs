@@ -1,7 +1,5 @@
 # FileStats
 
-
-
 ## Properties
 
 ### ctime
@@ -10,21 +8,14 @@
 ctime: number
 ```
 
-
-
 ### mtime
 
 ```ts
 mtime: number
 ```
 
-
-
 ### size
 
 ```ts
 size: number
 ```
-
-
-

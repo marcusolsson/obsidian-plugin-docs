@@ -1,7 +1,5 @@
 # ListItemCache
 
-
-
 ## Properties
 
 ### id
@@ -35,4 +33,3 @@ then this value is the negative of the line number of the first list item (start
 
 Can be used to deduce which list items belongs to the same group (item1.parent === item2.parent).
 Can be used to reconstruct hierarchy information (parentItem.position.start.line === childItem.parent).
-

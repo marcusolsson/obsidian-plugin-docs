@@ -7,4 +7,8 @@ export function parseLinktext(linktext: string): {
 };
 ```
 
+## Parameters
 
+| Parameter | Description |
+|-----------|-------------|
+| `linktext` | |

@@ -1,7 +1,5 @@
 # DataAdapter
 
-
-
 ## Methods
 
 ### getName
@@ -10,15 +8,11 @@
 getName: () => string
 ```
 
-
-
 ### exists
 
 ```ts
 exists: (normalizedPath: string, sensitive?: boolean) => Promise<boolean>
 ```
-
-
 
 ### stat
 
@@ -26,15 +20,11 @@ exists: (normalizedPath: string, sensitive?: boolean) => Promise<boolean>
 stat: (normalizedPath: string) => Promise<Stat>
 ```
 
-
-
 ### list
 
 ```ts
 list: (normalizedPath: string) => Promise<ListedFiles>
 ```
-
-
 
 ### read
 
@@ -42,15 +32,11 @@ list: (normalizedPath: string) => Promise<ListedFiles>
 read: (normalizedPath: string) => Promise<string>
 ```
 
-
-
 ### readBinary
 
 ```ts
 readBinary: (normalizedPath: string) => Promise<ArrayBuffer>
 ```
-
-
 
 ### write
 
@@ -58,15 +44,11 @@ readBinary: (normalizedPath: string) => Promise<ArrayBuffer>
 write: (normalizedPath: string, data: string, options?: DataWriteOptions) => Promise<void>
 ```
 
-
-
 ### writeBinary
 
 ```ts
 writeBinary: (normalizedPath: string, data: ArrayBuffer, options?: DataWriteOptions) => Promise<void>
 ```
-
-
 
 ### getResourcePath
 
@@ -74,15 +56,11 @@ writeBinary: (normalizedPath: string, data: ArrayBuffer, options?: DataWriteOpti
 getResourcePath: (normalizedPath: string) => string
 ```
 
-
-
 ### mkdir
 
 ```ts
 mkdir: (normalizedPath: string) => Promise<void>
 ```
-
-
 
 ### trashSystem
 
@@ -90,15 +68,11 @@ mkdir: (normalizedPath: string) => Promise<void>
 trashSystem: (normalizedPath: string) => Promise<boolean>
 ```
 
-
-
 ### trashLocal
 
 ```ts
 trashLocal: (normalizedPath: string) => Promise<void>
 ```
-
-
 
 ### rmdir
 
@@ -106,15 +80,11 @@ trashLocal: (normalizedPath: string) => Promise<void>
 rmdir: (normalizedPath: string, recursive: boolean) => Promise<void>
 ```
 
-
-
 ### remove
 
 ```ts
 remove: (normalizedPath: string) => Promise<void>
 ```
-
-
 
 ### rename
 
@@ -122,13 +92,8 @@ remove: (normalizedPath: string) => Promise<void>
 rename: (normalizedPath: string, normalizedNewPath: string) => Promise<void>
 ```
 
-
-
 ### copy
 
 ```ts
 copy: (normalizedPath: string, normalizedNewPath: string) => Promise<void>
 ```
-
-
-

@@ -1,7 +1,5 @@
 # PreparedQuery
 
-
-
 ## Properties
 
 ### query
@@ -10,21 +8,14 @@
 query: string
 ```
 
-
-
 ### tokens
 
 ```ts
 tokens: string[]
 ```
 
-
-
 ### fuzzy
 
 ```ts
 fuzzy: string[]
 ```
-
-
-

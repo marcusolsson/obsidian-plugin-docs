@@ -1,7 +1,5 @@
 # Command
 
-
-
 ## Properties
 
 ### id
@@ -33,8 +31,6 @@ Icon ID to be used in the toolbar.
 ```ts
 mobileOnly: boolean
 ```
-
-
 
 ### callback
 
@@ -81,4 +77,3 @@ hotkeys: Hotkey[]
 ```
 
 Sets the default hotkey
-

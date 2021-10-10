@@ -1,7 +1,5 @@
 # EditorTransaction
 
-
-
 ## Properties
 
 ### replaceSelection
@@ -10,15 +8,11 @@
 replaceSelection: string
 ```
 
-
-
 ### changes
 
 ```ts
 changes: EditorChange[]
 ```
-
-
 
 ### selections
 
@@ -33,6 +27,3 @@ Multiple selections, overrides `selection`.
 ```ts
 selection: EditorRangeOrCaret
 ```
-
-
-

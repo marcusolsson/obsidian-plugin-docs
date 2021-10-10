@@ -1,7 +1,5 @@
 # MarkdownSubView
 
-
-
 ## Methods
 
 ### getScroll
@@ -10,15 +8,11 @@
 getScroll: () => number
 ```
 
-
-
 ### applyScroll
 
 ```ts
 applyScroll: (scroll: number) => void
 ```
-
-
 
 ### get
 
@@ -26,13 +20,8 @@ applyScroll: (scroll: number) => void
 get: () => string
 ```
 
-
-
 ### set
 
 ```ts
 set: (data: string, clear: boolean) => void
 ```
-
-
-

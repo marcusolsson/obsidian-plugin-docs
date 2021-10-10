@@ -1,7 +1,5 @@
 # Hotkey
 
-
-
 ## Properties
 
 ### modifiers
@@ -10,13 +8,8 @@
 modifiers: Modifier[]
 ```
 
-
-
 ### key
 
 ```ts
 key: string
 ```
-
-
-

@@ -1,7 +1,5 @@
 # EditorSelection
 
-
-
 ## Properties
 
 ### anchor
@@ -10,13 +8,8 @@
 anchor: EditorPosition
 ```
 
-
-
 ### head
 
 ```ts
 head: EditorPosition
 ```
-
-
-

@@ -1,7 +1,5 @@
 # ViewState
 
-
-
 ## Properties
 
 ### type
@@ -10,15 +8,11 @@
 type: string
 ```
 
-
-
 ### state
 
 ```ts
 state: any
 ```
-
-
 
 ### active
 
@@ -26,21 +20,14 @@ state: any
 active: boolean
 ```
 
-
-
 ### pinned
 
 ```ts
 pinned: boolean
 ```
 
-
-
 ### group
 
 ```ts
 group: WorkspaceLeaf
 ```
-
-
-

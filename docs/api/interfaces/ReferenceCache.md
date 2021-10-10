@@ -1,7 +1,5 @@
 # ReferenceCache
 
-
-
 ## Properties
 
 ### link
@@ -10,15 +8,11 @@
 link: string
 ```
 
-
-
 ### original
 
 ```ts
 original: string
 ```
-
-
 
 ### displayText
 
@@ -27,4 +21,3 @@ displayText: string
 ```
 
 if title is different than link text, in the case of [[page name&vert;display name]]
-
