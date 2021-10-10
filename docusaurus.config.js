@@ -38,6 +38,16 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
         title: "Plugin development for Obsidian",
         items: [
           {
+            href: "https://buymeacoffee.com/marcusolsson",
+            label: "Buy me a coffee",
+            position: "right",
+          },
+          {
+            href: "https://obsidian.md/community",
+            label: "Community",
+            position: "right",
+          },
+          {
             href: "https://github.com/marcusolsson/obsidian-plugin-docs",
             label: "GitHub",
             position: "right",
