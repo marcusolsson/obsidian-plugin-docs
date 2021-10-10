@@ -1,4 +1,5 @@
 ---
+slug: /api
 sidebar_label: Overview
 ---
 
@@ -71,6 +72,9 @@ The script used to generate the documentation is still relatively untested. If y
 - [WorkspaceSidedock](classes/WorkspaceSidedock.md)
 - [WorkspaceSplit](classes/WorkspaceSplit.md)
 - [WorkspaceTabs](classes/WorkspaceTabs.md)
+## Enums
+
+- [PopoverState](enums/PopoverState.md)
 ## Functions
 
 - [addIcon](functions/addIcon.md)
@@ -168,3 +172,15 @@ The script used to generate the documentation is still relatively untested. If y
 - [TagCache](interfaces/TagCache.md)
 - [ViewState](interfaces/ViewState.md)
 - [ViewStateResult](interfaces/ViewStateResult.md)
+## Types
+
+- [EditorCommandName](types/EditorCommandName.md)
+- [KeymapEventListener](types/KeymapEventListener.md)
+- [MarkdownViewModeType](types/MarkdownViewModeType.md)
+- [Modifier](types/Modifier.md)
+- [ObsidianProtocolHandler](types/ObsidianProtocolHandler.md)
+- [SearchMatches](types/SearchMatches.md)
+- [SearchMatchPart](types/SearchMatchPart.md)
+- [SplitDirection](types/SplitDirection.md)
+- [UserEvent](types/UserEvent.md)
+- [ViewCreator](types/ViewCreator.md)
