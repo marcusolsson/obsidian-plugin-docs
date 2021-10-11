@@ -41,7 +41,7 @@ There are two methods to delete a file, [`delete()`](../api/classes/Vault.md#del
 - `delete()` removes the file without a trace.
 - `trash()` moves the file to the trash bin.
 
-When you use `trash()`, you have the option to move the file to the system's trash bin, or to a local  `.trash` folder at the root of the user's Vault. 
+When you use `trash()`, you have the option to move the file to the system's trash bin, or to a local  `.trash` folder at the root of the user's Vault.
 
 ## Read files
 
@@ -50,7 +50,7 @@ There are two methods for reading the content of a file: [`read()`](../api/class
 - If you only want to display the content to the user, then use `cachedRead()` to avoid reading the file from disk multiple times.
 - If you want to read the content, change it, and then write it back to disk, then use `read()` to avoid potentially overwriting the file with a stale copy.
 
-The following example is a method that reads the content of all Markdown files in the Vault and returns the average document size:
+The following example reads the content of all Markdown files in the Vault and returns the average document size:
 
 ```ts title="main.ts"
 import { Notice, Plugin } from "obsidian";
