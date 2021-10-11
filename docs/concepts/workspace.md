@@ -48,4 +48,3 @@ You can create [linked panes](https://help.obsidian.md/User+interface/Workspace/
 ```ts
 leaves.forEach((leaf) => leaf.setGroup("group1");
 ```
-
