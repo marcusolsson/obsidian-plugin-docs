@@ -30,7 +30,7 @@ You might've noticed the striking resemblance between leaves and panes. I'm not 
 And since grouping of leaves only seem to affect Markdown documents, my best guess is that any leaf of type [`MarkdownView`](../api/classes/MarkdownView.md) is considered a pane.
 :::
 
-## Creating and detaching leaves
+## Create and detach leaves
 
 There are several methods for creating leaves, which are fairly similar. To see all of them, refer to [`Workspace`](../api/classes/Workspace.md), but here are a few to get you started:
 
@@ -41,7 +41,7 @@ You can also explicitly create the leaf in the split of your choice, using [`cre
 
 To remove a leaf from the workspace, call [`detach()`](../api/classes/WorkspaceLeaf.md#detach) on the leaf you want to remove.
 
-## Grouping leaves
+## Leaf groups
 
 You can create [linked panes](https://help.obsidian.md/User+interface/Workspace/Panes/Linked+pane) by assigning multiple leaves to the same group, using [`setGroup()`](../api/classes/WorkspaceLeaf.md#setgroup).
 
