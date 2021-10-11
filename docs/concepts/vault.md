@@ -22,7 +22,7 @@ If you want to list _all_ files, and not just Markdown documents, use [`getFiles
 
 ## Is it a file or folder?
 
-Some operations return or accept a [`TAbstractFile`](../api/classes/TAbstractFile.md) object, which can be either a file or a folder. Always check the concrete type of a `TA` it's a file or a folder before you use it.
+Some operations return or accept a [`TAbstractFile`](../api/classes/TAbstractFile.md) object, which can be either a file or a folder. Always check the concrete type of a `TAbstractFile` before you use it.
 
 ```ts
 const folderOrFile = this.app.vault.getAbstractFileByPath("folderOrFile");
