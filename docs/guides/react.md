@@ -46,7 +46,7 @@ export const ReactView = () => {
 
 To use the React component, it needs to be mounted on a [HTML element](html-elements.md). The following example mounts the `ReactView` component on the `this.containerEl.children[1]` element:
 
-```ts title="view.ts" {2-4,22-25,29}
+```tsx title="view.tsx" {2-4,22-25,29}
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -69,7 +69,7 @@ class ExampleView extends ItemView {
 
   async onOpen() {
     ReactDOM.render(
-      React.createElement(ReactView),
+      <ReactView />,
       this.containerEl.children[1]
     );
   }
@@ -83,3 +83,51 @@ class ExampleView extends ItemView {
 For more information on `ReactDOM.render()` and `ReactDOM.unmountComponentAtNode()`, refer to the documentation on [ReactDOM](https://reactjs.org/docs/react-dom.html).
 
 You can mount your React component on any `HTMLElement`, for example [status bar items](status-bar.md). Just make sure to clean up properly by calling `ReactDOM.unmountComponentAtNode()` when you're done.
+
+## Create an App context
+
+If you want to access the [`App`](../api/classes/App.md) object from one of your React components, you need to pass it as a dependency. As your plugin grows, even though you're only using the `App` object in a few places, you start passing the it through the whole component tree.
+
+Another alternative is to create a React context for the app to make it globally available to all components inside your React view.
+
+1. Use `React.createContext()` to create a new app context.
+
+   ```tsx title="context.ts"
+   export const AppContext = React.createContext<App>(undefined);
+   ```
+
+1. Wrap the `ReactView` with a context provider and pass the app as the value.
+
+   ```tsx title="view.tsx"
+   ReactDOM.render(
+     <AppContext.Provider value={this.app}>
+       <ReactView />
+     </AppContext.Provider>,
+     this.containerEl.children[1]
+   );
+   ```
+
+1. Create a custom hook to make it easier to use the context in your components.
+
+   ```tsx title="hooks.ts"
+   import { AppContext } from "./context";
+
+   export const useApp = (): App | undefined => {
+     return React.useContext(AppContext);
+   };
+   ```
+
+1. Use the hook in any React component within `ReactView` by calling the `useApp()` hook.
+
+   ```tsx title="ReactView.tsx"
+   import * as React from "react";
+   import { useApp } from './hooks.ts;
+
+   export const ReactView = () => {
+     const { vault } = useApp();
+
+     return <h4>{vault.getName()}</h4>;
+   };
+   ```
+
+For more information, refer to the React documentation for [Context](https://reactjs.org/docs/context.html) and [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html).
