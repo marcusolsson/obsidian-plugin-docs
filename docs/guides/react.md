@@ -117,7 +117,7 @@ Another alternative is to create a React context for the app to make it globally
    };
    ```
 
-1. Use the hook in any React component within `ReactView` by calling the `useApp()` hook.
+1. Use the hook in any React component within `ReactView` to access the app.
 
    ```tsx title="ReactView.tsx"
    import * as React from "react";
