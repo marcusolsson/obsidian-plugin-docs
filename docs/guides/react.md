@@ -121,7 +121,7 @@ Another alternative is to create a React context for the app to make it globally
 
    ```tsx title="ReactView.tsx"
    import * as React from "react";
-   import { useApp } from "./hooks.ts";
+   import { useApp } from "./hooks";
 
    export const ReactView = () => {
      const { vault } = useApp();
