@@ -2,11 +2,56 @@
 
 Obsidian lets you configure what content is visible to you at any given time. Hide the file explorer when you don't need it, display multiple documents side by side, or show an outline of your document while you're working on it. The configuration of visible content within your application window is known as the _workspace_.
 
-The workspace consists of three areas, or _splits_: left, right, and the root split. Each split contains a collection of _leaves_.
+The workspace is implemented as a [tree data structure](https://en.wikipedia.org/wiki/Tree_(data_structure)) that consists of _group nodes_ and _leaf nodes_. The main difference is that group nodes can contain any number of child nodes, including other group nodes, while leaf nodes can't contain any nodes at all.
+
+There are two types of group nodes, _splits_ and _tabs_, which determine how the children are presented to the user:
+
+```mermaid
+flowchart TD
+    split{Split}
+    split --> A((Leaf))
+    split --> B((Leaf))
+    split --> C((Leaf))
+
+    tabs{Tabs}
+    tabs --> X((Leaf))
+    tabs --> Y((Leaf))
+    tabs --> Z((Leaf))
+```
+
+- A split node lays out its child nodes one after another along a vertical or horizontal direction.
+- A tabs node only displays one child node at a time and hides the others.
+
+The workspace has three special split nodes under it: _left_, _right_, and _root_. The following diagram shows a example of what a more complex workspace could look like:
+
+```mermaid
+flowchart TD
+    Workspace --> Left{Left split}
+    Workspace --> Root{Root split}
+    Workspace --> Right{Right split}
+
+    Left --> leftTabs{Tabs}
+    leftTabs --> A((Leaf))
+    leftTabs --> B((Leaf))
+
+    Root --> C{Split}
+    Root --> D((Leaf))
+
+    C --> E((Leaf))
+    C --> F((Leaf))
+
+    Right --> rightTabs{Tabs}
+
+    rightTabs --> I((Leaf))
+    rightTabs --> J((Leaf))
+    rightTabs --> K((Leaf))
+```
 
 A leaf is a window that can display content in different ways. The type of leaf determines how content is displayed, and correspond to a specific _view_. For example, a leaf of type `graph` displays the [graph view](https://help.obsidian.md/Plugins/Graph+view).
 
-You can access the workspace through the [App](../api/classes/App.md) object inside your plugin. The following example prints the type of every leaf in the workspace:
+## Access the workspace from your plugin
+
+You can access the workspace through the [App](../api/classes/App.md) object. The following example prints the type of every leaf in the workspace:
 
 ```ts title="main.ts" {6-8}
 import { Plugin } from "obsidian";
@@ -21,14 +66,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::tip Leaves vs. panes
-You might've noticed the striking resemblance between leaves and panes. I'm not sure what the exact difference is, but the [official documentation on panes](https://help.obsidian.md/User+interface/Workspace/Panes/Pane+layout) says:
-
-> The window a file gets opened in is what we call a "pane".
-
-And since grouping of leaves only seem to affect Markdown documents, my best guess is that any leaf of type [`MarkdownView`](../api/classes/MarkdownView.md) is considered a pane.
-:::
 
 ## Create and detach leaves
 
