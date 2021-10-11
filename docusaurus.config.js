@@ -14,6 +14,19 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     organizationName: "marcusolsson", // Usually your GitHub org/user name.
     projectName: "obsidian-plugin-docs", // Usually your repo name.
     trailingSlash: false,
+    plugins: [
+      [
+        "@docusaurus/plugin-client-redirects",
+        {
+          redirects: [
+            {
+              to: "/api/classes/Plugin_2",
+              from: ["/api/classes/Plugin"],
+            },
+          ],
+        },
+      ],
+    ],
     presets: [
       [
         "@docusaurus/preset-classic",
