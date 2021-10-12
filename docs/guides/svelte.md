@@ -22,12 +22,14 @@ To build a Svelte application, you need to install the dependencies and configur
    npm install --save-dev svelte svelte-preprocess @tsconfig/svelte rollup-plugin-svelte
    ```
 
-1. Extend the `tsconfig.json` to enable additional type checking for common Svelte issues.
+1. Extend the `tsconfig.json` to enable additional type checking for common Svelte issues. The `types` property is important for TypeScript to recognize `.svelte` files.
 
    ```json title="tsconfig.json"
    {
      "extends": "@tsconfig/svelte/tsconfig.json",
      "compilerOptions": {
+       "types": ["svelte", "node"],
+
        // ...
      }
    }
