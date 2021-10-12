@@ -20,29 +20,6 @@ for (let = i; i < files.length; i++) {
 If you want to list _all_ files, and not just Markdown documents, use [`getFiles()`](../api/classes/Vault.md#getfiles) instead.
 :::
 
-## Is it a file or folder?
-
-Some operations return or accept a [`TAbstractFile`](../api/classes/TAbstractFile.md) object, which can be either a file or a folder. Always check the concrete type of a `TAbstractFile` before you use it.
-
-```ts
-const folderOrFile = this.app.vault.getAbstractFileByPath("folderOrFile");
-
-if (folderOrFile instanceof TFile) {
-  console.log("It's a file!");
-} else if (folderOrFile instanceof TFolder) {
-  console.log("It's a folder!");
-}
-```
-
-## Delete files
-
-There are two methods to delete a file, [`delete()`](../api/classes/Vault.md#delete), and [`trash()`](../api/classes/Vault.md#trash). Which one you should use depends on if you want to allow the user to change their mind.
-
-- `delete()` removes the file without a trace.
-- `trash()` moves the file to the trash bin.
-
-When you use `trash()`, you have the option to move the file to the system's trash bin, or to a local  `.trash` folder at the root of the user's Vault.
-
 ## Read files
 
 There are two methods for reading the content of a file: [`read()`](../api/classes/Vault.md#read) and [`cachedRead()`](../api/classes/Vault.md#cachedread).
@@ -77,5 +54,28 @@ export default class ExamplePlugin extends Plugin {
 
     return totalLength / fileContents.length;
   }
+}
+```
+
+## Delete files
+
+There are two methods to delete a file, [`delete()`](../api/classes/Vault.md#delete), and [`trash()`](../api/classes/Vault.md#trash). Which one you should use depends on if you want to allow the user to change their mind.
+
+- `delete()` removes the file without a trace.
+- `trash()` moves the file to the trash bin.
+
+When you use `trash()`, you have the option to move the file to the system's trash bin, or to a local  `.trash` folder at the root of the user's Vault.
+
+## Is it a file or folder?
+
+Some operations return or accept a [`TAbstractFile`](../api/classes/TAbstractFile.md) object, which can be either a file or a folder. Always check the concrete type of a `TAbstractFile` before you use it.
+
+```ts
+const folderOrFile = this.app.vault.getAbstractFileByPath("folderOrFile");
+
+if (folderOrFile instanceof TFile) {
+  console.log("It's a file!");
+} else if (folderOrFile instanceof TFolder) {
+  console.log("It's a folder!");
 }
 ```
