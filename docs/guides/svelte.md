@@ -1,3 +1,7 @@
+---
+sidebar_position: 78
+---
+
 # Svelte
 
 This guide describes how to configure your plugin to use [Svelte](https://svelte.dev/), a light-weight alternative to traditional frameworks like React and Vue.
