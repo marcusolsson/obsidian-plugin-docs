@@ -22,7 +22,7 @@ flowchart TD
 - A split node lays out its child nodes one after another along a vertical or horizontal direction.
 - A tabs node only displays one child node at a time and hides the others.
 
-The workspace has three special split nodes under it: _left_, _right_, and _root_. The following diagram shows a example of what a more complex workspace could look like:
+The workspace has three special split nodes under it: _left_, _right_, and _root_. The following diagram shows a example of what a typical workspace could look like:
 
 ```mermaid
 flowchart TD
