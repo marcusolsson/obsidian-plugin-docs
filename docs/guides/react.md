@@ -6,6 +6,12 @@ sidebar_position: 77
 
 In this guide, you'll configure your plugin to use [React](https://reactjs.org/). It assumes that you already have a plugin with a [custom view](custom-views.md) that you want to convert to use React.
 
+While you don't need to use a separate framework to build a plugin, there are a few reasons why you'd want to use React:
+
+- You have existing experience of React and want to use a familiar technology.
+- You have existing React components that you want to reuse in your plugin.
+- Your plugin requires complex state management or other features that can be cumbersome to implement with regular [HTML element](html-elements.md).
+
 ## Configure your plugin
 
 1. Add React to your plugin dependencies:
