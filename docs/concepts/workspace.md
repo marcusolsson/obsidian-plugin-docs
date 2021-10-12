@@ -49,6 +49,53 @@ flowchart TD
 
 A leaf is a window that can display content in different ways. The type of leaf determines how content is displayed, and correspond to a specific _view_. For example, a leaf of type `graph` displays the [graph view](https://help.obsidian.md/Plugins/Graph+view).
 
+## Splits
+
+By default, the direction of the root split is set to vertical. When you create a new leaf to it, Obsidian creates a new column in the user interface. When you split a leaf, the resulting leaves are added to a new split node. While there's no defined limit to the number of levels you can create under the root split, in practice their usefulness diminish for each level.
+
+```mermaid
+flowchart TD
+    rootBefore{"Root split\n(before)"}
+
+    rootBefore --> leaf1((Leaf))
+    rootBefore --> leaf2((Leaf))
+
+    rootAfter{"Root split\n(after)"}
+
+    rootAfter --> split{Split}
+    rootAfter --> leaf3((Leaf))
+    split --> leaf4((Leaf))
+    split --> leaf5((Leaf))
+```
+
+The left and right splits work a little different. When you split a leaf in the side docks, Obsidian generates a new tabs node and adds the new leaf under it. Effectively, this means they can only have three levels of nodes at any time, and any direct children must be tabs nodes.
+
+```mermaid
+flowchart TD
+    split1{"Right split\n(before)"}
+    tabs1{Tabs}
+    leaf1((Leaf))
+    leaf2((Leaf))
+
+    split1 --> tabs1
+    tabs1 --> leaf1
+    tabs1 --> leaf2
+
+    split2{"Right split\n(after)"}
+    tabs2{Tabs}
+    tabs3{Tabs}
+    leaf3((Leaf))
+    leaf4((Leaf))
+    leaf5((Leaf))
+
+    split2 --> tabs2
+    tabs2 --> leaf3
+    tabs2 --> leaf4
+
+    split2 --> tabs3
+    tabs3 --> leaf5
+```
+
 ## Access the workspace from your plugin
 
 You can access the workspace through the [App](../api/classes/App.md) object. The following example prints the type of every leaf in the workspace:
