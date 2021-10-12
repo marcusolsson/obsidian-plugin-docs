@@ -68,7 +68,7 @@ flowchart TD
     split --> leaf5((Leaf))
 ```
 
-The left and right splits work a little different. When you split a leaf in the side docks, Obsidian generates a new tabs node and adds the new leaf under it. Effectively, this means they can only have three levels of nodes at any time, and any direct children must be tabs nodes.
+The left and right splits work a little differently. When you split a leaf in the side docks, Obsidian generates a new tabs node and adds the new leaf under it. Effectively, this means they can only have three levels of nodes at any time, and any direct children must be tabs nodes.
 
 ```mermaid
 flowchart TD
