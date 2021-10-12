@@ -8,7 +8,7 @@ sidebar_label: Overview
 :::warning
 This documentation has been generated from the [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
 
-The script used to generate the documentation is still relatively untested. If you spot any errors or inconsistencies with the official API, let me know.
+The [script](https://github.com/marcusolsson/dts-docs) used to generate the documentation is still relatively untested. If you spot any errors or inconsistencies with the official API, let me know.
 :::
 ## Classes
 
@@ -72,9 +72,11 @@ The script used to generate the documentation is still relatively untested. If y
 - [WorkspaceSidedock](classes/WorkspaceSidedock.md)
 - [WorkspaceSplit](classes/WorkspaceSplit.md)
 - [WorkspaceTabs](classes/WorkspaceTabs.md)
+
 ## Enums
 
 - [PopoverState](enums/PopoverState.md)
+
 ## Functions
 
 - [addIcon](functions/addIcon.md)
@@ -109,6 +111,7 @@ The script used to generate the documentation is still relatively untested. If y
 - [sortSearchResults](functions/sortSearchResults.md)
 - [stringifyYaml](functions/stringifyYaml.md)
 - [stripHeading](functions/stripHeading.md)
+
 ## Interfaces
 
 - [EventListenerInfo](interfaces/EventListenerInfo.md)
@@ -172,6 +175,7 @@ The script used to generate the documentation is still relatively untested. If y
 - [TagCache](interfaces/TagCache.md)
 - [ViewState](interfaces/ViewState.md)
 - [ViewStateResult](interfaces/ViewStateResult.md)
+
 ## Types
 
 - [EditorCommandName](types/EditorCommandName.md)
