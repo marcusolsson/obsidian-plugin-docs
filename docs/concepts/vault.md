@@ -27,6 +27,10 @@ There are two methods for reading the content of a file: [`read()`](../api/class
 - If you only want to display the content to the user, then use `cachedRead()` to avoid reading the file from disk multiple times.
 - If you want to read the content, change it, and then write it back to disk, then use `read()` to avoid potentially overwriting the file with a stale copy.
 
+:::info
+The only difference between `cachedRead()` and `read()` is when the file was modified outside of Obsidian just before the plugin reads it. As soon as the file system notifies Obsidian that the file has changed from the outside, `cachedRead()` behaves _exactly_ like `read()`. Similarly, if you save the file within Obsidian, the read cache is flushed as well.
+:::
+
 The following example reads the content of all Markdown files in the Vault and returns the average document size:
 
 ```ts title="main.ts"
