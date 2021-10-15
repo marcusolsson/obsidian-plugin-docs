@@ -47,6 +47,7 @@ module.exports = {
         },
       ],
     },
+    { type: "doc", id: "submit-your-plugin" },
     { type: "doc", id: "manifest-reference" },
     {
       type: "category",
