@@ -15,6 +15,7 @@ In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-th
 To complete this guide, you will need:
 
 - [Git](https://git-scm.com/) installed on your local machine.
+- A [GitHub](https://github.com) account.
 - A local development environment for [Node.js](https://Node.js.org/en/about/).
 
 ## Step 1 — Download the sample plugin
