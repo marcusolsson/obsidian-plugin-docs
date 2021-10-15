@@ -4,9 +4,7 @@ sidebar_position: 10
 
 # Create your first plugin
 
-This guide walks you through the steps needed to develop a plugin for Obsidian.
-
-> If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
+In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
 
 :::warning Before you start
 **Don't develop plugins in your main vault.** When you develop a plugin, one mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
@@ -14,10 +12,14 @@ This guide walks you through the steps needed to develop a plugin for Obsidian.
 
 ## Prerequisites
 
-- [Git](https://git-scm.com/)
-- [NodeJS](https://nodejs.org/)
+To complete this guide, you will need:
 
-## Step 1: Download the Obsidian sample plugin
+- [Git](https://git-scm.com/) installed on your local machine.
+- A local development environment for [Node.js](https://Node.js.org/en/about/).
+
+## Step 1 — Download the sample plugin
+
+First, you'll download a working sample plugin that you'll build upon for the remaining steps.
 
 1. Browse to the [Obsidian Sample Plugin](https://github.com/obsidianmd/obsidian-sample-plugin).
 1. Click **Use this template**.
@@ -40,7 +42,9 @@ You've now created your own repository based on the Obsidian sample plugin. Next
    git clone https://github.com/username/obsidian-instant-coffee.git
    ```
 
-## Step 2: Build the plugin
+## Step 2 — Build the plugin
+
+In this section, you'll build the source code for the plugin.
 
 1. Install dependencies.
 
@@ -54,7 +58,9 @@ You've now created your own repository based on the Obsidian sample plugin. Next
    npm run dev
    ```
 
-## Step 3: Load the plugin in Obsidian
+## Step 3 — Enable the plugin in Obsidian
+
+To load a plugin in Obsidian, you first need to enable it.
 
 1. Open **Preferences** in Obsidian.
 1. In the side menu, click **Community plugins**.
@@ -62,11 +68,11 @@ You've now created your own repository based on the Obsidian sample plugin. Next
 
 You're now running a custom plugin that you've built yourself. Nice! 💪
 
-Though "Sample Plugin" is probably not the name you had in mind for your plugin. Let's change that.
+Though, "Sample Plugin" is probably not the name you had in mind for your plugin. Let's change that.
 
-## Step 4: Update the plugin manifest
+## Step 4 — Update the plugin manifest
 
-The plugin manifest, `manifest.json` is a file that contains information about your plugin, such as its name and version.
+In this step, you'll update the _manifest_ to rename the plugin., The plugin manifest, `manifest.json` is a file that contains information about your plugin, such as its name and version.
 
 1. Open the `obsidian-instant-coffee` directory in a code editor, such as [Visual Studio Code](https://code.visualstudio.com/).
 1. Open `manifest.json` in your editor.
@@ -74,7 +80,7 @@ The plugin manifest, `manifest.json` is a file that contains information about y
 1. Change `name` to the human-friendly name of the plugin, for example `Instant coffee`.
 1. If you'd like, then update `description`, `author`, and `authorUrl` as well.
 
-A plugin is also a NodeJS package, which you can configure in the `package.json`. You shouldn't need to worry much about it for now. For now, update it to match the properties in the plugin manifest.
+A plugin is also a Node.js package, which you can configure in the `package.json`. You shouldn't need to worry much about it for now. For now, update it to match the properties in the plugin manifest.
 
 1. Open `package.json` in your editor.
 1. Change `name` to match the `id` in `manifest.json`.
@@ -82,7 +88,9 @@ A plugin is also a NodeJS package, which you can configure in the `package.json`
 1. Change `description` to match the `description` in `manifest.json`.
 1. Restart Obsidian to reload your plugin.
 
-## Step 5: Update the source code
+## Step 5 — Update the source code
+
+In this step, you'll make a change to the source code and reload the plugin to reflect your change.
 
 1. Open `main.ts` in your editor.
 1. Find the lines of code that adds a _ribbon icon_.
@@ -101,6 +109,6 @@ A plugin is also a NodeJS package, which you can configure in the `package.json`
 1. Restart Obsidian to reload your plugin.
 1. Click the die icon in the sidebar. Make sure it says "Sample Plugin" when you hover it.
 
-Congratulations! 🎉 You've successfully loaded and changed a custom plugin for Obsidian. 🚀
+## Next steps
 
-Feel free to change the code from the sample plugin to see what it does. Once you're ready, learn more about the [anatomy of a plugin](plugin-anatomy).
+You've built your own plugin for Obsidian! 🚀 You can experiment by making further changes to the code to see what it does. From here, you can explore some of the guides to see what your plugin can do.
