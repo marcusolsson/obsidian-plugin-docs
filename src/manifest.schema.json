@@ -1,0 +1,52 @@
+{
+  "$id": "https://marcus.se.net/obsidian-plugin-docs/manifest",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Manifest",
+  "description": "This page describe the schema for the plugin manifest, `manifest.json`.",
+  "required": [
+    "id",
+    "name",
+    "author",
+    "version",
+    "minAppVersion",
+    "description",
+    "isDesktopOnly"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of your plugin.",
+      "pattern": "^[-0-9a-z]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "The display name of your plugin."
+    },
+    "author": {
+      "type": "string",
+      "description": "The plugin author's name."
+    },
+    "version": {
+      "type": "string",
+      "description": "The version of your plugin."
+    },
+    "minAppVersion": {
+      "type": "string",
+      "description": "The minimum required Obsidian version for your plugin."
+    },
+    "description": {
+      "type": "string",
+      "description": "The long description of your plugin."
+    },
+    "authorUrl": {
+      "type": "string",
+      "description": "A URL to your own website."
+    },
+    "isDesktopOnly": {
+      "type": "boolean",
+      "description": "Whether your plugin uses NodeJS or Electron APIs."
+    }
+  }
+}

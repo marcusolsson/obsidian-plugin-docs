@@ -47,6 +47,7 @@ module.exports = {
         },
       ],
     },
+    { type: "doc", id: "manifest-reference" },
     {
       type: "category",
       label: "API reference",
