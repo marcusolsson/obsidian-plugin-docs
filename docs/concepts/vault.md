@@ -4,7 +4,7 @@ From the official documentation on [Working with multiple Vaults](https://help.o
 
 > Each collection of notes in Obsidian is known as a Vault. A Vault consists of a folder, and any sub-folders within it.
 
-While your plugin can access the file system like any other NodeJS application, the [`Vault`](../api/classes/Vault.md) module aims to make it easier to work with files and folders within a Vault.
+While your plugin can access the file system like any other Node.js application, the [`Vault`](../api/classes/Vault.md) module aims to make it easier to work with files and folders within a Vault.
 
 The following example recursively prints the paths of all Markdown files in a Vault:
 
