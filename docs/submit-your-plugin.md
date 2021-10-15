@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Submit your plugin
 
 If you want to share your plugin with the Obsidian community, the best way is to submit it to the [official list of plugins](https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json). Once your plugin has been reviewed, users can install your plugin directly from within Obsidian. It'll also be featured in the [plugin directory](https://obsidian.md/plugins) on the Obsidian website. In this guide, you'll submit your own plugin.
