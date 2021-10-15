@@ -58,7 +58,7 @@ In this section, you'll build the source code for the plugin.
    npm run dev
    ```
 
-## Step 3 — Enable the plugin in Obsidian
+## Step 3 — Enable the plugin
 
 To load a plugin in Obsidian, you first need to enable it.
 
