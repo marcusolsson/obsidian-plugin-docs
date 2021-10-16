@@ -56,12 +56,10 @@ import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
 
 export default class ExamplePlugin extends Plugin {
-  view: ExampleView;
-
   async onload() {
     this.registerView(
       VIEW_TYPE_EXAMPLE,
-      (leaf) => (this.view = new ExampleView(leaf))
+      (leaf) => new ExampleView(leaf)
     );
 
     this.addRibbonIcon("dice", "Activate view", () => {
@@ -70,11 +68,7 @@ export default class ExamplePlugin extends Plugin {
   }
 
   async onunload() {
-    await this.view.onClose();
-
-    this.app.workspace
-      .getLeavesOfType(VIEW_TYPE_EXAMPLE)
-      .forEach((leaf) => leaf.detach());
+    this.app.workspace.detachLeavesOfType(VIEW_TYPE_EXAMPLE);
   }
 
   async activateView() {
@@ -93,10 +87,6 @@ export default class ExamplePlugin extends Plugin {
 ```
 
 The second argument to [`registerView()`](../api/classes/Plugin_2.md#registerview) is a callback that returns an instance of the view you want to register.
-
-:::tip
-`(leaf) => (this.view = new ExampleView(leaf))` lets you return the view instance _and_ save the instance so that you can reference it later. Neat! 👌
-:::
 
 In the `onunload()` method, to make sure that you clean up the view whenever the plugin is disabled:
 
