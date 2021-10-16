@@ -51,7 +51,7 @@ Each view is uniquely identified by a text string and several operations require
 
 Custom views need to be registered when the plugin is enabled, and cleaned up when the plugin is disabled:
 
-```ts title="main.ts" {8-11,19-23}
+```ts title="main.ts" {6-9,17}
 import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
 
