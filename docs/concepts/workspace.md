@@ -2,9 +2,9 @@
 
 Obsidian lets you configure what content is visible to you at any given time. Hide the file explorer when you don't need it, display multiple documents side by side, or show an outline of your document while you're working on it. The configuration of visible content within your application window is known as the _workspace_.
 
-The workspace is implemented as a [tree data structure](https://en.wikipedia.org/wiki/Tree_(data_structure)) that consists of _group nodes_ and _leaf nodes_. The main difference is that group nodes can contain any number of child nodes, including other group nodes, while leaf nodes can't contain any nodes at all.
+The workspace is implemented as a [tree data structure](https://en.wikipedia.org/wiki/Tree_(data_structure)), where each node in the tree is referred to as a [workspace item](../api/classes/WorkspaceItem.md). There are two types of workspace items: [_parents_](../api/classes/WorkspaceParent.md) and [_leaves_](../api/classes/WorkspaceLeaf.md). The main difference is that parent items can contain _child_ items, including other parent items, whereas leaf items can't contain any workspace items at all.
 
-There are two types of group nodes, _splits_ and _tabs_, which determine how the children are presented to the user:
+There are two types of parent items, [_splits_](../api/classes/WorkspaceSplit.md) and [_tabs_](../api/classes/WorkspaceTabs.md), which determine how the children are presented to the user:
 
 ```mermaid
 flowchart TD
@@ -19,10 +19,10 @@ flowchart TD
     tabs --> Z((Leaf))
 ```
 
-- A split node lays out its child nodes one after another along a vertical or horizontal direction.
-- A tabs node only displays one child node at a time and hides the others.
+- A split item lays out its child items one after another along a vertical or horizontal direction.
+- A tabs item only displays one child item at a time and hides the others.
 
-The workspace has three special split nodes under it: _left_, _right_, and _root_. The following diagram shows a example of what a typical workspace could look like:
+The workspace has three special split items under it: _left_, _right_, and _root_. The following diagram shows a example of what a typical workspace could look like:
 
 ```mermaid
 flowchart TD
@@ -51,7 +51,7 @@ A leaf is a window that can display content in different ways. The type of leaf 
 
 ## Splits
 
-By default, the direction of the root split is set to vertical. When you create a new leaf to it, Obsidian creates a new column in the user interface. When you split a leaf, the resulting leaves are added to a new split node. While there's no defined limit to the number of levels you can create under the root split, in practice their usefulness diminish for each level.
+By default, the direction of the root split is set to vertical. When you create a new leaf to it, Obsidian creates a new column in the user interface. When you split a leaf, the resulting leaves are added to a new split item. While there's no defined limit to the number of levels you can create under the root split, in practice their usefulness diminish for each level.
 
 ```mermaid
 flowchart TD
@@ -68,7 +68,7 @@ flowchart TD
     split --> leaf5((Leaf))
 ```
 
-The left and right splits work a little differently. When you split a leaf in the side docks, Obsidian generates a new tabs node and adds the new leaf under it. Effectively, this means they can only have three levels of nodes at any time, and any direct children must be tabs nodes.
+The left and right splits work a little differently. When you split a leaf in the side docks, Obsidian generates a new tabs item and adds the new leaf under it. Effectively, this means they can only have three levels of workspace items at any time, and any direct children must be tabs items.
 
 ```mermaid
 flowchart TD
