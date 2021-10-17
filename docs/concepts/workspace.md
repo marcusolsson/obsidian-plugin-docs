@@ -96,7 +96,7 @@ flowchart TD
     tabs3 --> leaf5
 ```
 
-## Access the workspace from your plugin
+## Inspect the workspace
 
 You can access the workspace through the [App](../api/classes/App.md) object. The following example prints the type of every leaf in the workspace:
 
@@ -114,16 +114,18 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-## Create and detach leaves
+## Leaf lifecycle
 
-There are several methods for creating leaves, which are fairly similar. To see all of them, refer to [`Workspace`](../api/classes/Workspace.md), but here are a few to get you started:
+Plugins can add leaves of any type to the workspace, as well as define new leaf types through [custom views](../guides/custom-views.md). Here are a few ways to add a leaf to the workspace. For more ways, refer to [`Workspace`](../api/classes/Workspace.md).
 
-- If you want to create a new leaf in the root split, use [`workspace.getLeaf(true)`](../api/classes/Workspace.md#getleaf).
-- If you want to create a new leaf in any of the side bars, use [`workspace.getLeftLeaf()`](../api/classes/Workspace.md#getleftleaf) and [`workspace.getRightLeaf()`](../api/classes/Workspace.md#getrightleaf). Both let you decide whether to create the leaf in a new split inside the side bar.
+- If you want to add a new leaf in the root split, use [`workspace.getLeaf(true)`](../api/classes/Workspace.md#getleaf).
+- If you want to add a new leaf in any of the side bars, use [`workspace.getLeftLeaf()`](../api/classes/Workspace.md#getleftleaf) and [`workspace.getRightLeaf()`](../api/classes/Workspace.md#getrightleaf). Both let you decide whether to add the leaf to a new split.
 
-You can also explicitly create the leaf in the split of your choice, using [`createLeafInParent(leftSplit, index)`](../api/classes/Workspace.md#createleafinparent), where `index` is the position you want to insert the leaf on. For example, set `index` to 0 to prepend the leaf in the split.
+You can also explicitly add the leaf in the split of your choice, using [`createLeafInParent()`](../api/classes/Workspace.md#createleafinparent).
 
-To remove a leaf from the workspace, call [`detach()`](../api/classes/WorkspaceLeaf.md#detach) on the leaf you want to remove.
+Unless explicitly removed, any leaves that a plugin add to the workspace remain even after the plugin is disabled. Plugins are responsible for removing any leaves they add to the workspace.
+
+To remove a leaf from the workspace, call [`detach()`](../api/classes/WorkspaceLeaf.md#detach) on the leaf you want to remove. You can also remove all leaves of a certain type, by using [`detachLeavesOfType()`](../api/classes/Workspace.md#detachleavesoftype).
 
 ## Leaf groups
 

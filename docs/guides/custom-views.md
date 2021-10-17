@@ -86,7 +86,20 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-The second argument to [`registerView()`](../api/classes/Plugin_2.md#registerview) is a callback that returns an instance of the view you want to register.
+The second argument to [`registerView()`](../api/classes/Plugin_2.md#registerview) is a factory function that returns an instance of the view you want to register.
+
+:::warning
+Never manage references to views in your plugin. Obsidian may call the view factory function multiple times. Avoid side effects in your view, and use `getLeavesOfType()` whenever you need to access your view instances.
+
+```ts
+this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE).forEach((leaf) => {
+  if (leaf.view instanceof ExampleView) {
+    // Access your view instance.
+  }
+});
+```
+
+:::
 
 In the `onunload()` method, to make sure that you clean up the view whenever the plugin is disabled:
 
