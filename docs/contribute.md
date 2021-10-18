@@ -25,6 +25,15 @@ This site hosts four types of documentation:
 
 For more information, refer to [The documentation system](https://documentation.divio.com/) by [Divio](https://www.divio.com/).
 
+### Tutorials
+
+Each tutorial should have the following structure:
+
+1. Description of what the reader will have accomplished after the tutorial.
+1. **Prerequisites** section that describes what the reader needs to complete the tutorial.
+1. Headings for each step that start with "Step X — " (that's an [em-dash](https://en.wikipedia.org/wiki/Dash#Em_dash)), followed by a sentence in imperative form. For example, "Step 3 — Submit plugin for review".
+1. Closing section that summarizes what the reader has accomplished, and where they can go next.
+
 ### Guides
 
 Each guide should have the following structure:
