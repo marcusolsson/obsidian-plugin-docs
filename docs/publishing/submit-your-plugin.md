@@ -52,7 +52,7 @@ In this step, you'll submit your plugin to the Obsidian team for review.
    ```
 
    - `id`, `name`, `author`, and `description` determines how your plugin appears to the user, and should match the corresponding properties in your [plugin manifest](manifest-reference.md).
-   - `id` should be unique to your plugin and unique in the `community-plugins.json`. Therefore do a search to confirm there is no conflict.
+   - `id` is unique to your plugin. Search `community-plugins.json` to confirm that there's no existing plugin with the same id.
    - `repo` is the path to your GitHub repository. For example, if your GitHub repo is located at https://github.com/your-username/your-repo-name, the path is `your-username/your-repo-name`.
    - (Optional) `branch` lets you specify the Git branch you want to use. It defaults to `master`, if omitted.
 
