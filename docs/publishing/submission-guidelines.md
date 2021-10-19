@@ -4,7 +4,7 @@ This page lists some of the common review comments plugin authors get when submi
 
 
 # normalizePath function 
-The normalizePath() function takes a file path as a string and scrubs it to be safe for the file system and for cross-platform use. It performs such actions as:
+The [`normalizePath()`](../api/functions/normalizePath) function takes a file path and scrubs it to be safe for the file system and for cross-platform use.
 - Cleans up the use of forward and backward slashes, such as replacing 1 or more of `\` or `/` with a single `/`.
 - remove leading and trailing \ and /
 - Replaces any non-breaking spaces, `\u00A0`, with a regular space.
