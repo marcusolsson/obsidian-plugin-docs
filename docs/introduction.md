@@ -6,9 +6,9 @@ sidebar_position: 1
 
 # Obsidian Plugin Developer Docs
 
-This site is the **unofficial** developer docs for Obsidian plugins. It's being maintained by [@marcusolsson](https://github.com/marcusolsson), with the help of the Obsidian community.
+This is the **unofficial** documentation for Obsidian plugin development.
 
-If this site has been useful to you, you can buy the maintainer a coffee to support its continued development:
+It's being maintained by [@marcusolsson](https://github.com/marcusolsson), with the help of the Obsidian community. If this site has been useful to you, you can buy the maintainer a coffee to support its continued development:
 
 <a href="https://buymeacoffee.com/marcusolsson">
   <img src="/obsidian-plugin-docs/img/default-violet.webp" width="200"  />
