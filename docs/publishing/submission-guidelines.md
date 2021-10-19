@@ -8,7 +8,7 @@ The normalizePath() function takes a file path as a string and scrubs it to be s
 - Cleans up the use of forward and backward slashes, such as replacing 1 or more of `\` or `/` with a single `/`.
 - remove leading and trailing \ and /
 - Replaces any non-breaking spaces, `\u00A0`, with a regular space.
-- runs the path through the [String.prototype.normalize method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize )
+- Runs the path through the [String.prototype.normalize method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize).
 
 ```ts
 import { normalizePath } from "obsidian";
