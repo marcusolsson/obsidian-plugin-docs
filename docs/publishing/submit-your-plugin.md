@@ -24,7 +24,10 @@ In this step, you'll prepare a release for your plugin that's ready to be submit
 
 1. In `manifest.json`, update `version` to a new version that follows the [Semantic Versioning](https://semver.org/) specification.
 
-1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release). The  "Tag version" of the release must match the version in your `manifest.json`. Don't include a `v` in the tag version. It is also good practice to provide a release title and to describe the release in the description field. 
+1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release). 
+   - The  "Tag version" of the release must match the version in your `manifest.json`. 
+   - Don't include a `v` in the tag version. 
+1. Enter a name for the release, and describe it in the description field.
 
 1. Upload the following plugin assets to the release, as binary attachments:
 
