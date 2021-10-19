@@ -5,8 +5,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (
   module.exports = {
-    title: "Plugin development for Obsidian",
-    tagline: "Plugin development for Obsidian",
+    title: "Obsidian Plugin Developer Docs",
+    tagline: "Obsidian Plugin Developer Docs",
     url: "https://marcusolsson.github.io",
     baseUrl: "/obsidian-plugin-docs/",
     onBrokenLinks: "throw",
@@ -52,7 +52,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     themeConfig: {
       defaultMode: "dark",
       navbar: {
-        title: "Plugin development for Obsidian",
+        title: "Obsidian Plugin Developer Docs",
         items: [
           {
             href: "https://buymeacoffee.com/marcusolsson",
