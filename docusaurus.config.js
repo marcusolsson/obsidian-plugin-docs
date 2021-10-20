@@ -27,6 +27,14 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
               to: "/concepts/plugin-anatomy",
               from: ["/getting-started/plugin-anatomy"],
             },
+            {
+              to: "/advanced-guides/react",
+              from: ["/guides/react"],
+            },
+            {
+              to: "/advanced-guides/svelte",
+              from: ["/guides/svelte"],
+            },
           ],
         },
       ],

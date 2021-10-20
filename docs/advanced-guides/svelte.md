@@ -97,7 +97,7 @@ In the root directory of the plugin, create a new file called `Component.svelte`
 
 ## Mount the Svelte component
 
-To use the Svelte component, it needs to be mounted on an existing [HTML element](html-elements.md). For example, if you are mounting on a custom [`ItemView`](../api/classes/ItemView.md) in Obsidian:
+To use the Svelte component, it needs to be mounted on an existing [HTML element](../guides/html-elements.md). For example, if you are mounting on a custom [`ItemView`](../api/classes/ItemView.md) in Obsidian:
 
 ```ts
 import { ItemView, WorkspaceLeaf } from "obsidian";
