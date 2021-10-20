@@ -52,6 +52,10 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     themeConfig: {
       defaultMode: "dark",
       navbar: {
+        logo: {
+          alt: "Logo",
+          src: "img/logo.svg",
+        },
         title: "Obsidian Plugin Developer Docs",
         items: [
           {
