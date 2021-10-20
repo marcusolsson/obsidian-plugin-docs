@@ -1,6 +1,6 @@
 # Release your plugin with GitHub Actions
 
-Manually creating your plugin release can be time-consuming and error-prone. In this guide, you'll configure your plugin to use GitHub Actions to automatically create a release when you create a new tag.
+Manually creating your plugin release can be time-consuming and error-prone. In this guide, you'll configure your plugin to use [GitHub Actions](https://github.com/features/actions) to automatically create a release when you create a new tag.
 
 :::note
 The GitHub Action workflow was originally created and shared by [argentum](https://forum.obsidian.md/u/argentum). For more information and other variations, refer to the [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3).
