@@ -24,9 +24,9 @@ In this step, you'll prepare a release for your plugin that's ready to be submit
 
 1. In `manifest.json`, update `version` to a new version that follows the [Semantic Versioning](https://semver.org/) specification.
 
-1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release). 
-   - The  "Tag version" of the release must match the version in your `manifest.json`. 
-   - Don't include a `v` in the tag version. 
+1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release).
+   - The  "Tag version" of the release must match the version in your `manifest.json`.
+   - Don't include a `v` in the tag version.
 1. Enter a name for the release, and describe it in the description field.
 
 1. Upload the following plugin assets to the release, as binary attachments:
@@ -35,6 +35,9 @@ In this step, you'll prepare a release for your plugin that's ready to be submit
    - `manifest.json`
    - `styles.css` (optional)
 
+:::tip
+To automate the process of creating a release, refer to [Release your plugin with GitHub Actions](release-your-plugin-with-github-actions.md).
+:::
 ## Step 2 — Submit your plugin for review
 
 In this step, you'll submit your plugin to the Obsidian team for review.
