@@ -24,7 +24,10 @@ In this step, you'll prepare a release for your plugin that's ready to be submit
 
 1. In `manifest.json`, update `version` to a new version that follows the [Semantic Versioning](https://semver.org/) specification.
 
-1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release). The name of the release must match the version in your `manifest.json`. Don't include a `v` in the release name.
+1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release). 
+   - The  "Tag version" of the release must match the version in your `manifest.json`. 
+   - Don't include a `v` in the tag version. 
+1. Enter a name for the release, and describe it in the description field.
 
 1. Upload the following plugin assets to the release, as binary attachments:
 
@@ -52,6 +55,7 @@ In this step, you'll submit your plugin to the Obsidian team for review.
    ```
 
    - `id`, `name`, `author`, and `description` determines how your plugin appears to the user, and should match the corresponding properties in your [plugin manifest](manifest-reference.md).
+   - `id` is unique to your plugin. Search `community-plugins.json` to confirm that there's no existing plugin with the same id.
    - `repo` is the path to your GitHub repository. For example, if your GitHub repo is located at https://github.com/your-username/your-repo-name, the path is `your-username/your-repo-name`.
    - (Optional) `branch` lets you specify the Git branch you want to use. It defaults to `master`, if omitted.
 
