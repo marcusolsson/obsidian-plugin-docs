@@ -1,4 +1,4 @@
-# Docs for Obsidian plugin development
+# Obsidian Plugin Developer Docs
 
 [![Documentation](https://github.com/marcusolsson/obsidian-plugin-docs/actions/workflows/documentation.yml/badge.svg)](https://github.com/marcusolsson/obsidian-plugin-docs/actions/workflows/documentation.yml)
 [![Buy me a coffee](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-gray?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/marcusolsson)
