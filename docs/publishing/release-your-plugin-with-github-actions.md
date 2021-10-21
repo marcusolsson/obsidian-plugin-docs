@@ -124,3 +124,56 @@ You've set up your plugin to automatically create a GitHub release whenever you 
 
 - If this is the first release for this plugin, you're now ready to [submit your plugin](submit-your-plugin.md).
 - If this is an update to an already published plugin, your users can now update to the latest version.
+
+</br>
+
+## Use standard-version to do the tagging for you automatically
+
+You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically for you, depending on the commits you made.
+
+If you have a `feat:` commit, it will automatically bump the minor version. If you include a `BREAKING CHANGE:` on the third line of your commit message, it will bump the major version. If you made a `fix:`, it will bump the patch version. 
+
+For making these commits easily, you can use the VSCode extension [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
+
+Conventional commits (`feat:`, `fix:`, `docs:` etc.) combined with `standard-version` have the advantage that they add consistency to your commits. `standard-version` also adds a `CHANGELOG.md` that includes, by default, new features and bug fixes. That means that you don't need to maintain the changelog yourself. It is built automatically from your commits!
+
+### Configuration
+
+To set up `standard-version`, you only have to add a couple of lines to your `package.json`.
+
+```json
+{
+...
+	"scripts": {
+		"dev": "cross-env BUILD=dev node esbuild.js",
+		"build": "cross-env BUILD=production node esbuild.js",
+
+
+// these are the lines you need to add
+		"release": "standard-version" 
+	},
+	"standard-version": {
+		"t": ""                       // don't set a prefix for the tag because Obsidian needs 1.0.1 and not v1.0.1
+	},
+
+  ...
+}
+```
+
+You also need to run `npm i --save-dev standard-version`. This will install `standard-version` and add it to the `devDependencies` in your `package.json`.
+
+:::note
+If your major version is below **1** (e.g. 0.3.4), bumping the minor and major versions with `feat:` and `BREAKING CHANGE:`, respectively, won't work and default to patch versions. You will have to use the following commands in that case:
+
+```bash
+# to release as minor
+npm run release -- --release-as minor
+# to release as major
+npm run release -- --release-as major
+
+```
+
+The two extra hyphens are *not* a typo.
+:::
+
+When you want to make a release, commit your work with the Conventional Commits plugin (alternatively write the commit messages in the terminal/the VSCode GUI) and apply `feat:`, `fix:` or the other options as you see fit. Then, run `npm run release`. It will bump the version, commit it and apply the `git tag`. After that, you only need to run `git push --follow-tags origin main`, where `main` is your main branch. That will push the latest commit and the `git tag` to GitHub. In conjunction with the GitHub Actions script above, GitHub will build and publish the release for you.
