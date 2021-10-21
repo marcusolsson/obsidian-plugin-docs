@@ -47,6 +47,12 @@ You've now created your own repository based on the Obsidian sample plugin. Next
 
 In this section, you'll build the source code for the plugin.
 
+1. Navigate into the plugin folder.
+
+   ```bash
+   cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
+   ```   
+
 1. Install dependencies.
 
    ```bash
