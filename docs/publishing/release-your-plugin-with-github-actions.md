@@ -184,7 +184,7 @@ To make a release:
    git commit -m "feat: Add settings"
    ```
 
-1. Create a release.
+1. Create a release and update the changelog.
 
    ```bash
    npm run release
