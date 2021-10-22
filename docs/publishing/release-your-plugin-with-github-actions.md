@@ -139,7 +139,7 @@ You can also use [standard-version](https://github.com/conventional-changelog/st
 If you're using Visual Studio Code, the [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) extension helps to to create conventional commits.
 :::
 
-Conventional commits (`feat:`, `fix:`, `docs:` etc.) combined with `standard-version` have the advantage that they add consistency to your commits. `standard-version` also adds a `CHANGELOG.md` that includes, by default, new features and bug fixes. That means that you don't need to maintain the changelog yourself. It is built automatically from your commits!
+standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits.
 
 ### Configuration
 
