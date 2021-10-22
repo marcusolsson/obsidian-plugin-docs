@@ -124,3 +124,79 @@ You've set up your plugin to automatically create a GitHub release whenever you 
 
 - If this is the first release for this plugin, you're now ready to [submit your plugin](submit-your-plugin.md).
 - If this is an update to an already published plugin, your users can now update to the latest version.
+
+## Use standard-version to automatically tag your release
+
+You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically for you, depending on the commits you made.
+
+- If your commit message starts with `fix:`, it bumps the patch version. 
+- If your commit message starts with `feat:`, it bumps the minor version. 
+- If the third line of your commit message starts with `BREAKING CHANGE:`, it bumps the major version.
+
+:::tip
+If you're using Visual Studio Code, the [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) extension helps to to create conventional commits.
+:::
+
+standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits.
+
+
+To enable standard-version for your plugin:
+
+1. Install standard-version.
+
+   ```bash
+   npm install --save-dev standard-version
+   ```
+
+2. In `package.json`, add the following properties:
+
+   ```json title="package.json"
+   {
+   	"scripts": {
+   		"release": "standard-version"
+   	},
+   	"standard-version": {
+   		"t": ""
+   	}
+   }
+   ```
+
+   - `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
+
+
+To make a release:
+
+1. Commit your changes according to Conventional Commits.
+
+   ```bash
+   git commit -m "feat: Add settings"
+   ```
+
+1. Create a release and update the changelog.
+
+   ```bash
+   npm run release
+   ```
+
+   :::note
+   By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
+   
+   ```bash
+   # Release as minor
+   npm run release -- --release-as minor
+   # Release as major
+   npm run release -- --release-as major
+   
+   ```
+   :::
+
+
+1. Push the new tag to GitHub.
+
+   ```bash
+   git push --follow-tags origin main
+   ```
+
+   - `main` is the name of the remote branch you want to push to.
+
+GitHub builds and releases the plugin using GitHub Actions.
