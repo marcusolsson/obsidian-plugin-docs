@@ -142,7 +142,7 @@ standard-version uses [Conventional Commits](https://www.conventionalcommits.org
 
 To set up `standard-version`, you only have to add a couple of lines to your `package.json`.
 
-```json
+```json title="package.json"
 {
 ...
 	"scripts": {
