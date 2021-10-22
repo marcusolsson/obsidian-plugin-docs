@@ -170,7 +170,7 @@ You also need to run `npm i --save-dev standard-version`. This will install `sta
 If your major version is below **1** (e.g. 0.3.4), bumping the minor and major versions with `feat:` and `BREAKING CHANGE:`, respectively, won't work and default to patch versions. You will have to use the following commands in that case:
 
 ```bash
-# to release as minor
+# Release as minor
 npm run release -- --release-as minor
 # to release as major
 npm run release -- --release-as major
