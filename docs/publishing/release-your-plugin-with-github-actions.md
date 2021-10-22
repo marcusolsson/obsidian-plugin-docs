@@ -142,38 +142,27 @@ standard-version uses [Conventional Commits](https://www.conventionalcommits.org
 
 To enable standard-version for your plugin:
 
-1. In `package.json`, add the following properties:
-
-```json title="package.json"
-{
-	"scripts": {
-		"release": "standard-version"
-	},
-	"standard-version": {
-		"t": ""
-	}
-}
-```
-
-- `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
-
 1. Install standard-version.
 
    ```bash
    npm install --save-dev standard-version
    ```
 
-:::note
-By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
+2. In `package.json`, add the following properties:
 
-```bash
-# Release as minor
-npm run release -- --release-as minor
-# Release as major
-npm run release -- --release-as major
+   ```json title="package.json"
+   {
+   	"scripts": {
+   		"release": "standard-version"
+   	},
+   	"standard-version": {
+   		"t": ""
+   	}
+   }
+   ```
 
-```
-:::
+   - `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
+
 
 To make a release:
 
@@ -188,6 +177,20 @@ To make a release:
    ```bash
    npm run release
    ```
+
+   :::note
+   By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
+   
+   ```bash
+   # Release as minor
+   npm run release -- --release-as minor
+   # Release as major
+   npm run release -- --release-as major
+   
+   ```
+   :::
+
+
 1. Push the new tag to GitHub.
 
    ```bash
