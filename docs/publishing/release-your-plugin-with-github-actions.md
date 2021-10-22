@@ -127,7 +127,7 @@ You've set up your plugin to automatically create a GitHub release whenever you 
 
 </br>
 
-## Use standard-version to do the tagging for you automatically
+## Use standard-version to automatically tag your release
 
 You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically for you, depending on the commits you made.
 
