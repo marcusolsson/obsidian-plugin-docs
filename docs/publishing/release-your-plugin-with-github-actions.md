@@ -131,8 +131,8 @@ You can also use [standard-version](https://github.com/conventional-changelog/st
 
 standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits. For example:
 
-- If your commit message starts with `fix:`, it bumps the patch version. 
-- If your commit message starts with `feat:`, it bumps the minor version. 
+- If your commit message starts with `fix:`, it bumps the patch version.
+- If your commit message starts with `feat:`, it bumps the minor version.
 - If the third line of your commit message starts with `BREAKING CHANGE:`, it bumps the major version.
 
 :::tip
@@ -179,16 +179,15 @@ To make a release:
 
    :::note
    By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
-   
+
    ```bash
    # Release as minor
    npm run release -- --release-as minor
    # Release as major
    npm run release -- --release-as major
    ```
-   
-   :::
 
+   :::
 
 1. Push the new tag to GitHub.
 
