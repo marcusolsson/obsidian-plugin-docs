@@ -172,7 +172,7 @@ If your major version is below **1** (e.g. 0.3.4), bumping the minor and major v
 ```bash
 # Release as minor
 npm run release -- --release-as minor
-# to release as major
+# Release as major
 npm run release -- --release-as major
 
 ```
