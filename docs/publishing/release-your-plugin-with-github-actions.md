@@ -139,7 +139,6 @@ If you're using Visual Studio Code, the [Conventional Commits](https://marketpla
 
 standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits.
 
-### Configuration
 
 To set up `standard-version`, you only have to add a couple of lines to your `package.json`.
 
