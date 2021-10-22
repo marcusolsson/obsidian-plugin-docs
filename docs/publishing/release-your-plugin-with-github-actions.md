@@ -176,4 +176,25 @@ npm run release -- --release-as major
 ```
 :::
 
-When you want to make a release, commit your work with the Conventional Commits plugin (alternatively write the commit messages in the terminal/the VSCode GUI) and apply `feat:`, `fix:` or the other options as you see fit. Then, run `npm run release`. It will bump the version, commit it and apply the `git tag`. After that, you only need to run `git push --follow-tags origin main`, where `main` is your main branch. That will push the latest commit and the `git tag` to GitHub. In conjunction with the GitHub Actions script above, GitHub will build and publish the release for you.
+To make a release:
+
+1. Commit your changes according to Conventional Commits.
+
+   ```bash
+   git commit -m "feat: Add settings"
+   ```
+
+1. Create a release.
+
+   ```bash
+   npm run release
+   ```
+1. Push the new tag to GitHub.
+
+   ```bash
+   git push --follow-tags origin main
+   ```
+
+   - `main` is the name of the remote branch you want to push to.
+
+GitHub builds and releases the plugin using GitHub Actions.
