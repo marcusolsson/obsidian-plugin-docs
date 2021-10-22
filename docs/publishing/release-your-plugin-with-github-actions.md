@@ -125,8 +125,6 @@ You've set up your plugin to automatically create a GitHub release whenever you 
 - If this is the first release for this plugin, you're now ready to [submit your plugin](submit-your-plugin.md).
 - If this is an update to an already published plugin, your users can now update to the latest version.
 
-</br>
-
 ## Use standard-version to automatically tag your release
 
 You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically for you, depending on the commits you made.
@@ -167,7 +165,7 @@ To set up `standard-version`, you only have to add a couple of lines to your `pa
 You also need to run `npm i --save-dev standard-version`. This will install `standard-version` and add it to the `devDependencies` in your `package.json`.
 
 :::note
-If your major version is below **1** (e.g. 0.3.4), bumping the minor and major versions with `feat:` and `BREAKING CHANGE:`, respectively, won't work and default to patch versions. You will have to use the following commands in that case:
+By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
 
 ```bash
 # Release as minor
@@ -176,8 +174,6 @@ npm run release -- --release-as minor
 npm run release -- --release-as major
 
 ```
-
-The two extra hyphens are *not* a typo.
 :::
 
 When you want to make a release, commit your work with the Conventional Commits plugin (alternatively write the commit messages in the terminal/the VSCode GUI) and apply `feat:`, `fix:` or the other options as you see fit. Then, run `npm run release`. It will bump the version, commit it and apply the `git tag`. After that, you only need to run `git push --follow-tags origin main`, where `main` is your main branch. That will push the latest commit and the `git tag` to GitHub. In conjunction with the GitHub Actions script above, GitHub will build and publish the release for you.
