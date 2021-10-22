@@ -144,22 +144,16 @@ To set up `standard-version`, you only have to add a couple of lines to your `pa
 
 ```json title="package.json"
 {
-...
 	"scripts": {
-		"dev": "cross-env BUILD=dev node esbuild.js",
-		"build": "cross-env BUILD=production node esbuild.js",
-
-
-// these are the lines you need to add
-		"release": "standard-version" 
+		"release": "standard-version"
 	},
 	"standard-version": {
-		"t": ""                       // don't set a prefix for the tag because Obsidian needs 1.0.1 and not v1.0.1
-	},
-
-  ...
+		"t": ""
+	}
 }
 ```
+
+- `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
 
 You also need to run `npm i --save-dev standard-version`. This will install `standard-version` and add it to the `devDependencies` in your `package.json`.
 
