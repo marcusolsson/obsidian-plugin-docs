@@ -127,18 +127,17 @@ You've set up your plugin to automatically create a GitHub release whenever you 
 
 ## Use standard-version to automatically tag your release
 
-You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically, depending on the commits you made.
+You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically based on the commits you made.
+
+standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits. For example:
 
 - If your commit message starts with `fix:`, it bumps the patch version. 
 - If your commit message starts with `feat:`, it bumps the minor version. 
 - If the third line of your commit message starts with `BREAKING CHANGE:`, it bumps the major version.
 
-standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits.
-
 :::tip
 If you're using Visual Studio Code, the [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) extension helps you to create Conventional Commits.
 :::
-
 
 To enable standard-version for your plugin:
 
