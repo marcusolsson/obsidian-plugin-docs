@@ -157,7 +157,11 @@ To enable standard-version for your plugin:
 
 - `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
 
-You also need to run `npm i --save-dev standard-version`. This will install `standard-version` and add it to the `devDependencies` in your `package.json`.
+1. Install standard-version.
+
+   ```bash
+   npm install --save-dev standard-version
+   ```
 
 :::note
 By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
