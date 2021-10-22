@@ -131,7 +131,9 @@ You've set up your plugin to automatically create a GitHub release whenever you 
 
 You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically for you, depending on the commits you made.
 
-If you have a `feat:` commit, it will automatically bump the minor version. If you include a `BREAKING CHANGE:` on the third line of your commit message, it will bump the major version. If you made a `fix:`, it will bump the patch version. 
+- If your commit message starts with `fix:`, it bumps the patch version. 
+- If your commit message starts with `feat:`, it bumps the minor version. 
+- If the third line of your commit message starts with `BREAKING CHANGE:`, it bumps the major version.
 
 For making these commits easily, you can use the VSCode extension [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
 
