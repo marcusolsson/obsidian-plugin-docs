@@ -135,7 +135,9 @@ You can also use [standard-version](https://github.com/conventional-changelog/st
 - If your commit message starts with `feat:`, it bumps the minor version. 
 - If the third line of your commit message starts with `BREAKING CHANGE:`, it bumps the major version.
 
-For making these commits easily, you can use the VSCode extension [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits).
+:::tip
+If you're using Visual Studio Code, the [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) extension helps to to create conventional commits.
+:::
 
 Conventional commits (`feat:`, `fix:`, `docs:` etc.) combined with `standard-version` have the advantage that they add consistency to your commits. `standard-version` also adds a `CHANGELOG.md` that includes, by default, new features and bug fixes. That means that you don't need to maintain the changelog yourself. It is built automatically from your commits!
 
