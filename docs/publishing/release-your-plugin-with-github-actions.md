@@ -33,8 +33,8 @@ The GitHub Action workflow was originally created and shared by [argentum](https
          - name: Build
            id: build
            run: |
-             yarn install
-             yarn run build
+             npm install
+             npm run build
              mkdir ${{ env.PLUGIN_NAME }}
              cp main.js manifest.json styles.css ${{ env.PLUGIN_NAME }}
              zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
@@ -143,7 +143,7 @@ To enable standard-version for your plugin:
 
 1. Install standard-version.
 
-   ```bash
+   ```bash npm2yarn
    npm install --save-dev standard-version
    ```
 
@@ -173,14 +173,14 @@ To make a release:
 
 1. Create a release and update the changelog.
 
-   ```bash
+   ```bash npm2yarn
    npm run release
    ```
 
    :::note
    By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
 
-   ```bash
+   ```bash npm2yarn
    # Release as minor
    npm run release -- --release-as minor
    # Release as major

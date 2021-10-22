@@ -49,13 +49,13 @@ In this section, you'll build the source code for the plugin.
 
 1. Install dependencies.
 
-   ```bash
+   ```bash npm2yarn
    npm install
    ```
 
 1. Compile the source code. The following command generates a `main.js` that contains the compiled version of your plugin.
 
-   ```bash
+   ```bash npm2yarn
    npm run dev
    ```
 

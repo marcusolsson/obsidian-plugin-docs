@@ -48,7 +48,10 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
             editUrl:
               "https://github.com/marcusolsson/obsidian-plugin-docs/edit/main/",
             routeBasePath: "/",
-            remarkPlugins: [require("mdx-mermaid")],
+            remarkPlugins: [
+              require("mdx-mermaid"),
+              [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
+            ],
           },
           theme: {
             customCss: require.resolve("./src/css/custom.css"),
