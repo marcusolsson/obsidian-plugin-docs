@@ -1,6 +1,7 @@
 ---
 slug: /manifest
 sidebar_label: Manifest reference
+sidebar_position: 75
 ---
 
 # Manifest
