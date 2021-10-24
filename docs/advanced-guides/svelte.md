@@ -4,7 +4,11 @@ sidebar_position: 78
 
 # Svelte
 
-This guide describes how to configure your plugin to use [Svelte](https://svelte.dev/), a light-weight alternative to traditional frameworks like React and Vue.
+:::info
+This guide is written for an older version of the sample plugin that uses Rollup. If you know how to adapt it for ESBuild, consider [contributing](../contribute.md) the changes.
+:::
+
+This guide explains how to configure your plugin to use [Svelte](https://svelte.dev/), a light-weight alternative to traditional frameworks like React and Vue.
 
 Svelte is built around a compiler that preprocesses your code and outputs vanilla JavaScript, which means it doesn't need to load any libraries at run time. This also means that it doesn't need a virtual DOM to track state changes, which allows your plugin to run with minimal additional overhead.
 
