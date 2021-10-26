@@ -103,7 +103,7 @@ this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE).forEach((leaf) => {
 
 In the `onunload()` method, to make sure that you clean up the view whenever the plugin is disabled:
 
-- Allow the view clean up after itself by calling `onClose()`.
+- Allow the view clean up after itself by calling `close()`.
 - Detach all leaves that are using the view.
 
 After you've registered a custom view for the plugin, you should to give the user a way to activate it. The `activateView()` is a convenient method that does three things:
