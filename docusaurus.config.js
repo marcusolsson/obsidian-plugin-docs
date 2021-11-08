@@ -7,11 +7,11 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
   module.exports = {
     title: "Obsidian Plugin Developer Docs",
     tagline: "Obsidian Plugin Developer Docs",
-    url: "https://marcusolsson.github.io",
+    url: "https://obsidianmd.github.io",
     baseUrl: "/obsidian-plugin-docs/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
-    organizationName: "marcusolsson", // Usually your GitHub org/user name.
+    organizationName: "obsidianmd", // Usually your GitHub org/user name.
     projectName: "obsidian-plugin-docs", // Usually your repo name.
     trailingSlash: false,
     plugins: [
@@ -46,7 +46,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
           docs: {
             sidebarPath: require.resolve("./sidebars.js"),
             editUrl:
-              "https://github.com/marcusolsson/obsidian-plugin-docs/edit/main/",
+              "https://github.com/obsidianmd/obsidian-plugin-docs/edit/main/",
             routeBasePath: "/",
             remarkPlugins: [
               require("mdx-mermaid"),
@@ -70,17 +70,12 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
         title: "Obsidian Plugin Developer Docs",
         items: [
           {
-            href: "https://buymeacoffee.com/marcusolsson",
-            label: "Buy me a coffee",
-            position: "right",
-          },
-          {
             href: "https://obsidian.md/community",
             label: "Community",
             position: "right",
           },
           {
-            href: "https://github.com/marcusolsson/obsidian-plugin-docs",
+            href: "https://github.com/obsidianmd/obsidian-plugin-docs",
             label: "GitHub",
             position: "right",
           },
@@ -119,7 +114,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/marcusolsson/obsidian-plugin-docs",
+                href: "https://github.com/obsidianmd/obsidian-plugin-docs",
               },
             ],
           },
