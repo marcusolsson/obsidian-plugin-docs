@@ -121,6 +121,12 @@ modify(file: TFile, data: string, options?: DataWriteOptions): Promise<void>;
 modifyBinary(file: TFile, data: ArrayBuffer, options?: DataWriteOptions): Promise<void>;
 ```
 
+### append
+
+```ts
+append(file: TFile, data: string, options?: DataWriteOptions): Promise<void>;
+```
+
 ### copy
 
 ```ts

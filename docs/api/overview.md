@@ -107,6 +107,7 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [renderResults](functions/renderResults.md)
 - [request](functions/request.md)
 - [resolveSubpath](functions/resolveSubpath.md)
+- [sanitizeHTMLToDom](functions/sanitizeHTMLToDom.md)
 - [setIcon](functions/setIcon.md)
 - [sortSearchResults](functions/sortSearchResults.md)
 - [stringifyYaml](functions/stringifyYaml.md)

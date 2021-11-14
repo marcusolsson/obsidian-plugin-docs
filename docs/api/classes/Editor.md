@@ -158,7 +158,7 @@ abstract scrollTo(x?: number | null, y?: number | null): void;
 ### scrollIntoView
 
 ```ts
-abstract scrollIntoView(range: EditorRange, margin?: number): void;
+abstract scrollIntoView(range: EditorRange, center?: boolean): void;
 ```
 
 ### undo
@@ -182,7 +182,13 @@ abstract exec(command: EditorCommandName): void;
 ### transaction
 
 ```ts
-abstract transaction(tx: EditorTransaction): void;
+abstract transaction(tx: EditorTransaction, origin?: string): void;
+```
+
+### wordAt
+
+```ts
+abstract wordAt(pos: EditorPosition): EditorRange | null;
 ```
 
 ### posToOffset

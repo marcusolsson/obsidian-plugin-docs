@@ -111,4 +111,4 @@ registerInterval(id: number): void;
 ```
 
 Registers an interval (from setInterval) to be cancelled when unloading
-Use {@link window.setInterval} instead of {@link setInterval} to avoid TypeScript confusing between Node.js vs Browser API
+Use {@link window.setInterval} instead of {@link setInterval} to avoid TypeScript confusing between NodeJS vs Browser API

@@ -3,7 +3,7 @@
 ## Constructor
 
 ```ts
-constructor(message: string, timeout: number);
+constructor(message: string | DocumentFragment, timeout: number);
 ```
 
 ## Methods
@@ -11,7 +11,7 @@ constructor(message: string, timeout: number);
 ### setMessage
 
 ```ts
-setMessage(message: string): this;
+setMessage(message: string | DocumentFragment): this;
 ```
 
 Change the message of this notice.

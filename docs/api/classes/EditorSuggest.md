@@ -29,6 +29,12 @@ Override this to use a different limit for suggestion items
 
 ## Methods
 
+### setInstructions
+
+```ts
+setInstructions(instructions: Instruction[]): void;
+```
+
 ### onTrigger
 
 ```ts
