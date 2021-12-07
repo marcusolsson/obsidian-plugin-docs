@@ -30,23 +30,33 @@ export default class ExamplePlugin extends Plugin {
 
 If your command is only able to run under certain conditions, then consider using [`checkCallback`](../api/interfaces/Command.md#checkcallback) instead.
 
-When using the `checkCallback`, Obsidian first performs a _check_ to see whether the command can run. To determine whether the callback should perform a check or an action, a `checking` argument is passed to the callback.
+The `checkCallback` runs twice. First, to perform a preliminary check to determine whether the command can run. Second, to perform the action.
 
-- If `checking` is set to `true`, perform a check.
+Since time may pass between the two runs, you need to perform the check during both calls.
+
+To determine whether the callback should perform a preliminary check or an action, a `checking` argument is passed to the callback.
+
+- If `checking` is set to `true`, perform a preliminary check.
 - If `checking` is set to `false`, perform an action.
+
+The command in the following example depends on a required value. In both runs, the callback checks that the value is present but only performs the action if `checking` is `false`.
 
 ```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
   checkCallback: (checking: boolean) => {
-    if (checking) {
-      return isCommandPossible();
+    const value = getRequiredValue();
+
+    if (value) {
+      if (!checking) {
+        doCommand(value);
+      }
+
+      return true
     }
 
-    doCommand();
-
-    return true;
+    return false;
   },
 });
 ```
@@ -78,13 +88,17 @@ this.addCommand({
   id: 'example-command',
   name: 'Example command',
   editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
-    if (checking) {
-      return isCommandPossible();
+    const value = getRequiredValue();
+
+    if (value) {
+      if (!checking) {
+        doCommand(value);
+      }
+
+      return true
     }
 
-    doCommand();
-
-    return true;
+    return false;
   },
 });
 ```
