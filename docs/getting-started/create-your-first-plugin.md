@@ -114,7 +114,7 @@ In this step, you'll make a change to the source code and reload the plugin to r
    ```
 
 1. Restart Obsidian to reload your plugin.
-1. Click the die icon in the sidebar. Make sure it says "Sample Plugin" when you hover it.
+1. Click the dice icon in the sidebar. Make sure it says "Sample Plugin" when you hover it.
 
 ## Next steps
 
