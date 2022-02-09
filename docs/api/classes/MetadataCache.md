@@ -40,19 +40,21 @@ Source paths are all vault absolute paths, similar to `resolvedLinks`.
 getFirstLinkpathDest(linkpath: string, sourcePath: string): TFile | null;
 ```
 
-Get the best match for a linkpath.
+The function gets the best match for a linkpath, and requires two parameters. You need to supply the source path as well so that it can match the closest note to the source you’re calling it from. This lets it resolve the correct note in case there are two with the same name in your vault. 
 
 ### getFileCache
 
 ```ts
 getFileCache(file: TFile): CachedMetadata | null;
 ```
-
+The input for the `getFileCache` is a TFile (also in the API). This is a JS class for a specific file, that you can also get with the metadata cache if you know the name using `getFirstLinkpathDest`. Alternatively, if you know the full path of a file, you can use `getCache`
 ### getCache
 
 ```ts
 getCache(path: string): CachedMetadata;
 ```
+
+Example: `this.app.metadataCache.getCache("A.md")`
 
 ### fileToLinktext
 
