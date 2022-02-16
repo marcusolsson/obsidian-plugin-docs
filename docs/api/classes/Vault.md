@@ -16,6 +16,8 @@ constructor();
 adapter: DataAdapter
 ```
 
+See the methods for the `adapter` property in [`DataAdapter`](https://marcus.se.net/obsidian-plugin-docs/api/interfaces/DataAdapter) interface.
+
 ### configDir
 
 ```ts
