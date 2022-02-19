@@ -80,6 +80,8 @@ setGroup(group: string): void;
 
 ### detach
 
+Detach is responsible for closing the current workspace leaf that is open and bringing the workspace leaf to the empty state.
+
 ```ts
 detach(): void;
 ```
