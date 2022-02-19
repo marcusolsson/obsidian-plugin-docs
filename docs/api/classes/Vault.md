@@ -157,31 +157,37 @@ getMarkdownFiles(): TFile[];
 getFiles(): TFile[];
 ```
 
-### on
+## Events
+
+The below events can emit either a `TFile` or a `TFolder` event. To check which event your processing it's suggested to use `file instanceof TFile` or similar to verify what type of event you are receiving. 
+
+If a folder is renamed this will emit an event for the renaming of the folder and every child file.
+
+### on create
 
 ```ts
 on(name: 'create', callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
 ```
 
-### on
+### on modify
 
 ```ts
 on(name: 'modify', callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
 ```
 
-### on
+### on delete
 
 ```ts
 on(name: 'delete', callback: (file: TAbstractFile) => any, ctx?: any): EventRef;
 ```
 
-### on
+### on rename
 
 ```ts
 on(name: 'rename', callback: (file: TAbstractFile, oldPath: string) => any, ctx?: any): EventRef;
 ```
 
-### on
+### on closed
 
 ```ts
 on(name: 'closed', callback: () => any, ctx?: any): EventRef;
