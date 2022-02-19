@@ -239,268 +239,115 @@ getLastOpenFiles(): string[];
 iterateCodeMirrors(callback: (cm: CodeMirror.Editor) => any): void;
 ```
 
-### on
+## Events
+
+### on quick-preview
 
 ```ts
 on(name: 'quick-preview', callback: (file: TFile, data: string) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
 
-### on
+### on resize
 
 ```ts
 on(name: 'resize', callback: () => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
 
-### on
+### on click
+
+Triggered whenever a click occurs within the workspace.
 
 ```ts
 on(name: 'click', callback: () => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
 
-### on
+### on active-leaf-change
 
 ```ts
 on(name: 'active-leaf-change', callback: (leaf: WorkspaceLeaf | null) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
 
-### on
+### on file-open
+
+Triggered when a file is opened.
 
 ```ts
 on(name: 'file-open', callback: (file: TFile | null) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
-
-### on
+### on layout-change
 
 ```ts
 on(name: 'layout-change', callback: () => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
+### on css-change
 
-### on
+Triggered when the CSS of the app has changed.
 
 ```ts
 on(name: 'css-change', callback: () => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
+### on file-menu
 
-### on
+Triggered when the user opens the context menu on a file, usually by right clicking. This can also be triggered when a folder context menu is opened. Which means can emit either a `TFile` or a `TFolder` event. To check which event your processing it's suggested to use `file instanceof TFile` or similar to verify what type of event you are receiving. 
 
 ```ts
 on(name: 'file-menu', callback: (menu: Menu, file: TAbstractFile, source: string, leaf?: WorkspaceLeaf) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
+### on editor-menu
 
-### on
+Triggered when the user opens the context menu on an editor.
 
 ```ts
 on(name: 'editor-menu', callback: (menu: Menu, editor: Editor, view: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
+### on editor-change
 
-### on
+Triggered when changes to an editor has been applied, either programmatically or from a user event.
 
 ```ts
 on(name: 'editor-change', callback: (editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
+### on editor-paste
+
 Triggered when the editor receives a paste event.
 Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
 Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
-
-### on
 
 ```ts
 on(name: 'editor-paste', callback: (evt: ClipboardEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
+### on editor-drop
+
 Triggered when the editor receives a drop event.
 Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
 Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
-
-### on
 
 ```ts
 on(name: 'editor-drop', callback: (evt: DragEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
-
-### on
+### on codemirror
 
 ```ts
 on(name: 'codemirror', callback: (cm: CodeMirror.Editor) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
+### on quit
 
-### on
+Triggered when the app is about to quit. Not guaranteed to actually run.
 
 ```ts
 on(name: 'quit', callback: (tasks: Tasks) => any, ctx?: any): EventRef;
 ```
 
-Triggered when the CSS of the app has changed.
-Triggered when the user opens the context menu on a file.
-Triggered when the user opens the context menu on an editor.
-Triggered when changes to an editor has been applied, either programmatically or from a user event.
-Triggered when the editor receives a paste event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the editor receives a drop event.
-Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
-Use `evt.preventDefault()` to indicate that you've handled the event.
-Triggered when the app is about to quit. Not guaranteed to actually run.
-Perform some best effort cleanup here.
