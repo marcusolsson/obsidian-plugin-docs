@@ -25,7 +25,12 @@ export default class ExamplePlugin extends Plugin {
 
 [`onunload()`](../api/classes/Component.md#onunload) runs when the plugin is disabled. Any resources that your plugin is using must be released here to avoid affecting the performance of Obsidian after your plugin has been disabled.
 
-To better understand when these methods are called, you can print a message to the console whenever the plugin loads and unloads. The console is a valuable "behind the scenes" tool for developers to use to monitor the status of their code. To view the console, press ctrl-shift-i in Windows/Linux, or cmd-option-i on the Mac. Click on the Console Tab in the resultant side window that appears. 
+To better understand when these methods are called, you can print a message to the console whenever the plugin loads and unloads. The console is a valuable tool that lets developers monitor the status of their code. 
+
+To view the console:
+
+1. Toggle the Developer Tools by pressing Ctrl+Shift+I in Windows and Linux, or Cmd-Option-I on macOS. 
+1. Click on the Console tab in the Developer Tools window. 
 
 ```ts {5,8} title="main.ts"
 import { Plugin } from "obsidian";
