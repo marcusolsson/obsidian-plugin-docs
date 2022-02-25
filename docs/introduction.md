@@ -22,7 +22,7 @@ If this site doesn't help you, maybe one of these resources might:
 - [Obsidian API](https://github.com/obsidianmd/obsidian-api)
 
 **Unofficial resources by community members:**
-
+- [for Plugin Developers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/for+Plugin+Developers "for Plugin Developers - Obsidian Hub - Obsidian Publish") in Obsidian Hub
 - [Plugins mini FAQ](https://forum.obsidian.md/t/plugins-mini-faq/7737)
 - [How to create a plugin for Obsidian](https://www.youtube.com/watch?v=XaES2G3PVpg) by [@phibr0](https://github.com/phibr0)
 - [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ)
