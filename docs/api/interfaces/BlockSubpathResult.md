@@ -13,3 +13,9 @@ type: "block"
 ```ts
 block: BlockCache
 ```
+
+### list
+
+```ts
+list: ListItemCache
+```

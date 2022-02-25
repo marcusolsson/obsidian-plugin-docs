@@ -76,4 +76,5 @@ Overrides `editorCallback`, `callback` and `checkCallback`
 hotkeys: Hotkey[]
 ```
 
-Sets the default hotkey
+Sets the default hotkey. It is recommended for plugins to avoid setting default hotkeys if possible,
+to avoid conflicting hotkeys with one that's set by the user, even though customized hotkeys have higher priority.

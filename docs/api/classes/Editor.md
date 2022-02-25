@@ -202,3 +202,9 @@ abstract posToOffset(pos: EditorPosition): number;
 ```ts
 abstract offsetToPos(offset: number): EditorPosition;
 ```
+
+### processLines
+
+```ts
+processLines<T>(read: (line: number, lineText: string) => T | null, write: (line: number, lineText: string, value: T | null) => EditorChange | void, ignoreEmpty?: boolean): void;
+```

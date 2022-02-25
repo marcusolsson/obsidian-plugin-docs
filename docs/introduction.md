@@ -28,4 +28,4 @@ If this site doesn't help you, maybe one of these resources might:
 - [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ)
 - [Unofficial API FAQ](https://liamca.in/Obsidian/API+FAQ/index) by [Liam Cain](https://liamca.in)
 - [Obsidian Tools](https://github.com/obsidian-tools/obsidian-tools)
-
+- [Getting Started with CodeMirror 6](https://github.com/nothingislost/obsidian-cm6-attributes#getting-started-with-codemirror-6) by [NothingIsLost](https://github.com/nothingislost)

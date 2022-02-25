@@ -1,5 +1,7 @@
 # TAbstractFile
 
+This can be either a `TFile` or a `TFolder`.
+
 ## Constructor
 
 ```ts

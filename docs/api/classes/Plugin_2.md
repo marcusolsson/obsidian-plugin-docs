@@ -67,13 +67,13 @@ registerExtensions(extensions: string[], viewType: string): void;
 ### registerMarkdownPostProcessor
 
 ```ts
-registerMarkdownPostProcessor(postProcessor: MarkdownPostProcessor): MarkdownPostProcessor;
+registerMarkdownPostProcessor(postProcessor: MarkdownPostProcessor, sortOrder?: number): MarkdownPostProcessor;
 ```
 
 ### registerMarkdownCodeBlockProcessor
 
 ```ts
-registerMarkdownCodeBlockProcessor(language: string, handler: (source: string, el: HTMLElement, ctx: MarkdownPostProcessorContext) => Promise<any> | void): MarkdownPostProcessor;
+registerMarkdownCodeBlockProcessor(language: string, handler: (source: string, el: HTMLElement, ctx: MarkdownPostProcessorContext) => Promise<any> | void, sortOrder?: number): MarkdownPostProcessor;
 ```
 
 Register a special post processor that handles fenced code given a language and a handler.
@@ -88,6 +88,16 @@ registerCodeMirror(callback: (cm: CodeMirror.Editor) => any): void;
 
 Runs callback on all currently loaded instances of CodeMirror,
 then registers the callback for all future CodeMirror instances.
+
+### registerEditorExtension
+
+```ts
+registerEditorExtension(extension: Extension): void;
+```
+
+Registers a CodeMirror 6 extension.
+To reconfigure cm6 extensions for your plugin on the fly, you can pass an array here and dynamically
+modify it. Once this array is modified, call `Workspace.updateOptions()` to have the changes applied.
 
 ### registerObsidianProtocolHandler
 

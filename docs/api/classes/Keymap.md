@@ -8,6 +8,18 @@ constructor();
 
 ## Methods
 
+### pushScope
+
+```ts
+pushScope(scope: Scope): void;
+```
+
+### popScope
+
+```ts
+popScope(scope: Scope): void;
+```
+
 ### isModifier
 
 ```ts
