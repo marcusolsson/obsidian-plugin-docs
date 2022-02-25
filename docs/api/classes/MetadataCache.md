@@ -68,7 +68,7 @@ If not unique, use full path.
 ### on
 
 ```ts
-on(name: 'changed', callback: (file: TFile) => any, ctx?: any): EventRef;
+on(name: 'changed', callback: (file: TFile, data: string, cache: CachedMetadata) => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.

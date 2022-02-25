@@ -3,7 +3,7 @@
 ## Constructor
 
 ```ts
-constructor();
+constructor(parent: Scope);
 ```
 
 ## Methods

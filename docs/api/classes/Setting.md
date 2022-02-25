@@ -143,3 +143,9 @@ then(cb: (setting: this) => any): this;
 ```
 
 Facilitates chaining
+
+### clear
+
+```ts
+clear(): this;
+```

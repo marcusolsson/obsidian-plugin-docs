@@ -8,6 +8,18 @@ constructor();
 
 ## Properties
 
+### keymap
+
+```ts
+keymap: Keymap
+```
+
+### scope
+
+```ts
+scope: Scope
+```
+
 ### workspace
 
 ```ts

@@ -43,3 +43,9 @@ headers: Record<string, string>
 ```ts
 withCredentials: boolean
 ```
+
+### req
+
+```ts
+req: XMLHttpRequest
+```

@@ -67,7 +67,7 @@ Called when the user makes a selection.
 ### getSuggestions
 
 ```ts
-abstract getSuggestions(query: string): T[];
+abstract getSuggestions(query: string): T[] | Promise<T[]>;
 ```
 
 ### renderSuggestion

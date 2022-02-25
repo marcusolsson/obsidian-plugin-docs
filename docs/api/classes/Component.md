@@ -107,7 +107,7 @@ Registers an key event to be detached when unloading
 ### registerInterval
 
 ```ts
-registerInterval(id: number): void;
+registerInterval(id: number): number;
 ```
 
 Registers an interval (from setInterval) to be cancelled when unloading

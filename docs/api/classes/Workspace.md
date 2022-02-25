@@ -126,7 +126,7 @@ splitLeafOrActive(leaf?: WorkspaceLeaf, direction?: SplitDirection): WorkspaceLe
 ### duplicateLeaf
 
 ```ts
-duplicateLeaf(leaf: WorkspaceLeaf, direction?: SplitDirection): Promise<void>;
+duplicateLeaf(leaf: WorkspaceLeaf, direction?: SplitDirection): Promise<WorkspaceLeaf>;
 ```
 
 ### getUnpinnedLeaf
@@ -233,6 +233,15 @@ revealLeaf(leaf: WorkspaceLeaf): void;
 getLastOpenFiles(): string[];
 ```
 
+### updateOptions
+
+```ts
+updateOptions(): void;
+```
+
+Calling this function will update/reconfigure the options of all markdown panes.
+It is fairly expensive, so it should not be called frequently.
+
 ### iterateCodeMirrors
 
 ```ts
@@ -280,7 +289,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: 'click', callback: () => any, ctx?: any): EventRef;
+on(name: 'click', callback: (evt: MouseEvent) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
