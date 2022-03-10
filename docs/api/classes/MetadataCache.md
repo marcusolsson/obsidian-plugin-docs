@@ -72,6 +72,21 @@ on(name: 'changed', callback: (file: TFile, data: string, cache: CachedMetadata)
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
+but it could be null in case the file was not successfully cached previously.
+Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
+This happens sometimes after a file has been indexed.
+Called when all files has been resolved. This will be fired each time files get modified after the initial load.
+
+### on
+
+```ts
+on(name: 'deleted', callback: (file: TFile, prevCache: CachedMetadata | null) => any, ctx?: any): EventRef;
+```
+
+Called when a file has been indexed, and its (updated) cache is now available.
+Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
+but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
 This happens sometimes after a file has been indexed.
 Called when all files has been resolved. This will be fired each time files get modified after the initial load.
@@ -83,6 +98,8 @@ on(name: 'resolve', callback: (file: TFile) => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
+but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
 This happens sometimes after a file has been indexed.
 Called when all files has been resolved. This will be fired each time files get modified after the initial load.
@@ -94,6 +111,8 @@ on(name: 'resolved', callback: () => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
+but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
 This happens sometimes after a file has been indexed.
 Called when all files has been resolved. This will be fired each time files get modified after the initial load.

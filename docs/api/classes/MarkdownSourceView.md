@@ -13,7 +13,7 @@ constructor(view: MarkdownView);
 ### cmEditor
 
 ```ts
-cmEditor: Editor
+cmEditor: any
 ```
 
 ### hoverPopover
