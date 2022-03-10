@@ -1,5 +1,4 @@
 # DataAdapter
-
 ## Methods
 
 ### getName
@@ -57,6 +56,7 @@ append: (normalizedPath: string, data: string, options?: DataWriteOptions) => Pr
 ```
 
 ### getResourcePath
+To learn what is the different between `getBasePath`, `getFullPath`, `getRealPath`, `getFullRealPath`, visit [this forum thread](https://forum.obsidian.md/t/what-are-the-differences-between-these-adapter-methods-getbasepath-getfullpath-getrealpath-getfullrealpath/32622?u=ooker) 
 
 ```ts
 getResourcePath: (normalizedPath: string) => string
@@ -103,3 +103,4 @@ rename: (normalizedPath: string, normalizedNewPath: string) => Promise<void>
 ```ts
 copy: (normalizedPath: string, normalizedNewPath: string) => Promise<void>
 ```
+
