@@ -50,4 +50,10 @@ fileManager: FileManager
 lastEvent: UserEvent
 ```
 
+### commands
+
+```ts
+commands: Command[]
+```
+
 The last known user interaction event, to help commands find out what modifier keys are pressed.
