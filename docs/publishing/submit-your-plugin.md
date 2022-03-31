@@ -64,7 +64,7 @@ In this step, you'll submit your plugin to the Obsidian team for review.
 
    Remember to add a comma after the closing brace, `}`, of the previous entry.
 
-1. [Create a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+1. [Create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 1. Follow the instructions in the description field for the pull request to create a pull request from the required template.
 1. Click **Create pull request**.
 1. Fill in the details in the description for the pull request. For the checkboxes, insert an `x` between the brackets, `[x]`, to mark them as done.
