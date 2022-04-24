@@ -4,10 +4,6 @@ sidebar_position: 78
 
 # Svelte
 
-:::info
-This guide is written for an older version of the sample plugin that uses Rollup. If you know how to adapt it for ESBuild, consider [contributing](../contribute.md) the changes.
-:::
-
 This guide explains how to configure your plugin to use [Svelte](https://svelte.dev/), a light-weight alternative to traditional frameworks like React and Vue.
 
 Svelte is built around a compiler that preprocesses your code and outputs vanilla JavaScript, which means it doesn't need to load any libraries at run time. This also means that it doesn't need a virtual DOM to track state changes, which allows your plugin to run with minimal additional overhead.
@@ -26,8 +22,8 @@ To build a Svelte application, you need to install the dependencies and configur
 
 1. Add Svelte to your plugin dependencies:
 
-   ```bash
-   npm install --save-dev svelte svelte-preprocess @tsconfig/svelte rollup-plugin-svelte
+   ```bash npm2yarn
+   npm install --save-dev svelte svelte-preprocess @tsconfig/svelte esbuild-svelte
    ```
 
 1. Extend the `tsconfig.json` to enable additional type checking for common Svelte issues. The `types` property is important for TypeScript to recognize `.svelte` files.
@@ -49,34 +45,27 @@ To build a Svelte application, you need to install the dependencies and configur
    "inlineSourceMap": true,
    ```
 
-1. In `rollup.config.js`, add the following imports to the top of the file:
+1. In `esbuild.config.mjs`, add the following imports to the top of the file:
 
-   ```js title="rollup.config.js"
-   import svelte from "rollup-plugin-svelte";
+   ```js title="esbuild.config.mjs"
+   import esbuildSvelte from "esbuild-svelte";
    import sveltePreprocess from "svelte-preprocess";
    ```
 
 1. Add Svelte to the list of plugins.
 
-   ```js title="rollup.config.js" {14}
-   export default {
-     input: 'main.ts',
-     output: {
-       dir: '.',
-       sourcemap: 'inline',
-       sourcemapExcludeSources: isProd,
-       format: 'cjs',
-       exports: 'default',
-       banner,
-     },
-     external: ['obsidian'],
-     plugins: [
-       typescript(),
-       svelte({ emitCss: false, preprocess: sveltePreprocess() }),
-       nodeResolve({browser: true}),
-       commonjs(),
-     ]
-   };
+   ```js title="esbuild.config.mjs" {15}
+    esbuild
+		.build({
+			plugins: [
+				esbuildSvelte({
+					compilerOptions: { css: true },
+					preprocess: sveltePreprocess(),
+				}),
+			],
+			...
+		})
+	.catch(() => process.exit(1));
    ```
 
 ## Create a Svelte component
