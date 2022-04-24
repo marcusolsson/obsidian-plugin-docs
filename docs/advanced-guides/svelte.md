@@ -63,7 +63,7 @@ To build a Svelte application, you need to install the dependencies and configur
 					preprocess: sveltePreprocess(),
 				}),
 			],
-			...
+			// ...
 		})
 	.catch(() => process.exit(1));
    ```
