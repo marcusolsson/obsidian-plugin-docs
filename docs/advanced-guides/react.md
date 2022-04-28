@@ -99,6 +99,9 @@ Another alternative is to create a React context for the app to make it globally
 1. Use `React.createContext()` to create a new app context.
 
    ```tsx title="context.ts"
+   import * as React from "react";
+   import { App } from 'obsidian';
+   
    export const AppContext = React.createContext<App>(undefined);
    ```
 
