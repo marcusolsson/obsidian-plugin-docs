@@ -130,9 +130,9 @@ Another alternative is to create a React context for the app to make it globally
    import { useApp } from "./hooks";
 
    export const ReactView = () => {
-     const { vault } = useApp();
+     const { app } = useApp();
 
-     return <h4>{vault.getName()}</h4>;
+     return <h4>{app.getName()}</h4>;
    };
    ```
 
