@@ -123,7 +123,7 @@ this.addSettingTab(new ExampleSettingTab(this.app, this));
 Here, the `ExampleSettingTab` is a class that extends [`PluginSettingTab`](../api/classes/PluginSettingTab.md):
 
 ```ts title="settings.ts"
-import ExamplePlugin from "main";
+import ExamplePlugin from "./main";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
 export class ExampleSettingTab extends PluginSettingTab {
