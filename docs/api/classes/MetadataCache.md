@@ -51,7 +51,7 @@ getFileCache(file: TFile): CachedMetadata | null;
 ### getCache
 
 ```ts
-getCache(path: string): CachedMetadata;
+getCache(path: string): CachedMetadata | null;
 ```
 
 ### fileToLinktext

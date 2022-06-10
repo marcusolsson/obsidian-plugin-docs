@@ -82,6 +82,14 @@ append(normalizedPath: string, data: string, options?: DataWriteOptions): Promis
 getResourcePath(normalizedPath: string): string;
 ```
 
+### getFilePath
+
+```ts
+getFilePath(normalizedPath: string): string;
+```
+
+Returns the file:// path of this file
+
 ### remove
 
 ```ts
