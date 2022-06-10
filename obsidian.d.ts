@@ -20,6 +20,7 @@ declare global {
         contains(target: T): boolean;
         remove(target: T): void;
         shuffle(): this;
+        unique(): T[];
     }
 }
 declare global {
@@ -87,6 +88,11 @@ declare global {
     }
 }
 declare global {
+    interface Element extends Node {
+        getCssPropertyValue(property: string, pseudoElement?: string): string;
+    }
+}
+declare global {
     interface HTMLElement extends Element {
         show(): void;
         hide(): void;
@@ -119,6 +125,10 @@ declare global {
         findAll(selector: string): HTMLElement[];
         findAllSelf(selector: string): HTMLElement[];
     }
+    interface DocumentFragment extends Node, NonElementParentNode, ParentNode {
+        find(selector: string): HTMLElement;
+        findAll(selector: string): HTMLElement[];
+    }
 }
 declare global {
     interface DomElementInfo {
@@ -147,6 +157,7 @@ declare global {
         value?: string;
         type?: string;
         prepend?: boolean;
+        placeholder?: string;
         href?: string;
     }
     interface Node {
@@ -206,6 +217,7 @@ declare global {
     function ajax(options: AjaxOptions): void;
     function ajaxPromise(options: AjaxOptions): Promise<any>;
     function ready(fn: () => any): void;
+    function sleep(ms: number): Promise<void>;
 }
 
 /**
@@ -216,7 +228,7 @@ export class AbstractTextComponent<T extends HTMLInputElement | HTMLTextAreaElem
      * @public
      */
     inputEl: T;
-    
+
     /**
      * @public
      */
@@ -266,12 +278,12 @@ export let apiVersion: string;
  * @public
  */
 export class App {
-    
+
     /** @public */
     keymap: Keymap;
     /** @public */
     scope: Scope;
-    
+
     /** @public */
     workspace: Workspace;
 
@@ -290,6 +302,15 @@ export class App {
     lastEvent: UserEvent | null;
 
 }
+
+/** @public */
+export function arrayBufferToBase64(buffer: ArrayBuffer): string;
+
+/** @public */
+export function arrayBufferToHex(data: ArrayBuffer): string;
+
+/** @public */
+export function base64ToArrayBuffer(base64: string): ArrayBuffer;
 
 /**
  * @public
@@ -342,7 +363,7 @@ export class ButtonComponent extends BaseComponent {
      * @public
      */
     buttonEl: HTMLButtonElement;
-    
+
     /**
      * @public
      */
@@ -432,12 +453,12 @@ export interface CacheItem {
      * @public
      */
     position: Pos;
-    
+
 }
 
 /** @public */
 export interface CloseableComponent {
-    
+
     /** @public */
     close(): any;
 }
@@ -482,7 +503,7 @@ export interface Command {
      * @public
      */
     checkCallback?: (checking: boolean) => boolean | void;
-    
+
     /**
      * A command callback that is only triggered when the user is in an editor.
      * Overrides `callback` and `checkCallback`
@@ -554,17 +575,17 @@ export class Component {
      * Registers an DOM event to be detached when unloading
      * @public
      */
-    registerDomEvent<K extends keyof WindowEventMap>(el: Window, type: K, callback: (this: HTMLElement, ev: WindowEventMap[K]) => any): void;
+    registerDomEvent<K extends keyof WindowEventMap>(el: Window, type: K, callback: (this: HTMLElement, ev: WindowEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
     /**
      * Registers an DOM event to be detached when unloading
      * @public
      */
-    registerDomEvent<K extends keyof DocumentEventMap>(el: Document, type: K, callback: (this: HTMLElement, ev: DocumentEventMap[K]) => any): void;
+    registerDomEvent<K extends keyof DocumentEventMap>(el: Document, type: K, callback: (this: HTMLElement, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
     /**
      * Registers an DOM event to be detached when unloading
      * @public
      */
-    registerDomEvent<K extends keyof HTMLElementEventMap>(el: HTMLElement, type: K, callback: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any): void;
+    registerDomEvent<K extends keyof HTMLElementEventMap>(el: HTMLElement, type: K, callback: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
     /**
      * Registers an key event to be detached when unloading
      * @public
@@ -592,7 +613,7 @@ export interface Constructor<T> {
  * @public
  */
 export interface DataAdapter {
-    
+
     /**
      * @public
      */
@@ -654,7 +675,7 @@ export interface DataAdapter {
      * @public
      */
     remove(normalizedPath: string): Promise<void>;
-    
+
     /**
      * @public
      */
@@ -673,7 +694,7 @@ export interface DataWriteOptions {
     ctime?: number;
     /** @public */
     mtime?: number;
-    
+
 }
 
 /**
@@ -703,7 +724,7 @@ export class DropdownComponent extends ValueComponent<string> {
      * @public
      */
     selectEl: HTMLSelectElement;
-    
+
     /**
      * @public
      */
@@ -832,7 +853,7 @@ export interface EditorChange extends EditorRangeOrCaret {
 }
 
 /** @public */
-export type EditorCommandName = 'goUp' | 'goDown' | 'goLeft' | 'goRight' | 'goStart' | 'goEnd' | 'indentMore' | 'indentLess' | 'newlineAndIndent' | 'swapLineUp' | 'swapLineDown' | 'deleteLine' | 'toggleFold' | 'foldAll' | 'unfoldAll';
+export type EditorCommandName = 'goUp' | 'goDown' | 'goLeft' | 'goRight' | 'goStart' | 'goEnd' | 'goWordLeft' | 'goWordRight' | 'indentMore' | 'indentLess' | 'newlineAndIndent' | 'swapLineUp' | 'swapLineDown' | 'deleteLine' | 'toggleFold' | 'foldAll' | 'unfoldAll';
 
 /**
  * Use this StateField to get a reference to the EditorView
@@ -905,7 +926,7 @@ export abstract class EditorSuggest<T> extends PopoverSuggest<T> {
      * @public
      */
     setInstructions(instructions: Instruction[]): void;
-    
+
     /**
      * Based on the editor line and cursor position, determine if this EditorSuggest should be triggered at this moment.
      * Typically, you would run a regular expression on the current line text before the cursor.
@@ -1021,7 +1042,7 @@ export class ExtraButtonComponent extends BaseComponent {
      * @public
      */
     extraSettingsEl: HTMLElement;
-    
+
     /**
      * @public
      */
@@ -1141,16 +1162,21 @@ export class FileSystemAdapter implements DataAdapter {
      * @public
      */
     append(normalizedPath: string, data: string, options?: DataWriteOptions): Promise<void>;
-    
+
     /**
      * @public
      */
     getResourcePath(normalizedPath: string): string;
     /**
+     * Returns the file:// path of this file
+     * @public
+     */
+    getFilePath(normalizedPath: string): string;
+    /**
      * @public
      */
     remove(normalizedPath: string): Promise<void>;
-    
+
     /**
      * @public
      */
@@ -1163,7 +1189,7 @@ export class FileSystemAdapter implements DataAdapter {
      * @public
      */
     exists(normalizedPath: string, sensitive?: boolean): Promise<boolean>;
-    
+
     /**
      * @public
      */
@@ -1311,8 +1337,11 @@ export abstract class FuzzySuggestModal<T> extends SuggestModal<FuzzyMatch<T>> {
  */
 export function getAllTags(cache: CachedMetadata): string[] | null;
 
+/** @public */
+export function getBlobArrayBuffer(blob: Blob): Promise<ArrayBuffer>;
+
 /**
-@public
+ * @public
  */
 export function getLinkpath(linktext: string): string;
 
@@ -1348,6 +1377,9 @@ export interface HeadingSubpathResult extends SubpathResult {
     next: HeadingCache;
 }
 
+/** @public */
+export function hexToArrayBuffer(hex: string): ArrayBuffer;
+
 /**
  * @public
  */
@@ -1356,7 +1388,7 @@ export interface Hotkey {
     modifiers: Modifier[];
     /** @public */
     key: string;
-    
+
 }
 
 /**
@@ -1433,12 +1465,12 @@ export abstract class ItemView extends View {
      * @public
      */
     onMoreOptionsMenu(menu: Menu): void;
-    
+
     /**
      * @public
      */
     addAction(icon: string, title: string, callback: (evt: MouseEvent) => any, size?: number): HTMLElement;
-    
+
     /**
      * @public
      */
@@ -1471,7 +1503,7 @@ export class Keymap {
      * @public
      */
     static isModifier(evt: MouseEvent | TouchEvent | KeyboardEvent, modifier: Modifier): boolean;
-    
+
     /**
      * Returns true if the modifier key Cmd/Ctrl is pressed OR if this is a middle-click MouseEvent.
      * @public
@@ -1493,7 +1525,7 @@ export interface KeymapContext extends KeymapInfo {
 export interface KeymapEventHandler extends KeymapInfo {
     /** @public */
     scope: Scope;
-    
+
 }
 
 /**
@@ -1679,7 +1711,7 @@ export interface MarkdownPostProcessorContext {
     sourcePath: string;
     /** @public */
     frontmatter: any | null | undefined;
-    
+
     /**
      * Adds a child component that will have its lifecycle managed by the renderer.
      *
@@ -1721,7 +1753,7 @@ export class MarkdownPreviewRenderer {
      * @public
      */
     static createCodeBlockPostProcessor(language: string, handler: (source: string, el: HTMLElement, ctx: MarkdownPostProcessorContext) => Promise<any> | void): (el: HTMLElement, ctx: MarkdownPostProcessorContext) => void;
-    
+
 }
 
 /**
@@ -1746,7 +1778,7 @@ export class MarkdownPreviewView extends MarkdownRenderer implements MarkdownSub
      * @public
      */
     clear(): void;
-    
+
     /**
      * @public
      */
@@ -1898,7 +1930,7 @@ export class MarkdownView extends TextFileView {
      * @public
      */
     previewMode: MarkdownPreviewView;
-    
+
     /**
      * @public
      */
@@ -1951,9 +1983,10 @@ export type MarkdownViewModeType = 'source' | 'preview';
 export class Menu extends Component {
 
     /**
+     * As of 0.14.3, the `app` parameter is no longer required.
      * @public
      */
-    constructor(app: App);
+    constructor(app?: any);
 
     /**
      * @public
@@ -2003,7 +2036,7 @@ export class MenuItem {
      * @public
      */
     setIcon(icon: string | null, size?: number): this;
-    
+
     /**
      * @public
      */
@@ -2012,15 +2045,17 @@ export class MenuItem {
      * @public
      */
     setDisabled(disabled: boolean): this;
+
     /**
      * @public
      */
     setIsLabel(isLabel: boolean): this;
+
     /**
      * @public
      */
     onClick(callback: (evt: MouseEvent | KeyboardEvent) => any): this;
-    
+
 }
 
 /**
@@ -2046,7 +2081,7 @@ export class MetadataCache extends Events {
     /**
      * @public
      */
-    getCache(path: string): CachedMetadata;
+    getCache(path: string): CachedMetadata | null;
 
     /**
      * Generates a linktext for a file.
@@ -2123,12 +2158,12 @@ export class Modal implements CloseableComponent {
      * @public
      */
     contentEl: HTMLElement;
-    
+
     /**
      * @public
      */
     shouldRestoreSelection: boolean;
-    
+
     /**
      * @public
      */
@@ -2172,7 +2207,7 @@ export class MomentFormatComponent extends TextComponent {
      * @public
      */
     sampleEl: HTMLElement;
-    
+
     /**
      * Sets the default format when input is cleared. Also used for placeholder.
      * @public
@@ -2205,7 +2240,7 @@ export function normalizePath(path: string): string;
  * @public
  */
 export class Notice {
-    
+
     /**
      * @public
      */
@@ -2240,7 +2275,14 @@ export type ObsidianProtocolHandler = (params: ObsidianProtocolData) => any;
  * @public
  */
 export interface OpenViewState {
-
+    /** @public */
+    state?: any;
+    /** @public */
+    eState?: any;
+    /** @public */
+    active?: boolean;
+    /** @public */
+    group?: WorkspaceLeaf;
 }
 
 /**
@@ -2264,15 +2306,15 @@ export function parseFrontMatterStringArray(frontmatter: any | null, key: string
 export function parseFrontMatterTags(frontmatter: any | null): string[] | null;
 
 /**
-@public
+ * @public
  */
 export function parseLinktext(linktext: string): {
     /**
-    @public
+     * @public
      */
     path: string;
     /**
-    @public
+     * @public
      */
     subpath: string;
 };
@@ -2417,7 +2459,7 @@ export abstract class Plugin_2 extends Component {
      * @public
      */
     saveData(data: any): Promise<void>;
-    
+
 }
 export { Plugin_2 as Plugin }
 
@@ -2467,7 +2509,7 @@ export interface PluginManifest {
  * @public
  */
 export abstract class PluginSettingTab extends SettingTab {
-    
+
     /**
      * @public
      */
@@ -2649,6 +2691,8 @@ export interface RequestUrlParam {
     body?: string | ArrayBuffer;
     /** @public */
     headers?: Record<string, string>;
+    /** @public */
+    throw?: boolean;
 }
 
 /** @public */
@@ -2690,7 +2734,7 @@ export class Scope {
      * @public
      */
     constructor(parent?: Scope);
-    
+
     /**
      * @public
      * @param modifiers - `Mod`, `Ctrl`, `Meta`, `Shift`, or `Alt`. `Mod` translates to `Meta` on macOS and `Ctrl` otherwise.
@@ -2702,7 +2746,7 @@ export class Scope {
      * @public
      */
     unregister(handler: KeymapEventHandler): void;
-    
+
 }
 
 /**
@@ -2713,7 +2757,7 @@ export class SearchComponent extends AbstractTextComponent<HTMLInputElement> {
      * @public
      */
     clearButtonEl: HTMLElement;
-    
+
     /**
      * @public
      */
@@ -2722,7 +2766,7 @@ export class SearchComponent extends AbstractTextComponent<HTMLInputElement> {
      * @public
      */
     onChanged(): void;
-    
+
 }
 
 /**
@@ -2878,7 +2922,7 @@ export abstract class SettingTab {
      * @public
      */
     app: App;
-    
+
     /**
      * @public
      */
@@ -3080,7 +3124,7 @@ export interface TagCache extends CacheItem {
  * @public
  */
 export class Tasks {
-    
+
     /**
      * @public
      */
@@ -3138,12 +3182,12 @@ export abstract class TextFileView extends EditableFileView {
      * @public
      */
     requestSave: () => void;
-    
+
     /**
      * @public
      */
     constructor(leaf: WorkspaceLeaf);
-    
+
     /**
      * @public
      */
@@ -3207,7 +3251,7 @@ export class TFolder extends TAbstractFile {
      * @public
      */
     children: TAbstractFile[];
-    
+
     /**
      * @public
      */
@@ -3331,7 +3375,7 @@ export class Vault extends Events {
      * @public
      */
     readBinary(file: TFile): Promise<ArrayBuffer>;
-    
+
     /**
      * @public
      */
@@ -3403,12 +3447,12 @@ export class Vault extends Events {
      * @public
      */
     on(name: 'rename', callback: (file: TAbstractFile, oldPath: string) => any, ctx?: any): EventRef;
-    
+
     /**
      * @public
      */
     on(name: 'closed', callback: () => any, ctx?: any): EventRef;
-    
+
 }
 
 /**
@@ -3435,7 +3479,7 @@ export abstract class View extends Component {
      * @public
      */
     containerEl: HTMLElement;
-    
+
     /**
      * @public
      */
@@ -3486,7 +3530,7 @@ export abstract class View extends Component {
      * @public
      */
     onHeaderMenu(menu: Menu): void;
-    
+
 }
 
 /**
@@ -3498,7 +3542,7 @@ export type ViewCreator = (leaf: WorkspaceLeaf) => View;
  * @public
  */
 export interface ViewState {
-    
+
     /**
      * @public
      */
@@ -3532,7 +3576,7 @@ export interface ViewStateResult {
  * @public
  */
 export class Workspace extends Events {
-    
+
     /**
      * @public
      */
@@ -3584,7 +3628,7 @@ export class Workspace extends Events {
      * @public
      */
     changeLayout(workspace: any): Promise<void>;
-    
+
     /**
      * @public
      */
@@ -3681,7 +3725,7 @@ export class Workspace extends Events {
      * @public
      */
     detachLeavesOfType(viewType: string): void;
-    
+
     /**
      * @public
      */
@@ -3722,7 +3766,7 @@ export class Workspace extends Events {
      * @public
      */
     on(name: 'file-open', callback: (file: TFile | null) => any, ctx?: any): EventRef;
-    
+
     /**
      * @public
      */
@@ -3737,7 +3781,7 @@ export class Workspace extends Events {
      * @public
      */
     on(name: 'file-menu', callback: (menu: Menu, file: TAbstractFile, source: string, leaf?: WorkspaceLeaf) => any, ctx?: any): EventRef;
-    
+
     /**
      * Triggered when the user opens the context menu on an editor.
      * @public
@@ -3774,7 +3818,7 @@ export class Workspace extends Events {
      * @public
      */
     on(name: 'quit', callback: (tasks: Tasks) => any, ctx?: any): EventRef;
-    
+
 }
 
 /**
@@ -3803,7 +3847,7 @@ export class WorkspaceLeaf extends WorkspaceItem {
      * @public
      */
     openFile(file: TFile, openState?: OpenViewState): Promise<void>;
-    
+
     /**
      * @public
      */
@@ -3825,7 +3869,7 @@ export class WorkspaceLeaf extends WorkspaceItem {
      * @public
      */
     setEphemeralState(state: any): void;
-    
+
     /**
      * @public
      */
@@ -3846,7 +3890,7 @@ export class WorkspaceLeaf extends WorkspaceItem {
      * @public
      */
     detach(): void;
-    
+
     /**
      * @public
      */
@@ -3881,10 +3925,10 @@ export class WorkspaceMobileDrawer extends WorkspaceParent {
 
     /** @public */
     expand(): void;
-    
+
     /** @public */
     collapse(): void;
-    
+
     /** @public */
     toggle(): void;
 
@@ -3936,3 +3980,12 @@ export class WorkspaceTabs extends WorkspaceParent {
 }
 
 export { }
+
+/** @public */
+declare global {
+	/**
+	 * Global reference to the app.
+	 * @public
+	 */
+	var app: App;
+}
