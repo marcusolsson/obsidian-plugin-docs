@@ -31,3 +31,9 @@ body: string | ArrayBuffer
 ```ts
 headers: Record<string, string>
 ```
+
+### throw
+
+```ts
+throw: boolean
+```

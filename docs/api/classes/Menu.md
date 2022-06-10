@@ -5,7 +5,7 @@ Extends `Component`
 ## Constructor
 
 ```ts
-constructor(app: App);
+constructor(app: any);
 ```
 
 ## Methods

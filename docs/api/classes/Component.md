@@ -75,7 +75,7 @@ Registers an event to be detached when unloading
 ### registerDomEvent
 
 ```ts
-registerDomEvent<K extends keyof WindowEventMap>(el: Window, type: K, callback: (this: HTMLElement, ev: WindowEventMap[K]) => any): void;
+registerDomEvent<K extends keyof WindowEventMap>(el: Window, type: K, callback: (this: HTMLElement, ev: WindowEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 ```
 
 Registers an DOM event to be detached when unloading
@@ -83,7 +83,7 @@ Registers an DOM event to be detached when unloading
 ### registerDomEvent
 
 ```ts
-registerDomEvent<K extends keyof DocumentEventMap>(el: Document, type: K, callback: (this: HTMLElement, ev: DocumentEventMap[K]) => any): void;
+registerDomEvent<K extends keyof DocumentEventMap>(el: Document, type: K, callback: (this: HTMLElement, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 ```
 
 Registers an DOM event to be detached when unloading
@@ -91,7 +91,7 @@ Registers an DOM event to be detached when unloading
 ### registerDomEvent
 
 ```ts
-registerDomEvent<K extends keyof HTMLElementEventMap>(el: HTMLElement, type: K, callback: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any): void;
+registerDomEvent<K extends keyof HTMLElementEventMap>(el: HTMLElement, type: K, callback: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 ```
 
 Registers an DOM event to be detached when unloading
