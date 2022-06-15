@@ -56,16 +56,16 @@ To build a Svelte application, you need to install the dependencies and configur
 
    ```js title="esbuild.config.mjs" {15}
     esbuild
-		.build({
-			plugins: [
-				esbuildSvelte({
-					compilerOptions: { css: true },
-					preprocess: sveltePreprocess(),
-				}),
-			],
-			// ...
-		})
-	.catch(() => process.exit(1));
+    .build({
+      plugins: [
+        esbuildSvelte({
+          compilerOptions: { css: true },
+          preprocess: sveltePreprocess(),
+        }),
+      ],
+      // ...
+    })
+    .catch(() => process.exit(1));
    ```
 
 ## Create a Svelte component
@@ -128,6 +128,21 @@ class ExampleView extends ItemView {
   }
 }
 ```
+
+:::info
+Svelte requires at least TypeScript 4.5. If you see the following error when you build the plugin, you need to upgrade TypeScript to a more recent version.
+
+```plain
+error TS5023: Unknown compiler option 'preserveValueImports'.
+```
+
+To fix the error, run the following in your terminal:
+
+```bash
+yarn upgrade typescript@~4.5.0
+```
+
+:::
 
 ## Create a Svelte store
 
