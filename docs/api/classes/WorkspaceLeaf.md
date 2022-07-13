@@ -24,6 +24,9 @@ view: View
 openFile(file: TFile, openState?: OpenViewState): Promise<void>;
 ```
 
+By default, `openFile` will also make the leaf active.
+Pass in `{ active: false }` to override.
+
 ### open
 
 ```ts

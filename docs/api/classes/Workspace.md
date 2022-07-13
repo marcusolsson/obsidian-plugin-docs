@@ -37,7 +37,7 @@ rightRibbon: WorkspaceRibbon
 ### rootSplit
 
 ```ts
-rootSplit: WorkspaceSplit
+rootSplit: WorkspaceRoot
 ```
 
 ### activeLeaf
@@ -45,6 +45,15 @@ rootSplit: WorkspaceSplit
 ```ts
 activeLeaf: WorkspaceLeaf
 ```
+
+Indicates the currently focused leaf, if one exists.
+
+Please avoid using `activeLeaf` directly, especially without checking whether
+`activeLeaf` is null.
+
+The recommended alternatives are:
+- If you need information about the current view, use {@link getActiveViewOfType}.
+- If you need to open a new file or navigate a view, use {@link getLeaf}.
 
 ### containerEl
 
@@ -117,12 +126,6 @@ createLeafBySplit(leaf: WorkspaceLeaf, direction?: SplitDirection, before?: bool
 splitActiveLeaf(direction?: SplitDirection): WorkspaceLeaf;
 ```
 
-### splitLeafOrActive
-
-```ts
-splitLeafOrActive(leaf?: WorkspaceLeaf, direction?: SplitDirection): WorkspaceLeaf;
-```
-
 ### duplicateLeaf
 
 ```ts
@@ -138,8 +141,34 @@ getUnpinnedLeaf(type?: string): WorkspaceLeaf;
 ### getLeaf
 
 ```ts
-getLeaf(newLeaf?: boolean): WorkspaceLeaf;
+getLeaf(newLeaf?: boolean, direction?: SplitDirection): WorkspaceLeaf;
 ```
+
+Returns a leaf that can be used for navigation.
+
+If newLeaf is true, then a new leaf will be created in a preferred location within
+the root split and returned.
+
+If newLeaf is false (or not set), then an existing leaf which can be navigated will be returned,
+or a new leaf will be created if there was no leaf available.
+
+### moveLeafToPopout
+
+```ts
+moveLeafToPopout(leaf: WorkspaceLeaf, data?: WorkspaceWindowInitData): WorkspaceWindow;
+```
+
+Migrates this leaf to a new popout window.
+Only works on the desktop app.
+
+### openPopoutLeaf
+
+```ts
+openPopoutLeaf(data?: WorkspaceWindowInitData): WorkspaceLeaf;
+```
+
+Open a new popout window with a single new leaf and return that leaf.
+Only works on the desktop app.
 
 ### openLinkText
 
@@ -170,7 +199,7 @@ getGroupLeaves(group: string): WorkspaceLeaf[];
 ### getMostRecentLeaf
 
 ```ts
-getMostRecentLeaf(): WorkspaceLeaf;
+getMostRecentLeaf(root?: WorkspaceParent): WorkspaceLeaf | null;
 ```
 
 ### getLeftLeaf
@@ -197,17 +226,25 @@ getActiveViewOfType<T extends View>(type: Constructor<T>): T | null;
 getActiveFile(): TFile | null;
 ```
 
+Returns the file for the current view if it's a FileView.
+
+Otherwise, it will recent the most recently active file.
+
 ### iterateRootLeaves
 
 ```ts
 iterateRootLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
 ```
 
+Iterate through all leaves in the main area of the workspace.
+
 ### iterateAllLeaves
 
 ```ts
 iterateAllLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
 ```
+
+Iterate through all leaves, including main area leaves, floating leaves, and sidebar leaves.
 
 ### getLeavesOfType
 
@@ -347,6 +384,44 @@ Perform some best effort cleanup here.
 
 ```ts
 on(name: 'layout-change', callback: () => any, ctx?: any): EventRef;
+```
+
+Triggered when the CSS of the app has changed.
+Triggered when the user opens the context menu on a file.
+Triggered when the user opens the context menu on an editor.
+Triggered when changes to an editor has been applied, either programmatically or from a user event.
+Triggered when the editor receives a paste event.
+Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
+Use `evt.preventDefault()` to indicate that you've handled the event.
+Triggered when the editor receives a drop event.
+Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
+Use `evt.preventDefault()` to indicate that you've handled the event.
+Triggered when the app is about to quit. Not guaranteed to actually run.
+Perform some best effort cleanup here.
+
+### on
+
+```ts
+on(name: 'window-open', callback: (win: WorkspaceWindow, window: Window) => any, ctx?: any): EventRef;
+```
+
+Triggered when the CSS of the app has changed.
+Triggered when the user opens the context menu on a file.
+Triggered when the user opens the context menu on an editor.
+Triggered when changes to an editor has been applied, either programmatically or from a user event.
+Triggered when the editor receives a paste event.
+Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
+Use `evt.preventDefault()` to indicate that you've handled the event.
+Triggered when the editor receives a drop event.
+Check for `evt.defaultPrevented` before attempting to handle this event, and return if it has been already handled.
+Use `evt.preventDefault()` to indicate that you've handled the event.
+Triggered when the app is about to quit. Not guaranteed to actually run.
+Perform some best effort cleanup here.
+
+### on
+
+```ts
+on(name: 'window-close', callback: (win: WorkspaceWindow, window: Window) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.

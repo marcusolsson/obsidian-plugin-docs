@@ -22,6 +22,19 @@ allowNoFile: boolean
 file: TFile
 ```
 
+### navigation
+
+```ts
+navigation: boolean
+```
+
+Whether or not the view is intended for navigation.
+If your view is a static view that is not intended to be navigated away, set this to false.
+(For example: File explorer, calendar, etc.)
+If your view opens a file or can be otherwise navigated, set this to true.
+(For example: Markdown editor view, Kanban view, PDF view, etc.)
+File views can be navigated by default.
+
 ## Methods
 
 ### getDisplayText
@@ -60,18 +73,6 @@ onLoadFile(file: TFile): Promise<void>;
 
 ```ts
 onUnloadFile(file: TFile): Promise<void>;
-```
-
-### onMoreOptionsMenu
-
-```ts
-onMoreOptionsMenu(menu: Menu): void;
-```
-
-### onHeaderMenu
-
-```ts
-onHeaderMenu(menu: Menu): void;
 ```
 
 ### canAcceptExtension

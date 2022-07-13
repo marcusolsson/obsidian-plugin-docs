@@ -5,7 +5,7 @@ Extends `Component`
 ## Constructor
 
 ```ts
-constructor(app: any);
+constructor();
 ```
 
 ## Methods
@@ -37,7 +37,7 @@ showAtMouseEvent(evt: MouseEvent): this;
 ### showAtPosition
 
 ```ts
-showAtPosition(position: Point): this;
+showAtPosition(position: Point, doc?: Document): this;
 ```
 
 ### hide

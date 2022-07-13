@@ -1,5 +1,5 @@
 import { Extension, StateField } from '@codemirror/state';
-import { EditorView } from '@codemirror/view';
+import { EditorView, ViewPlugin } from '@codemirror/view';
 import * as CodeMirror from 'codemirror';
 import * as Moment from 'moment';
 
@@ -9,11 +9,7 @@ declare global {
         each<T>(object: {
             [key: string]: T;
         }, callback: (value: T, key?: string) => boolean | void, context?: any): boolean;
-        assign(target: any, ...sources: any): any;
-        entries(obj: any): any[];
     }
-}
-declare global {
     interface Array<T> {
         first(): T | undefined;
         last(): T | undefined;
@@ -22,14 +18,10 @@ declare global {
         shuffle(): this;
         unique(): T[];
     }
-}
-declare global {
     interface Math {
         clamp(value: number, min: number, max: number): number;
         square(value: number): number;
     }
-}
-declare global {
     interface StringConstructor {
         isString(obj: any): obj is string;
     }
@@ -39,35 +31,9 @@ declare global {
         endsWith(target: string, length?: number): boolean;
         format(...args: string[]): string;
     }
-}
-declare global {
     interface NumberConstructor {
         isNumber(obj: any): obj is number;
     }
-}
-declare global {
-    interface Window {
-        isBoolean(obj: any): obj is boolean;
-    }
-    function isBoolean(obj: any): obj is boolean;
-}
-declare global {
-    interface Element {
-        getText(): string;
-        setText(val: string | DocumentFragment): void;
-    }
-}
-declare global {
-    interface Element {
-        addClass(...classes: string[]): void;
-        addClasses(classes: string[]): void;
-        removeClass(...classes: string[]): void;
-        removeClasses(classes: string[]): void;
-        toggleClass(classes: string | string[], value: boolean): void;
-        hasClass(cls: string): boolean;
-    }
-}
-declare global {
     interface Node {
         detach(): void;
         empty(): void;
@@ -75,24 +41,41 @@ declare global {
         indexOf(other: Node): number;
         setChildrenInPlace(children: Node[]): void;
         appendText(val: string): void;
+        /**
+         * Cross-window capable instanceof check, a drop-in replacement
+         * for instanceof checks on DOM Nodes. Remember to also check
+         * for nulls when necessary.
+         * @param type
+         */
+        instanceOf<T>(type: {
+            new (): T;
+        }): this is T;
+        /**
+         * The document this node belongs to, or the global document.
+         */
+        doc: Document;
+        /**
+         * The window object this node belongs to, or the global window.
+         */
+        win: Window;
     }
-}
-declare global {
     interface Element extends Node {
+        getText(): string;
+        setText(val: string | DocumentFragment): void;
+        addClass(...classes: string[]): void;
+        addClasses(classes: string[]): void;
+        removeClass(...classes: string[]): void;
+        removeClasses(classes: string[]): void;
+        toggleClass(classes: string | string[], value: boolean): void;
+        hasClass(cls: string): boolean;
         setAttr(qualifiedName: string, value: string | number | boolean | null): void;
         setAttrs(obj: {
             [key: string]: string | number | boolean | null;
         }): void;
         getAttr(qualifiedName: string): string | null;
         matchParent(selector: string, lastParent?: Element): Element | null;
-    }
-}
-declare global {
-    interface Element extends Node {
         getCssPropertyValue(property: string, pseudoElement?: string): string;
     }
-}
-declare global {
     interface HTMLElement extends Element {
         show(): void;
         hide(): void;
@@ -105,16 +88,18 @@ declare global {
          * Exception: Does not work on <body> and <html>, or on elements with `position: fixed`.
          */
         isShown(): boolean;
+        /**
+         * Get the inner width of this element without padding.
+         */
+        readonly innerWidth: number;
+        /**
+         * Get the inner height of this element without padding.
+         */
+        readonly innerHeight: number;
     }
-}
-declare global {
+    function isBoolean(obj: any): obj is boolean;
     function fish(selector: string): HTMLElement | null;
     function fishAll(selector: string): HTMLElement[];
-    interface Window extends EventTarget, AnimationFrameProvider, GlobalEventHandlers, WindowEventHandlers, WindowLocalStorage, WindowOrWorkerGlobalScope, WindowSessionStorage {
-        fish(selector: string): HTMLElement | null;
-        fishAll(selector: string): HTMLElement[];
-        ElementList: any;
-    }
     interface Element extends Node {
         find(selector: string): Element | null;
         findAll(selector: string): HTMLElement[];
@@ -129,8 +114,6 @@ declare global {
         find(selector: string): HTMLElement;
         findAll(selector: string): HTMLElement[];
     }
-}
-declare global {
     interface DomElementInfo {
         /**
          * The class to be assigned. Can be a space-separated string or an array of strings.
@@ -172,14 +155,12 @@ declare global {
     function createDiv(o?: DomElementInfo | string, callback?: (el: HTMLDivElement) => void): HTMLDivElement;
     function createSpan(o?: DomElementInfo | string, callback?: (el: HTMLSpanElement) => void): HTMLSpanElement;
     function createFragment(callback?: (el: DocumentFragment) => void): DocumentFragment;
-}
-interface EventListenerInfo {
-    selector: string;
-    listener: Function;
-    options?: boolean | AddEventListenerOptions;
-    callback: Function;
-}
-declare global {
+    interface EventListenerInfo {
+        selector: string;
+        listener: Function;
+        options?: boolean | AddEventListenerOptions;
+        callback: Function;
+    }
     interface HTMLElement extends Element {
         _EVENTS?: {
             [K in keyof HTMLElementEventMap]?: EventListenerInfo[];
@@ -193,6 +174,11 @@ declare global {
          * @returns destroy - a function to remove the event handler to avoid memory leaks.
          */
         onNodeInserted(this: HTMLElement, listener: () => any, once?: boolean): () => void;
+        /**
+         * @param listener - the callback to call when this node has been migrated to another window.
+         * @returns destroy - a function to remove the event handler to avoid memory leaks.
+         */
+        onWindowMigrated(this: HTMLElement, listener: (win: Window) => any): () => void;
         trigger(eventType: string): void;
     }
     interface Document {
@@ -202,24 +188,61 @@ declare global {
         on<K extends keyof DocumentEventMap>(this: Document, type: K, selector: string, listener: (this: Document, ev: DocumentEventMap[K], delegateTarget: HTMLElement) => any, options?: boolean | AddEventListenerOptions): void;
         off<K extends keyof DocumentEventMap>(this: Document, type: K, selector: string, listener: (this: Document, ev: DocumentEventMap[K], delegateTarget: HTMLElement) => any, options?: boolean | AddEventListenerOptions): void;
     }
-}
-export interface AjaxOptions {
-    method?: 'GET' | 'POST';
-    url: string;
-    success?: (response: any, req: XMLHttpRequest) => any;
-    error?: (error: any, req: XMLHttpRequest) => any;
-    data?: object | string | ArrayBuffer;
-    headers?: Record<string, string>;
-    withCredentials?: boolean;
-    req?: XMLHttpRequest;
-}
-declare global {
+    interface UIEvent extends Event {
+        targetNode: Node | null;
+        win: Window;
+        doc: Document;
+        /**
+         * Cross-window capable instanceof check, a drop-in replacement
+         * for instanceof checks on UIEvents.
+         * @param type
+         */
+        instanceOf<T>(type: {
+            new (...data: any[]): T;
+        }): this is T;
+    }
+    interface AjaxOptions {
+        method?: 'GET' | 'POST';
+        url: string;
+        success?: (response: any, req: XMLHttpRequest) => any;
+        error?: (error: any, req: XMLHttpRequest) => any;
+        data?: object | string | ArrayBuffer;
+        headers?: Record<string, string>;
+        withCredentials?: boolean;
+        req?: XMLHttpRequest;
+    }
     function ajax(options: AjaxOptions): void;
     function ajaxPromise(options: AjaxOptions): Promise<any>;
     function ready(fn: () => any): void;
     function sleep(ms: number): Promise<void>;
+    /**
+     * The actively focused Window object. This is usually the same as `window` but
+     * it will be different when using popout windows.
+     */
+    let activeWindow: Window;
+    /**
+     * The actively focused Document object. This is usually the same as `document` but
+     * it will be different when using popout windows.
+     */
+    let activeDocument: Document;
+    interface Window extends EventTarget, AnimationFrameProvider, GlobalEventHandlers, WindowEventHandlers, WindowLocalStorage, WindowOrWorkerGlobalScope, WindowSessionStorage {
+        /**
+         * The actively focused Window object. This is usually the same as `window` but
+         * it will be different when using popout windows.
+         */
+        activeWindow: Window;
+        /**
+         * The actively focused Document object. This is usually the same as `document` but
+         * it will be different when using popout windows.
+         */
+        activeDocument: Document;
+    }
 }
-
+declare global {
+    interface Touch {
+        touchType: 'stylus' | 'direct';
+    }
+}
 /**
  * @public
  */
@@ -485,6 +508,11 @@ export interface Command {
     /** @public */
     mobileOnly?: boolean;
     /**
+     * Whether holding the hotkey should repeatedly trigger this command. Defaults to false.
+     * @public
+     */
+    repeatable?: boolean;
+    /**
      * Simple callback, triggered globally.
      * @public
      */
@@ -599,15 +627,8 @@ export class Component {
     registerInterval(id: number): number;
 }
 
-/**
- * @public
- */
-export interface Constructor<T> {
-    /**
-     * @public
-     */
-    new (...args: any[]): T;
-}
+/** @public */
+export type Constructor<T> = abstract new (...args: any[]) => T;
 
 /**
  * @public
@@ -767,6 +788,7 @@ export abstract class EditableFileView extends FileView {
  * @public
  */
 export abstract class Editor {
+
     /** @public */
     getDoc(): this;
     /** @public */
@@ -889,6 +911,22 @@ export interface EditorRangeOrCaret {
     from: EditorPosition;
     /** @public */
     to?: EditorPosition;
+}
+
+/** @public */
+export interface EditorScrollInfo {
+    /** @public */
+    left: number;
+    /** @public */
+    top: number;
+    /** @public */
+    width: number;
+    /** @public */
+    height: number;
+    /** @public */
+    clientWidth: number;
+    /** @public */
+    clientHeight: number;
 }
 
 /** @public */
@@ -1227,6 +1265,12 @@ export abstract class FileView extends ItemView {
      */
     file: TFile;
     /**
+     * File views can be navigated by default.
+     * @inheritDoc
+     * @public
+     */
+    navigation: boolean;
+    /**
      * @public
      */
     constructor(leaf: WorkspaceLeaf);
@@ -1256,14 +1300,6 @@ export abstract class FileView extends ItemView {
      * @public
      */
     onUnloadFile(file: TFile): Promise<void>;
-    /**
-     * @public
-     */
-    onMoreOptionsMenu(menu: Menu): void;
-    /**
-     * @public
-     */
-    onHeaderMenu(menu: Menu): void;
 
     /**
      * @public
@@ -1407,6 +1443,10 @@ export class HoverPopover extends Component {
     /**
      * @public
      */
+    hoverEl: HTMLElement;
+    /**
+     * @public
+     */
     state: PopoverState;
 
     /**
@@ -1464,17 +1504,8 @@ export abstract class ItemView extends View {
     /**
      * @public
      */
-    onMoreOptionsMenu(menu: Menu): void;
-
-    /**
-     * @public
-     */
     addAction(icon: string, title: string, callback: (evt: MouseEvent) => any, size?: number): HTMLElement;
 
-    /**
-     * @public
-     */
-    onHeaderMenu(menu: Menu): void;
 }
 
 /**
@@ -1588,6 +1619,23 @@ export interface ListItemCache extends CacheItem {
      */
     parent: number;
 }
+
+/**
+ * @public
+ */
+export interface LivePreviewState {
+    /**
+     * True if the left mouse is currently held down in the editor
+     * (for example, when drag-to-select text).
+     * @public
+     */
+    mousedown: boolean;
+}
+
+/**
+ * @public
+ */
+export const livePreviewState: ViewPlugin<LivePreviewState>;
 
 /**
  * Load MathJax.
@@ -1983,10 +2031,9 @@ export type MarkdownViewModeType = 'source' | 'preview';
 export class Menu extends Component {
 
     /**
-     * As of 0.14.3, the `app` parameter is no longer required.
      * @public
      */
-    constructor(app?: any);
+    constructor();
 
     /**
      * @public
@@ -2000,6 +2047,7 @@ export class Menu extends Component {
      * @public
      */
     addSeparator(): this;
+
     /**
      * @public
      */
@@ -2007,7 +2055,7 @@ export class Menu extends Component {
     /**
      * @public
      */
-    showAtPosition(position: Point): this;
+    showAtPosition(position: Point, doc?: Document): this;
     /**
      * @public
      */
@@ -2025,9 +2073,10 @@ export class Menu extends Component {
 export class MenuItem {
 
     /**
+     * Private constructor. Use {@link Menu.addItem} instead.
      * @public
      */
-    constructor(menu: Menu);
+    private constructor();
     /**
      * @public
      */
@@ -2055,6 +2104,21 @@ export class MenuItem {
      * @public
      */
     onClick(callback: (evt: MouseEvent | KeyboardEvent) => any): this;
+
+    /**
+     * Sets the section this menu item should belong in.
+     * To find the section IDs of an existing menu, inspect the DOM elements
+     * to see their `data-section` attribute.
+     * @public
+     */
+    setSection(section: string): this;
+
+}
+
+/**
+ * @public
+ */
+export class MenuSeparator {
 
 }
 
@@ -2623,11 +2687,11 @@ export interface Rect_2 {
     /**
      * @public
      */
-    w: number;
+    width: number;
     /**
      * @public
      */
-    h: number;
+    height: number;
 }
 
 /**
@@ -3468,6 +3532,12 @@ export abstract class View extends Component {
      */
     icon: string;
     /**
+     * Whether or not the view is intended for navigation.
+     * If your view is a static view that is not intended to be navigated away, set this to false.
+     * (For example: File explorer, calendar, etc.)
+     * If your view opens a file or can be otherwise navigated, set this to true.
+     * (For example: Markdown editor view, Kanban view, PDF view, etc.)
+     *
      * @public
      */
     navigation: boolean;
@@ -3527,9 +3597,12 @@ export abstract class View extends Component {
      */
     abstract getDisplayText(): string;
     /**
+     * Populates the pane menu.
+     *
+     * (Replaces the previously removed `onHeaderMenu` and `onMoreOptionsMenu`)
      * @public
      */
-    onHeaderMenu(menu: Menu): void;
+    onPaneMenu(menu: Menu, source: 'more-options' | 'tab-header' | string): void;
 
 }
 
@@ -3596,9 +3669,20 @@ export class Workspace extends Events {
     /**
      * @public
      */
-    rootSplit: WorkspaceSplit;
+    rootSplit: WorkspaceRoot;
+
     /**
+     * Indicates the currently focused leaf, if one exists.
+     *
+     * Please avoid using `activeLeaf` directly, especially without checking whether
+     * `activeLeaf` is null.
+     *
+     * The recommended alternatives are:
+     * - If you need information about the current view, use {@link getActiveViewOfType}.
+     * - If you need to open a new file or navigate a view, use {@link getLeaf}.
+     *
      * @public
+     * @deprecated - The use of this field is discouraged.
      */
     activeLeaf: WorkspaceLeaf | null;
     /**
@@ -3648,24 +3732,43 @@ export class Workspace extends Events {
     createLeafBySplit(leaf: WorkspaceLeaf, direction?: SplitDirection, before?: boolean): WorkspaceLeaf;
     /**
      * @public
+     * @deprecated - You should use {@link getLeaf|getLeaf(true)} instead which does the same thing.
      */
     splitActiveLeaf(direction?: SplitDirection): WorkspaceLeaf;
-    /**
-     * @public
-     */
-    splitLeafOrActive(leaf?: WorkspaceLeaf, direction?: SplitDirection): WorkspaceLeaf;
+
     /**
      * @public
      */
     duplicateLeaf(leaf: WorkspaceLeaf, direction?: SplitDirection): Promise<WorkspaceLeaf>;
     /**
      * @public
+     * @deprecated - You should use {@link getLeaf|getLeaf(false)} instead which does the same thing.
      */
     getUnpinnedLeaf(type?: string): WorkspaceLeaf;
     /**
+     * Returns a leaf that can be used for navigation.
+     *
+     * If newLeaf is true, then a new leaf will be created in a preferred location within
+     * the root split and returned.
+     *
+     * If newLeaf is false (or not set), then an existing leaf which can be navigated will be returned,
+     * or a new leaf will be created if there was no leaf available.
      * @public
      */
-    getLeaf(newLeaf?: boolean): WorkspaceLeaf;
+    getLeaf(newLeaf?: boolean, direction?: SplitDirection): WorkspaceLeaf;
+    /**
+     * Migrates this leaf to a new popout window.
+     * Only works on the desktop app.
+     * @public
+     */
+    moveLeafToPopout(leaf: WorkspaceLeaf, data?: WorkspaceWindowInitData): WorkspaceWindow;
+
+    /**
+     * Open a new popout window with a single new leaf and return that leaf.
+     * Only works on the desktop app.
+     * @public
+     */
+    openPopoutLeaf(data?: WorkspaceWindowInitData): WorkspaceLeaf;
     /**
      * @public
      */
@@ -3687,10 +3790,11 @@ export class Workspace extends Events {
      * @public
      */
     getGroupLeaves(group: string): WorkspaceLeaf[];
+
     /**
      * @public
      */
-    getMostRecentLeaf(): WorkspaceLeaf;
+    getMostRecentLeaf(root?: WorkspaceParent): WorkspaceLeaf | null;
     /**
      * @public
      */
@@ -3705,15 +3809,21 @@ export class Workspace extends Events {
      */
     getActiveViewOfType<T extends View>(type: Constructor<T>): T | null;
     /**
+     * Returns the file for the current view if it's a FileView.
+     *
+     * Otherwise, it will recent the most recently active file.
+     *
      * @public
      */
     getActiveFile(): TFile | null;
 
     /**
+     * Iterate through all leaves in the main area of the workspace.
      * @public
      */
     iterateRootLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
     /**
+     * Iterate through all leaves, including main area leaves, floating leaves, and sidebar leaves.
      * @public
      */
     iterateAllLeaves(callback: (leaf: WorkspaceLeaf) => any): void;
@@ -3772,6 +3882,14 @@ export class Workspace extends Events {
      */
     on(name: 'layout-change', callback: () => any, ctx?: any): EventRef;
     /**
+     * @public
+     */
+    on(name: 'window-open', callback: (win: WorkspaceWindow, window: Window) => any, ctx?: any): EventRef;
+    /**
+     * @public
+     */
+    on(name: 'window-close', callback: (win: WorkspaceWindow, window: Window) => any, ctx?: any): EventRef;
+    /**
      * Triggered when the CSS of the app has changed.
      * @public
      */
@@ -3824,12 +3942,38 @@ export class Workspace extends Events {
 /**
  * @public
  */
+export abstract class WorkspaceContainer extends WorkspaceSplit {
+
+    /** @public */
+    abstract win: Window;
+    /** @public */
+    abstract doc: Document;
+
+}
+
+/**
+ * @public
+ */
+export class WorkspaceFloating extends WorkspaceParent {
+
+}
+
+/**
+ * @public
+ */
 export abstract class WorkspaceItem extends Events {
 
     /**
      * @public
      */
     getRoot(): WorkspaceItem;
+    /**
+     * Get the root container parent item, which can be one of:
+     * - {@link WorkspaceRoot}
+     * - {@link WorkspaceWindow}
+     * @public
+     */
+    getContainer(): WorkspaceContainer;
 
 }
 
@@ -3844,6 +3988,9 @@ export class WorkspaceLeaf extends WorkspaceItem {
     view: View;
 
     /**
+     * By default, `openFile` will also make the leaf active.
+     * Pass in `{ active: false }` to override.
+     *
      * @public
      */
     openFile(file: TFile, openState?: OpenViewState): Promise<void>;
@@ -3861,6 +4008,7 @@ export class WorkspaceLeaf extends WorkspaceItem {
      * @public
      */
     setViewState(viewState: ViewState, eState?: any): Promise<void>;
+
     /**
      * @public
      */
@@ -3951,6 +4099,16 @@ export class WorkspaceRibbon {
 /**
  * @public
  */
+export class WorkspaceRoot extends WorkspaceContainer {
+    /** @public */
+    win: Window;
+    /** @public */
+    doc: Document;
+}
+
+/**
+ * @public
+ */
 export class WorkspaceSidedock extends WorkspaceSplit {
 
     /** @public */
@@ -3977,6 +4135,35 @@ export class WorkspaceSplit extends WorkspaceParent {
  */
 export class WorkspaceTabs extends WorkspaceParent {
 
+}
+
+/**
+ * @public
+ */
+export class WorkspaceWindow extends WorkspaceContainer {
+
+    /** @public */
+    win: Window;
+    /** @public */
+    doc: Document;
+
+}
+
+/**
+ * @public
+ */
+export interface WorkspaceWindowInitData {
+
+    /**
+     * The suggested size
+     * @public
+     */
+    size?: {
+        /** @public */
+        width: number;
+        /** @public */
+        height: number;
+    };
 }
 
 export { }
