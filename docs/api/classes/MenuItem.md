@@ -3,7 +3,7 @@
 ## Constructor
 
 ```ts
-constructor(menu: Menu);
+constructor();
 ```
 
 ## Methods
@@ -43,3 +43,13 @@ setIsLabel(isLabel: boolean): this;
 ```ts
 onClick(callback: (evt: MouseEvent | KeyboardEvent) => any): this;
 ```
+
+### setSection
+
+```ts
+setSection(section: string): this;
+```
+
+Sets the section this menu item should belong in.
+To find the section IDs of an existing menu, inspect the DOM elements
+to see their `data-section` attribute.

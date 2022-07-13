@@ -28,6 +28,12 @@ icon: string
 navigation: boolean
 ```
 
+Whether or not the view is intended for navigation.
+If your view is a static view that is not intended to be navigated away, set this to false.
+(For example: File explorer, calendar, etc.)
+If your view opens a file or can be otherwise navigated, set this to true.
+(For example: Markdown editor view, Kanban view, PDF view, etc.)
+
 ### leaf
 
 ```ts
@@ -104,8 +110,12 @@ Called when the size of this view is changed.
 abstract getDisplayText(): string;
 ```
 
-### onHeaderMenu
+### onPaneMenu
 
 ```ts
-onHeaderMenu(menu: Menu): void;
+onPaneMenu(menu: Menu, source: 'more-options' | 'tab-header' | string): void;
 ```
+
+Populates the pane menu.
+
+(Replaces the previously removed `onHeaderMenu` and `onMoreOptionsMenu`)

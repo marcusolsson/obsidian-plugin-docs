@@ -32,6 +32,14 @@ Icon ID to be used in the toolbar.
 mobileOnly: boolean
 ```
 
+### repeatable
+
+```ts
+repeatable: boolean
+```
+
+Whether holding the hotkey should repeatedly trigger this command. Defaults to false.
+
 ### callback
 
 ```ts

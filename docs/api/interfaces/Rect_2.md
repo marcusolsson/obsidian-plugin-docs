@@ -14,14 +14,14 @@ x: number
 y: number
 ```
 
-### w
+### width
 
 ```ts
-w: number
+width: number
 ```
 
-### h
+### height
 
 ```ts
-h: number
+height: number
 ```

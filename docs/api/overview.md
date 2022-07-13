@@ -39,6 +39,7 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [MarkdownView](classes/MarkdownView.md)
 - [Menu](classes/Menu.md)
 - [MenuItem](classes/MenuItem.md)
+- [MenuSeparator](classes/MenuSeparator.md)
 - [MetadataCache](classes/MetadataCache.md)
 - [Modal](classes/Modal.md)
 - [MomentFormatComponent](classes/MomentFormatComponent.md)
@@ -64,14 +65,18 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [Vault](classes/Vault.md)
 - [View](classes/View.md)
 - [Workspace](classes/Workspace.md)
+- [WorkspaceContainer](classes/WorkspaceContainer.md)
+- [WorkspaceFloating](classes/WorkspaceFloating.md)
 - [WorkspaceItem](classes/WorkspaceItem.md)
 - [WorkspaceLeaf](classes/WorkspaceLeaf.md)
 - [WorkspaceMobileDrawer](classes/WorkspaceMobileDrawer.md)
 - [WorkspaceParent](classes/WorkspaceParent.md)
 - [WorkspaceRibbon](classes/WorkspaceRibbon.md)
+- [WorkspaceRoot](classes/WorkspaceRoot.md)
 - [WorkspaceSidedock](classes/WorkspaceSidedock.md)
 - [WorkspaceSplit](classes/WorkspaceSplit.md)
 - [WorkspaceTabs](classes/WorkspaceTabs.md)
+- [WorkspaceWindow](classes/WorkspaceWindow.md)
 
 ## Enums
 
@@ -122,15 +127,12 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 
 ## Interfaces
 
-- [EventListenerInfo](interfaces/EventListenerInfo.md)
-- [AjaxOptions](interfaces/AjaxOptions.md)
 - [BlockCache](interfaces/BlockCache.md)
 - [BlockSubpathResult](interfaces/BlockSubpathResult.md)
 - [CachedMetadata](interfaces/CachedMetadata.md)
 - [CacheItem](interfaces/CacheItem.md)
 - [CloseableComponent](interfaces/CloseableComponent.md)
 - [Command](interfaces/Command.md)
-- [Constructor](interfaces/Constructor.md)
 - [DataAdapter](interfaces/DataAdapter.md)
 - [DataWriteOptions](interfaces/DataWriteOptions.md)
 - [Debouncer](interfaces/Debouncer.md)
@@ -138,6 +140,7 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [EditorPosition](interfaces/EditorPosition.md)
 - [EditorRange](interfaces/EditorRange.md)
 - [EditorRangeOrCaret](interfaces/EditorRangeOrCaret.md)
+- [EditorScrollInfo](interfaces/EditorScrollInfo.md)
 - [EditorSelection](interfaces/EditorSelection.md)
 - [EditorSelectionOrCaret](interfaces/EditorSelectionOrCaret.md)
 - [EditorSuggestContext](interfaces/EditorSuggestContext.md)
@@ -160,6 +163,7 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [LinkCache](interfaces/LinkCache.md)
 - [ListedFiles](interfaces/ListedFiles.md)
 - [ListItemCache](interfaces/ListItemCache.md)
+- [LivePreviewState](interfaces/LivePreviewState.md)
 - [Loc](interfaces/Loc.md)
 - [MarkdownPostProcessor](interfaces/MarkdownPostProcessor.md)
 - [MarkdownPostProcessorContext](interfaces/MarkdownPostProcessorContext.md)
@@ -184,9 +188,11 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [TagCache](interfaces/TagCache.md)
 - [ViewState](interfaces/ViewState.md)
 - [ViewStateResult](interfaces/ViewStateResult.md)
+- [WorkspaceWindowInitData](interfaces/WorkspaceWindowInitData.md)
 
 ## Types
 
+- [Constructor](types/Constructor.md)
 - [EditorCommandName](types/EditorCommandName.md)
 - [KeymapEventListener](types/KeymapEventListener.md)
 - [MarkdownViewModeType](types/MarkdownViewModeType.md)
