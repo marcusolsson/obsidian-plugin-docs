@@ -187,22 +187,25 @@ To update the view when the data changes on disk:
    }
    ```
 
-**(Optional)** Depending on the Obsidian theme you're using, you may want to style the table. To add some basic CSS to your table, add the following to a file called `styles.css` in the plugin's root directory:
+:::tip
+Depending on the Obsidian theme you're using, you may want to style the table. To add some basic CSS to your table, add the following to a file called `styles.css` in the plugin's root directory:
 
-```css
+```css title="styles.css"
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 table,
 td {
-	border: 1px solid var(--background-modifier-border);
+  border: 1px solid var(--background-modifier-border);
 }
 
 td {
-	padding: 4px 8px;
+  padding: 4px 8px;
 }
 ```
+
+:::
 
 Your plugin can now appropriately display CSV data as a table. Much more user-friendly, wouldn't you say?
 
@@ -210,7 +213,7 @@ Your plugin can now appropriately display CSV data as a table. Much more user-fr
 
 Right now, the user can only read the content of the file. In this step, you'll add `input` elements for each table cell that let the user edit the CSV values and write them back to disk.
 
-The `refresh()` helper from previous step creates a `td` element for each table cell. Right now, it adds the cell value as text inside the `td` element. 
+The `refresh()` helper from previous step creates a `td` element for each table cell. Right now, it adds the cell value as text inside the `td` element.
 
 ```ts {2}
 row.forEach((cell, j) => {
@@ -249,6 +252,18 @@ row.forEach((cell, j) => {
 
 The event handler for the input updates the in-memory representation of the table and tells Obsidian to update it on disk, by calling `this.requestSave()`.
 
+:::tip
+Remove the background and border of the `input` element for a more polished look.
+
+```css title="styles.css"
+input {
+  background: none;
+  border: none;
+}
+```
+
+:::
+
 ## Next steps
 
 In this tutorial, you've built a plugin that lets users display and edit CSV files in Obsidian. You can use the same steps to add support for other text-based file formats, such as [Org Mode](https://orgmode.org/) and [BibTex](http://www.bibtex.org/).
@@ -261,77 +276,77 @@ import { TextFileView } from "obsidian";
 export const VIEW_TYPE_CSV = "csv-view";
 
 export class CSVView extends TextFileView {
-	tableData: string[][];
-	tableEl: HTMLElement;
+  tableData: string[][];
+  tableEl: HTMLElement;
 
-	getViewData() {
-		return this.tableData.map((row) => row.join(",")).join("\n");
-	}
+  getViewData() {
+    return this.tableData.map((row) => row.join(",")).join("\n");
+  }
 
-	// If clear is set, then it means we're opening a completely different file.
-	setViewData(data: string, clear: boolean) {
-		this.tableData = data.split("\n").map((line) => line.split(","));
+  // If clear is set, then it means we're opening a completely different file.
+  setViewData(data: string, clear: boolean) {
+    this.tableData = data.split("\n").map((line) => line.split(","));
 
-		this.refresh();
-	}
+    this.refresh();
+  }
 
-	refresh() {
-		this.tableEl.empty();
+  refresh() {
+    this.tableEl.empty();
 
-		const tableBody = this.tableEl.createEl("tbody");
+    const tableBody = this.tableEl.createEl("tbody");
 
-		this.tableData.forEach((row, i) => {
-			const tableRow = tableBody.createEl("tr");
+    this.tableData.forEach((row, i) => {
+      const tableRow = tableBody.createEl("tr");
 
-			row.forEach((cell, j) => {
-				const input = tableRow
-					.createEl("td")
-					.createEl("input", { attr: { value: cell } });
+      row.forEach((cell, j) => {
+        const input = tableRow
+          .createEl("td")
+          .createEl("input", { attr: { value: cell } });
 
-				input.oninput = (ev) => {
-					if (ev.currentTarget instanceof HTMLInputElement) {
-						this.tableData[i][j] = ev.currentTarget.value;
-						this.requestSave();
-					}
-				};
-			});
-		});
-	}
+        input.oninput = (ev) => {
+          if (ev.currentTarget instanceof HTMLInputElement) {
+            this.tableData[i][j] = ev.currentTarget.value;
+            this.requestSave();
+          }
+        };
+      });
+    });
+  }
 
-	clear() {
-		this.tableData = [];
-	}
+  clear() {
+    this.tableData = [];
+  }
 
-	getViewType() {
-		return VIEW_TYPE_CSV;
-	}
+  getViewType() {
+    return VIEW_TYPE_CSV;
+  }
 
-	async onOpen() {
-		this.tableEl = this.contentEl.createEl("table");
-	}
+  async onOpen() {
+    this.tableEl = this.contentEl.createEl("table");
+  }
 
-	async onClose() {
-		this.contentEl.empty();
-	}
+  async onClose() {
+    this.contentEl.empty();
+  }
 }
 ```
 
 ```css title="styles.css"
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 table,
 td {
-	border: 1px solid var(--background-modifier-border);
+  border: 1px solid var(--background-modifier-border);
 }
 
 td {
-	padding: 4px 8px;
+  padding: 4px 8px;
 }
 
 input {
-	background: none;
-	border: none;
+  background: none;
+  border: none;
 }
 ```
