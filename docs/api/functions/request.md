@@ -12,3 +12,12 @@ Returns the text value of the response.
 | Parameter | Description |
 |-----------|-------------|
 | `request` | |
+
+```ts
+type RequestUrlParam = {
+  url: string,
+  method: 'POST'|'GET',
+  body: string,
+  contentType: string //'application/json'
+}
+```
