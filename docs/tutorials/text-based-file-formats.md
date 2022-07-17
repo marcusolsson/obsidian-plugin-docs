@@ -187,6 +187,8 @@ To update the view when the data changes on disk:
    }
    ```
 
+Your plugin can now appropriately display CSV data as a table. Much more user-friendly, wouldn't you say?
+
 :::tip
 Depending on the Obsidian theme you're using, you may want to style the table. To add some basic CSS to your table, add the following to a file called `styles.css` in the plugin's root directory:
 
@@ -207,9 +209,8 @@ td {
 
 :::
 
-Your plugin can now appropriately display CSV data as a table. Much more user-friendly, wouldn't you say?
 
-## Step 5 — Edit the data
+## Step 4 — Edit the data
 
 Right now, the user can only read the content of the file. In this step, you'll add `input` elements for each table cell that let the user edit the CSV values and write them back to disk.
 
