@@ -42,6 +42,10 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
               to: "/advanced-guides/svelte",
               from: ["/guides/svelte"],
             },
+            {
+              to: "/concepts/editor-extensions",
+              from: ["/concepts/codemirror"],
+            },
           ],
         },
       ],
