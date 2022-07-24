@@ -92,14 +92,14 @@ In the root directory of the plugin, create a new file called `Component.svelte`
 
 To use the Svelte component, it needs to be mounted on an existing [HTML element](../guides/html-elements.md). For example, if you are mounting on a custom [`ItemView`](../api/classes/ItemView.md) in Obsidian:
 
-```ts
+```ts title="view.ts"
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
 import Component from "./Component.svelte";
 
-const VIEW_TYPE_EXAMPLE = "example-view";
+export const VIEW_TYPE_EXAMPLE = "example-view";
 
-class ExampleView extends ItemView {
+export class ExampleView extends ItemView {
   component: Component;
 
   constructor(leaf: WorkspaceLeaf) {
