@@ -13,3 +13,7 @@ Imagine that you want to edit a document that is too big to fit on your monitor.
 Whenever the user scrolls through the document, or when the document itself changes, the viewport becomes out-of-date and needs to be recomputed.
 
 If you want to build an editor extension that depends on the viewport, refer to [View plugins](view-plugins.md).
+
+:::note
+This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more information on state management, refer to [Viewport](https://codemirror.net/docs/guide/#viewport).
+:::
