@@ -25,5 +25,5 @@ onload() {
 }
 ```
 
-While CM6 supports several types of extensions, two of the most common ones are [view plugins](view-plugins.md) and [state fields](state-fields.md).
+While CM6 supports several types of extensions, two of the most common ones are view plugins and [state fields](state-fields.md).
 
