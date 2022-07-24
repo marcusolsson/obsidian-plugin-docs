@@ -51,7 +51,7 @@ Notice that the implementation consists of _two_ state changes. If you added the
 
 For editor extensions, a group of state changes that happen together is called a _transaction_.
 
-If you combine what you've learnt so far—and if you allow transactions that contains only a single state change—then you can consider state as a _history of transactions_.
+If you combine what you've learned so far—and if you allow transactions that contain only a single state change—then you can consider state as a _history of transactions_.
 
 Bringing it all together to implement the surround feature from before in an editor extension, here's how you'd add, or _dispatch_, a transaction to the editor view:
 
@@ -66,6 +66,6 @@ view.dispatch({
 
 ## Next steps
 
-On this page, you've learnt about modeling state as a series of state changes, and how to group them into transactions.
+On this page, you've learned about modeling state as a series of state changes, and how to group them into transactions.
 
 To learn how to manage custom state in your editor, refer to [State fields](state-fields.md).

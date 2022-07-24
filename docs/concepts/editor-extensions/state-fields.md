@@ -34,9 +34,9 @@ The type between the angle brackets, `<>`, defines the input type for the effect
 
 ## Defining a state field
 
-In contrary to what one might think, state fields don't actually _store_ state. They _manage_ it. State fields takes the current state, applies any state effects, and returns the new state.
+Contrary to what one might think, state fields don't actually _store_ state. They _manage_ it. State fields take the current state, applies any state effects, and returns the new state.
 
-The state field contains the calculator logic to apply the mathematical operations depending on the effects in a transaction. Since a transaction that can contain multiple effects, for example two additions, the state field needs to apply them all one after another.
+The state field contains the calculator logic to apply the mathematical operations depending on the effects in a transaction. Since a transaction can contain multiple effects, for example two additions, the state field needs to apply them all one after another.
 
 ```ts
 export const calculatorField = StateField.define<number>({
