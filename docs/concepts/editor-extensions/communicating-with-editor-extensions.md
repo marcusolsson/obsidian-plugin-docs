@@ -9,13 +9,15 @@ Once you've built your editor extension, you might want to communicate with it f
 You can access the CodeMirror 6 editor from a [MarkdownView](../../api/classes/MarkdownView.md). However, since the Obsidian API doesn't actually expose the editor, you need to tell TypeScript to trust that it's there, using `@ts-expect-error`.
 
 ```ts
+import { EditorView } from "@codemirror/view";
+
 // @ts-expect-error, not typed
 const editorView = view.editor.cm as EditorView;
 ```
 
 ## View plugin
 
-You can access the view plugin instance from the `EditorView.plugin()` method.
+You can access the [view plugin](view-plugins.md) instance from the `EditorView.plugin()` method.
 
 ```ts title="main.ts" {8-11}
 this.addCommand({
