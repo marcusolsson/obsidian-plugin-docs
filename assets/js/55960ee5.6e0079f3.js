@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkobsidian_plugin_docs=self.webpackChunkobsidian_plugin_docs||[]).push([[4121],{88070:function(s){s.exports=[]}}]);
