@@ -96,3 +96,7 @@ export function reset(view: EditorView) {
   });
 }
 ```
+
+## Next steps
+
+Provide [Decorations](decorations.md) from your state fields to change how to display the document.

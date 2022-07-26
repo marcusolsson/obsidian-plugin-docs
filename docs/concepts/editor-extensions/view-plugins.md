@@ -56,3 +56,7 @@ The three methods of the view plugin control its lifecycle:
 - `destroy()` cleans up after the plugin.
 
 While the view plugin in the example works, it doesn't do much. If you want to better understand what causes the plugin to update, you can add a `console.log(update);` line to the `update()` method to print all updates to the console.
+
+## Next steps
+
+Provide [Decorations](decorations.md) from your view plugin to change how to display the document.
