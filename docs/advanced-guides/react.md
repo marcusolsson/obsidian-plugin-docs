@@ -52,11 +52,12 @@ export const ReactView = () => {
 
 To use the React component, it needs to be mounted on a [HTML element](../guides/html-elements.md). The following example mounts the `ReactView` component on the `this.containerEl.children[1]` element:
 
-```tsx title="view.tsx" {2-4,22-25,29}
+```tsx title="view.tsx" {2-5,22-25,29}
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { ReactView } from "./ReactView";
+import { createRoot } from "react-dom/client";
 
 const VIEW_TYPE_EXAMPLE = "example-view";
 
@@ -74,10 +75,13 @@ class ExampleView extends ItemView {
   }
 
   async onOpen() {
-    ReactDOM.render(
-      <ReactView />,
-      this.containerEl.children[1]
+    const root = createRoot(this.containerEl.children[1]);
+    root.render(
+      <React.StrictMode>
+        <ReactView />,
+      </React.StrictMode>
     );
+    
   }
 
   async onClose() {
@@ -108,7 +112,8 @@ Another alternative is to create a React context for the app to make it globally
 1. Wrap the `ReactView` with a context provider and pass the app as the value.
 
    ```tsx title="view.tsx"
-   ReactDOM.render(
+   const root = createRoot(this.containerEl.children[1]);
+   root.render(
      <AppContext.Provider value={this.app}>
        <ReactView />
      </AppContext.Provider>,
