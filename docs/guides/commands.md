@@ -10,11 +10,12 @@ Commands are actions that the user can perform from the [Command Palette](https:
 
 To register a new command for your plugin, call the [`addCommand()`](../api/classes/Plugin_2.md#addcommand) method inside the `onload()` method:
 
-```ts title="main.ts" {5-11}
+```ts title="main.ts"
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
+    // highlight-start
     this.addCommand({
       id: "print-greeting-to-console",
       name: "Print greeting to console",
@@ -22,6 +23,7 @@ export default class ExamplePlugin extends Plugin {
         console.log("Hey, you!");
       },
     });
+    // highlight-end
   }
 }
 ```
@@ -41,10 +43,11 @@ To determine whether the callback should perform a preliminary check or an actio
 
 The command in the following example depends on a required value. In both runs, the callback checks that the value is present but only performs the action if `checking` is `false`.
 
-```ts {4}
+```ts
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
+  // highlight-next-line
   checkCallback: (checking: boolean) => {
     const value = getRequiredValue();
 
@@ -65,10 +68,11 @@ this.addCommand({
 
 If your command needs access to the editor, you can also use the [`editorCallback`](../api/interfaces/Command.md#editorcallback), which provides the active editor and its view as arguments.
 
-```ts {4}
+```ts
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
+  // highlight-next-line
   editorCallback: (editor: Editor, view: MarkdownView) => {
     const sel = editor.getSelection()
 
@@ -83,10 +87,11 @@ Editor commands only appear in the Command Palette when there's an active editor
 
 If the editor callback can only run given under certain conditions, consider using the [`editorCheckCallback`](../api/interfaces/Command.md#editorcheckcallback) instead. For more information, refer to [conditional commands](#conditional-commands).
 
-```ts {4}
+```ts
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
+  // highlight-next-line
   editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
     const value = getRequiredValue();
 
@@ -113,10 +118,11 @@ Avoid setting default hot keys for plugins that you intend for others to use. Ho
 
 In this example, the user can run the command by pressing and holding Ctrl (or Cmd on Mac) and Shift together, and then pressing the letter `a` on their keyboard.
 
-```ts {4}
+```ts
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
+  // highlight-next-line
   hotkeys: [{ modifiers: ["Mod", "Shift"], key: "a" }],
   callback: () => {
     console.log('Hey, you!');

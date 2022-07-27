@@ -6,7 +6,7 @@ sidebar_position: 75
 
 Several components in the Obsidian API, such as the [settings tab](settings.md), expose _container elements_:
 
-```ts {12}
+```ts
 import { App, PluginSettingTab } from "obsidian";
 
 class ExampleSettingTab extends PluginSettingTab {
@@ -18,6 +18,7 @@ class ExampleSettingTab extends PluginSettingTab {
   }
 
   display(): void {
+    // highlight-next-line
     let { containerEl } = this;
 
     // ...

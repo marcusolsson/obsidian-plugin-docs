@@ -163,8 +163,10 @@ Update the settings object whenever the value of the text field changes, and the
 
 ```ts {2,3}
 .onChange(async (value) => {
+  // highlight-start
   this.plugin.settings.dateFormat = value;
   await this.plugin.saveSettings();
+  // highlight-end
 })
 ```
 

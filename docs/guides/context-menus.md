@@ -2,12 +2,13 @@
 
 If you want to open up a context menu, use [`Menu`](../api/classes/Menu.md):
 
-```ts {6,26}
+```ts
 import { Menu, Notice, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
     this.addRibbonIcon("dice", "Open menu", (event) => {
+      // highlight-start
       const menu = new Menu(this.app);
 
       menu.addItem((item) =>
@@ -29,6 +30,7 @@ export default class ExamplePlugin extends Plugin {
       );
 
       menu.showAtMouseEvent(event);
+      // highlight-end
     });
   }
 }

@@ -4,12 +4,13 @@ If you want to change how a Markdown document is rendered in Preview mode, you c
 
 The following example looks for any code block that contains a text between two colons, `:`, and replaces it with an appropriate emoji:
 
-```ts title="main.ts" {6,15}
+```ts title="main.ts"
 import { Plugin } from "obsidian";
 import { Emoji } from "./emoji";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
+    // highlight-next-line
     this.registerMarkdownPostProcessor((element, context) => {
       const codeblocks = element.querySelectorAll("code");
 
@@ -19,6 +20,7 @@ export default class ExamplePlugin extends Plugin {
         const isEmoji = text[0] === ":" && text[text.length - 1] === ":";
 
         if (isEmoji) {
+          // highlight-next-line
           context.addChild(new Emoji(codeblock, text));
         }
       }
@@ -29,9 +31,10 @@ export default class ExamplePlugin extends Plugin {
 
 The `Emoji` class extends [`MarkdownRenderChild`](../api/classes/MarkdownRenderChild.md), and replaces the code block with a `span` element with the emoji:
 
-```ts title="emoji.ts" {3,19-22}
+```ts title="emoji.ts"
 import { MarkdownRenderChild } from "obsidian";
 
+// highlight-next-line
 export class Emoji extends MarkdownRenderChild {
   static ALL_EMOJIS: Record<string, string> = {
     ":+1:": "👍",
@@ -48,10 +51,12 @@ export class Emoji extends MarkdownRenderChild {
   }
 
   onload() {
+    // highlight-start
     const emojiEl = this.containerEl.createSpan({
       text: Emoji.ALL_EMOJIS[this.text] ?? this.text,
     });
     this.containerEl.replaceWith(emojiEl);
+    // highlight-end
   }
 }
 ```

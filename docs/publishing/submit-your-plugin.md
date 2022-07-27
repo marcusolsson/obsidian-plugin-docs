@@ -38,6 +38,7 @@ In this step, you'll prepare a release for your plugin that's ready to be submit
 :::tip
 To automate the process of creating a release, refer to [Release your plugin with GitHub Actions](release-your-plugin-with-github-actions.md).
 :::
+
 ## Step 2 — Submit your plugin for review
 
 In this step, you'll submit your plugin to the Obsidian team for review.

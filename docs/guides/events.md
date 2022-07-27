@@ -8,14 +8,16 @@ Many of the interfaces in the Obsidian lets you subscribe to events throughout t
 
 Any registered event handlers need to be detached whenever the plugin unloads. The safest way to make sure this happens is to use the [`registerEvent()`](../api/classes/Component.md#registerevent) method.
 
-```ts title="main.ts" {5-7}
+```ts title="main.ts"
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
+    // highlight-start
     this.registerEvent(this.app.vault.on('create', () => {
       console.log('a new file has entered the arena')
     }));
+    // highlight-end
   }
 }
 ```
@@ -37,9 +39,11 @@ export default class ExamplePlugin extends Plugin {
 
     this.updateStatusBar();
 
+    // highlight-start
     this.registerInterval(
       window.setInterval(() => this.updateStatusBar(), 1000)
     );
+    // highlight-end
   }
 
   updateStatusBar() {

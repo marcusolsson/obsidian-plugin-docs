@@ -216,7 +216,7 @@ Right now, the user can only read the content of the file. In this step, you'll 
 
 The `refresh()` helper from previous step creates a `td` element for each table cell. Right now, it adds the cell value as text inside the `td` element.
 
-```ts {2}
+```ts
 row.forEach((cell, j) => {
   rowEl.createEl("td", { text: cell });
 });
@@ -229,25 +229,27 @@ row.forEach((cell, j) => {
   rowEl
     .createEl("td")
     .createEl("input", { attr: { value: cell } });
-}
+});
 ```
 
 The user can now edit the values in the table, but since the `input` doesn't actually update the table data, the changes don't persist when you close and reopen the view.
 
 To save the changes, add an `oninput` event handler that updates `tableData` when the `input` value changes.
 
-```ts {6-11}
+```ts
 row.forEach((cell, j) => {
   const inputEl = rowEl
     .createEl("td")
     .createEl("input", { attr: { value: cell } });
 
+  // highlight-start
   input.oninput = (ev) => {
     if (ev.currentTarget instanceof HTMLInputElement) {
       this.tableData[i][j] = ev.currentTarget.value;
       this.requestSave();
     }
   };
+  // highlight-end
 });
 ```
 

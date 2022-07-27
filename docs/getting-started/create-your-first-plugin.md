@@ -51,7 +51,7 @@ In this section, you'll build the source code for the plugin.
 
    ```bash
    cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
-   ```   
+   ```
 
 1. Install dependencies.
 
@@ -106,6 +106,7 @@ In this step, you'll make a change to the source code and reload the plugin to r
    this.addRibbonIcon('dice', 'Sample Plugin', () => {
      new Notice('This is a notice!');
    });
+   ```
 
 1. Change the text for the notice. Feel free to come up with a text of your own.
 

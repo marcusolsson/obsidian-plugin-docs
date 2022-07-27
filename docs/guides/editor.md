@@ -10,11 +10,12 @@ If you want to access the editor in a command, use the [editorCallback](./comman
 
 If you want to use the editor elsewhere, you can access it from the active view:
 
-```ts {5}
+```ts
 const view = this.app.workspace.getActiveViewOfType(MarkdownView);
 
 // Make sure the user is editing a Markdown file.
 if (view) {
+  // highlight-next-line
   const cursor = view.editor.getCursor();
 
   // ...
@@ -31,7 +32,7 @@ The [`replaceRange()`](../api/classes/Editor.md#replacerange) method replaces th
 
 The following command inserts today's date at the cursor position:
 
-```ts title="main.ts" {9}
+```ts title="main.ts"
 import { Editor, moment, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -40,6 +41,7 @@ export default class ExamplePlugin extends Plugin {
       id: "insert-todays-date",
       name: "Insert today's date",
       editorCallback: (editor: Editor) => {
+        // highlight-next-line
         editor.replaceRange(moment().format("YYYY-MM-DD"), editor.getCursor());
       },
     });
@@ -55,7 +57,7 @@ If you want to modify the selected text, use [`replaceSelection()`](../api/class
 
 The following command reads the current selection and converts it to uppercase:
 
-```ts title="main.ts" {9-10}
+```ts title="main.ts"
 import { Editor, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -64,8 +66,10 @@ export default class ExamplePlugin extends Plugin {
       id: "convert-to-uppercase",
       name: "Convert to uppercase",
       editorCallback: (editor: Editor) => {
+        // highlight-start
         const selection = editor.getSelection();
         editor.replaceSelection(selection.toUpperCase());
+        // highlight-end
       },
     });
   }

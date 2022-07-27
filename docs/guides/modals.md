@@ -54,7 +54,7 @@ The modal in the previous example only displayed some text. Let's look at a litt
 
 ![Modal with user input](../../static/img/modal-input.png)
 
-```ts title="modal.ts" {21,30-31}
+```ts title="modal.ts"
 import { App, Modal, Setting } from "obsidian";
 
 export class ExampleModal extends Modal {
@@ -75,6 +75,7 @@ export class ExampleModal extends Modal {
       .setName("Name")
       .addText((text) =>
         text.onChange((value) => {
+          // highlight-next-line
           this.result = value
         }));
 
@@ -84,8 +85,10 @@ export class ExampleModal extends Modal {
           .setButtonText("Submit")
           .setCta()
           .onClick(() => {
+            // highlight-start
             this.close();
             this.onSubmit(this.result);
+            // highlight-end
           }));
   }
 
