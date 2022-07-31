@@ -19,6 +19,8 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
+Notice the line `class ExamplePlugin extends Plugin`. This means that `ExamplePlugin` is an instance of the class `Plugin`. In a next couple pages, you will occasionally meet the syntax `this.doSomeThing`. For example: `this.addRibbonIcon`, `this.addCommand`. Because we are inside the class block, so `this` in here refers to the instance `ExamplePlugin`. `this.addRibbonIcon` mean that you `addRibbonIcon` to `ExamplePlugin`. Click these links to learn more about JavaScript [class](https://dmitripavlutin.com/javascript-classes-complete-guide/#41-instance-methods "The Complete Guide to JavaScript Classes") and [`this`](https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/#41-this-in-a-constructor-invocation "Gentle Explanation of &quot;this&quot; in JavaScript") syntax.
+
 ## Plugin lifecycle
 
 [`onload()`](../api/classes/Component.md#onload) runs whenever Obsidian the user starts using the plugin. This is where you'll configure most of the plugin's capabilities.
