@@ -1,14 +1,10 @@
----
-sidebar_position: 40
----
-
 # Commands
 
 Commands are actions that the user can perform from the [Command Palette](https://help.obsidian.md/Plugins/Command+palette) or by using a hot key.
 
 ![Command](../../static/img/command.png)
 
-To register a new command for your plugin, call the [`addCommand()`](../api/classes/Plugin_2.md#addcommand) method inside the `onload()` method:
+To register a new command for your plugin, call the [`addCommand()`](../reference/typescript/classes/Plugin_2.md#addcommand) method inside the `onload()` method:
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
@@ -30,7 +26,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Conditional commands
 
-If your command is only able to run under certain conditions, then consider using [`checkCallback`](../api/interfaces/Command.md#checkcallback) instead.
+If your command is only able to run under certain conditions, then consider using [`checkCallback`](../reference/typescript/interfaces/Command.md#checkcallback) instead.
 
 The `checkCallback` runs twice. First, to perform a preliminary check to determine whether the command can run. Second, to perform the action.
 
@@ -66,7 +62,7 @@ this.addCommand({
 
 ## Editor commands
 
-If your command needs access to the editor, you can also use the [`editorCallback`](../api/interfaces/Command.md#editorcallback), which provides the active editor and its view as arguments.
+If your command needs access to the editor, you can also use the [`editorCallback`](../reference/typescript/interfaces/Command.md#editorcallback), which provides the active editor and its view as arguments.
 
 ```ts
 this.addCommand({
@@ -85,7 +81,7 @@ this.addCommand({
 Editor commands only appear in the Command Palette when there's an active editor available.
 :::
 
-If the editor callback can only run given under certain conditions, consider using the [`editorCheckCallback`](../api/interfaces/Command.md#editorcheckcallback) instead. For more information, refer to [conditional commands](#conditional-commands).
+If the editor callback can only run given under certain conditions, consider using the [`editorCheckCallback`](../reference/typescript/interfaces/Command.md#editorcheckcallback) instead. For more information, refer to [conditional commands](#conditional-commands).
 
 ```ts
 this.addCommand({

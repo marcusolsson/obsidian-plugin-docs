@@ -1,7 +1,3 @@
----
-sidebar_position: 75
----
-
 # HTML elements
 
 Several components in the Obsidian API, such as the [settings tab](settings.md), expose _container elements_:

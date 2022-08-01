@@ -1,10 +1,6 @@
----
-sidebar_position: 56
----
-
 # Modals
 
-Modals display information and accept input from the user. To create a modal, create a class that extends [`Modal`](../api/classes/Modal.md):
+Modals display information and accept input from the user. To create a modal, create a class that extends [`Modal`](../reference/typescript/classes/Modal.md):
 
 ```ts title="modal.ts"
 import { App, Modal } from "obsidian";
@@ -26,10 +22,10 @@ export class ExampleModal extends Modal {
 }
 ```
 
-- [`onOpen()`](../api/classes/Modal.md#onopen) is called when the modal is opened and is responsible for building the content of your modal. For more information, refer to [HTML elements](html-elements.md).
-- [`onClose()`](../api/classes/Modal.md#onclose) is called when the modal is closed and is responsible for cleaning up any resources used by the modal.
+- [`onOpen()`](../reference/typescript/classes/Modal.md#onopen) is called when the modal is opened and is responsible for building the content of your modal. For more information, refer to [HTML elements](html-elements.md).
+- [`onClose()`](../reference/typescript/classes/Modal.md#onclose) is called when the modal is closed and is responsible for cleaning up any resources used by the modal.
 
-To open a modal, create a new instance of `ExampleModal` and call [`open()`](../api/classes/Modal.md#open) on it:
+To open a modal, create a new instance of `ExampleModal` and call [`open()`](../reference/typescript/classes/Modal.md#open) on it:
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
@@ -109,7 +105,7 @@ new ExampleModal(this.app, (result) => {
 
 ## Select from list of suggestions
 
-[`SuggestModal`](../api/classes/SuggestModal.md) is a special modal that lets you display a list of suggestions to the user.
+[`SuggestModal`](../reference/typescript/classes/SuggestModal.md) is a special modal that lets you display a list of suggestions to the user.
 
 ![Modal with suggestions](../../static/img/suggest-modal.gif)
 
@@ -157,7 +153,7 @@ export class ExampleModal extends SuggestModal<Book> {
 }
 ```
 
-In addition to `SuggestModal`, the Obsidian API provides an even more specialized type of modal for suggestions: the [`FuzzySuggestModal`](../api/classes/FuzzySuggestModal.md). While it doesn't give you the same control of how each item is rendered, you get [fuzzy string search](https://en.wikipedia.org/wiki/Approximate_string_matching) out-of-the-box.
+In addition to `SuggestModal`, the Obsidian API provides an even more specialized type of modal for suggestions: the [`FuzzySuggestModal`](../reference/typescript/classes/FuzzySuggestModal.md). While it doesn't give you the same control of how each item is rendered, you get [fuzzy string search](https://en.wikipedia.org/wiki/Approximate_string_matching) out-of-the-box.
 
 ![Fuzzy string search](../../static/img/fuzzy-suggestion-modal.png)
 

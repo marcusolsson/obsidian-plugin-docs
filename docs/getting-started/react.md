@@ -4,13 +4,13 @@ sidebar_position: 77
 
 # React
 
-In this guide, you'll configure your plugin to use [React](https://reactjs.org/). It assumes that you already have a plugin with a [custom view](../guides/custom-views.md) that you want to convert to use React.
+In this guide, you'll configure your plugin to use [React](https://reactjs.org/). It assumes that you already have a plugin with a [custom view](../user-interface/views.md) that you want to convert to use React.
 
 While you don't need to use a separate framework to build a plugin, there are a few reasons why you'd want to use React:
 
 - You have existing experience of React and want to use a familiar technology.
 - You have existing React components that you want to reuse in your plugin.
-- Your plugin requires complex state management or other features that can be cumbersome to implement with regular [HTML element](../guides/html-elements.md).
+- Your plugin requires complex state management or other features that can be cumbersome to implement with regular [HTML element](../user-interface/html-elements.md).
 
 ## Configure your plugin
 
@@ -50,7 +50,7 @@ export const ReactView = () => {
 
 ## Mount the React component
 
-To use the React component, it needs to be mounted on a [HTML element](../guides/html-elements.md). The following example mounts the `ReactView` component on the `this.containerEl.children[1]` element:
+To use the React component, it needs to be mounted on a [HTML element](../user-interface/html-elements.md). The following example mounts the `ReactView` component on the `this.containerEl.children[1]` element:
 
 ```tsx title="view.tsx"
 import { ItemView, WorkspaceLeaf } from "obsidian";
@@ -96,11 +96,11 @@ class ExampleView extends ItemView {
 
 For more information on `ReactDOM.render()` and `ReactDOM.unmountComponentAtNode()`, refer to the documentation on [ReactDOM](https://reactjs.org/docs/react-dom.html).
 
-You can mount your React component on any `HTMLElement`, for example [status bar items](../guides/status-bar.md). Just make sure to clean up properly by calling `ReactDOM.unmountComponentAtNode()` when you're done.
+You can mount your React component on any `HTMLElement`, for example [status bar items](../user-interface/status-bar.md). Just make sure to clean up properly by calling `ReactDOM.unmountComponentAtNode()` when you're done.
 
 ## Create an App context
 
-If you want to access the [`App`](../api/classes/App.md) object from one of your React components, you need to pass it as a dependency. As your plugin grows, even though you're only using the `App` object in a few places, you start passing it through the whole component tree.
+If you want to access the [`App`](../reference/typescript/classes/App.md) object from one of your React components, you need to pass it as a dependency. As your plugin grows, even though you're only using the `App` object in a few places, you start passing it through the whole component tree.
 
 Another alternative is to create a React context for the app to make it globally available to all components inside your React view.
 

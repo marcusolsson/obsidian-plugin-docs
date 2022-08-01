@@ -26,27 +26,34 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
         "@docusaurus/plugin-client-redirects",
         {
           redirects: [
-            {
-              to: "/api/classes/Plugin_2",
-              from: ["/api/classes/Plugin"],
-            },
-            {
-              to: "/concepts/plugin-anatomy",
-              from: ["/getting-started/plugin-anatomy"],
-            },
-            {
-              to: "/advanced-guides/react",
-              from: ["/guides/react"],
-            },
-            {
-              to: "/advanced-guides/svelte",
-              from: ["/guides/svelte"],
-            },
-            {
-              to: "/concepts/editor-extensions",
-              from: ["/concepts/codemirror"],
-            },
+            { to: "/reference/typescript/classes/Plugin_2", from: ["/reference/typescript/classes/Plugin"] },
+            { to: "/getting-started/plugin-anatomy", from: ["/concepts/plugin-anatomy"], },
+            { to: "/getting-started/react", from: ["/guides/react", "/advanced-guides/react"] },
+            { to: "/getting-started/svelte", from: ["/guides/svelte", "/advanced-guides/svelte"] },
+            { to: "/editor/extensions", from: ["/concepts/codemirror"], },
+            { to: "/user-interface/commands", from: ["/guides/commands"] },
+            { to: "/user-interface/context-menus", from: ["/guides/context-menus"] },
+            { to: "/user-interface/html-elements", from: ["/guides/html-elements"] },
+            { to: "/user-interface/icons", from: ["/guides/icons"] },
+            { to: "/user-interface/modals", from: ["/guides/modals"] },
+            { to: "/user-interface/ribbon-actions", from: ["/guides/ribbon-actions"] },
+            { to: "/user-interface/settings", from: ["/guides/settings"] },
+            { to: "/user-interface/status-bar", from: ["/guides/status-bar"] },
+            { to: "/reference/manifest", from: ["/manifest-reference"] },
           ],
+          createRedirects(existingPath) {
+            if (existingPath.includes('/reference/typescript')) {
+              return [
+                existingPath.replace('/reference/typescript', '/api'),
+              ];
+            }
+            if (existingPath.includes('/editor/extensions')) {
+              return [
+                existingPath.replace('/editor/extensions', '/concepts/editor-extensions'),
+              ];
+            }
+            return undefined; // Return a falsy value: no redirect created
+          },
         },
       ],
     ],

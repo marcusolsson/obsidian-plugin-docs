@@ -4,16 +4,16 @@ Obsidian has built-in support for Markdown files and other media types, such as 
 
 By the end of this tutorial, you'll be able to:
 
-- Use the [TextFileView](../api/classes/TextFileView.md) to display and edit text-based file formats.
+- Use the [TextFileView](../reference/typescript/classes/TextFileView.md) to display and edit text-based file formats.
 
 ## Prerequisites
 
 - [Create your first plugin](../getting-started/create-your-first-plugin.md).
-- Understand how to create basic [HTML elements](../guides/html-elements.md).
+- Understand how to create basic [HTML elements](../user-interface/html-elements.md).
 
 ## Step 1 — Register a `TextFileView`
 
-[TextFileView](../api/classes/TextFileView.md) is a [custom view](../guides/custom-views.md) for reading and writing text-based files from your plugin. In this step, you'll extend the TextFileView and tell Obsidian to use it when the user opens a CSV file.
+[TextFileView](../reference/typescript/classes/TextFileView.md) is a [custom view](../user-interface/views.md) for reading and writing text-based files from your plugin. In this step, you'll extend the TextFileView and tell Obsidian to use it when the user opens a CSV file.
 
 1. Create a new file `view.ts` with the following content:
 
@@ -126,7 +126,7 @@ The `clear` parameter in the `setViewData` is `true` whenever the user opens a d
 
 A benefit of creating a custom view for a file format is that you can display it in a more user-friendly way. In this step, you'll render the table data as an HTML `table` element.
 
-You can add HTML elements to the view by appending them to the `contentEl` property on the TextFileView. For more information on how to create HTML elements, refer to [HTML elements](../guides/html-elements.md).
+You can add HTML elements to the view by appending them to the `contentEl` property on the TextFileView. For more information on how to create HTML elements, refer to [HTML elements](../user-interface/html-elements.md).
 
 ```ts
 this.contentEl.createEl("table");

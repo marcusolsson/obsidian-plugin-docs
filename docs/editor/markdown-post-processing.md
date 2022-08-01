@@ -1,6 +1,6 @@
 # Markdown post processing
 
-If you want to change how a Markdown document is rendered in Preview mode, you can add your own _Markdown post processor_. As indicated by the name, the post processor runs _after_ the Markdown has been processed into HTML. It lets you add, remove, or replace [HTML elements](html-elements.md) to the rendered document.
+If you want to change how a Markdown document is rendered in Preview mode, you can add your own _Markdown post processor_. As indicated by the name, the post processor runs _after_ the Markdown has been processed into HTML. It lets you add, remove, or replace [HTML elements](../user-interface/html-elements.md) to the rendered document.
 
 The following example looks for any code block that contains a text between two colons, `:`, and replaces it with an appropriate emoji:
 
@@ -29,7 +29,7 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-The `Emoji` class extends [`MarkdownRenderChild`](../api/classes/MarkdownRenderChild.md), and replaces the code block with a `span` element with the emoji:
+The `Emoji` class extends [`MarkdownRenderChild`](../reference/typescript/classes/MarkdownRenderChild.md), and replaces the code block with a `span` element with the emoji:
 
 ```ts title="emoji.ts"
 import { MarkdownRenderChild } from "obsidian";
@@ -79,7 +79,7 @@ flowchart LR
     Start --> Stop
 ```
 
-If you want to add your own custom code blocks like the Mermaid one, you can use [`registerMarkdownCodeBlockProcessor`](../api/classes/Plugin_2.md#registermarkdowncodeblockprocessor). The following example renders a code block with CSV data, as a table:
+If you want to add your own custom code blocks like the Mermaid one, you can use [`registerMarkdownCodeBlockProcessor`](../reference/typescript/classes/Plugin_2.md#registermarkdowncodeblockprocessor). The following example renders a code block with CSV data, as a table:
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";

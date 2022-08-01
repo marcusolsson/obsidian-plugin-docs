@@ -4,7 +4,7 @@ This page lists common review comments plugin authors get when submitting their 
 
 ## Use `normalizePath()` to clean up user-defined paths
 
-Use [`normalizePath()`](../api/functions/normalizePath) whenever you accept user-defined paths to files or folders in the vault, or when you construct your own paths in the plugin code.
+Use [`normalizePath()`](../reference/typescript/functions/normalizePath) whenever you accept user-defined paths to files or folders in the vault, or when you construct your own paths in the plugin code.
 
 `normalizePath()` takes a path and scrubs it to be safe for the file system and for cross-platform use. This function:
 

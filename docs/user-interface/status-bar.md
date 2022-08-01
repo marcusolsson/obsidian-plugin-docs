@@ -1,10 +1,6 @@
----
-sidebar_position: 45
----
-
 # Status bar
 
-To create a new block in the status bar, call the [`addStatusBarItem()`](../api/classes/Plugin_2.md#addstatusbaritem) in the `onload()` method. The `addStatusBarItem()` method returns an [HTML element](html-elements.md) that you can add your own elements to.
+To create a new block in the status bar, call the [`addStatusBarItem()`](../reference/typescript/classes/Plugin_2.md#addstatusbaritem) in the `onload()` method. The `addStatusBarItem()` method returns an [HTML element](html-elements.md) that you can add your own elements to.
 
 :::caution Obsidian mobile
 Custom status bar items [is **not** supported](https://discord.com/channels/686053708261228577/707816848615407697/832321402106544179) on Obsidian mobile apps.

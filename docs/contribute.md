@@ -19,9 +19,9 @@ If you see anything that violates any of these style guides, please let me know 
 This site hosts four types of documentation:
 
 - **Tutorials** are _learning-oriented_: they take the reader through a series of steps to complete a project. For example, [Create your first plugin](getting-started/create-your-first-plugin.md).
-- **Guides** are _goal-oriented_: they provide step-by-step instructions for how to solve a specific problem. For example, [Settings](guides/settings.md).
-- **Reference** is _information-oriented_: its only job is to describe. For example, [Plugin](api/classes/Plugin_2.md).
-- **Concepts** is _understanding-oriented_: they deepen the reader's understanding in a topic. For example, [Workspace](concepts/workspace.md).
+- **Guides** are _goal-oriented_: they provide step-by-step instructions for how to solve a specific problem. For example, [Settings](user-interface/settings.md).
+- **Reference** is _information-oriented_: its only job is to describe. For example, [Plugin](reference/typescript/classes/Plugin_2.md).
+- **Concepts** is _understanding-oriented_: they deepen the reader's understanding in a topic. For example, [Workspace](user-interface/workspace.md).
 
 For more information, refer to [The documentation system](https://documentation.divio.com/) by [Divio](https://www.divio.com/).
 

@@ -1,9 +1,3 @@
----
-slug: /manifest
-sidebar_label: Manifest reference
-sidebar_position: 75
----
-
 # Manifest
 
 This page describe the schema for the plugin manifest, `manifest.json`.

@@ -1,7 +1,3 @@
----
-sidebar_position: 55
----
-
 # Settings
 
 If you want users to be able to configure parts of your plugin themselves, you can expose them as _settings_.
@@ -63,7 +59,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Save and load the settings object
 
-[`loadData()`](../api/classes/Plugin_2.md#loaddata) and [`saveData()`](../api/classes/Plugin_2.md#savedata) provide an easy way to store and retrieve data from disk. The example also introduces two helper methods that makes it easier to use `loadData()` and `saveData()` from other parts of the plugin.
+[`loadData()`](../reference/typescript/classes/Plugin_2.md#loaddata) and [`saveData()`](../reference/typescript/classes/Plugin_2.md#savedata) provide an easy way to store and retrieve data from disk. The example also introduces two helper methods that makes it easier to use `loadData()` and `saveData()` from other parts of the plugin.
 
 ```ts
 export default class ExamplePlugin extends Plugin {
@@ -120,7 +116,7 @@ The plugin can now save and load plugin configuration, but the user doesn't yet 
 this.addSettingTab(new ExampleSettingTab(this.app, this));
 ```
 
-Here, the `ExampleSettingTab` is a class that extends [`PluginSettingTab`](../api/classes/PluginSettingTab.md):
+Here, the `ExampleSettingTab` is a class that extends [`PluginSettingTab`](../reference/typescript/classes/PluginSettingTab.md):
 
 ```ts title="settings.ts"
 import ExamplePlugin from "./main";

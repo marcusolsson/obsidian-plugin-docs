@@ -1,6 +1,6 @@
 # Context menus
 
-If you want to open up a context menu, use [`Menu`](../api/classes/Menu.md):
+If you want to open up a context menu, use [`Menu`](../reference/typescript/classes/Menu.md):
 
 ```ts
 import { Menu, Notice, Plugin } from "obsidian";
@@ -36,7 +36,7 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-[`showAtMouseEvent()`](../api/classes/Menu.md#showatmouseevent) opens the menu where you clicked with the mouse.
+[`showAtMouseEvent()`](../reference/typescript/classes/Menu.md#showatmouseevent) opens the menu where you clicked with the mouse.
 
 :::tip
 If you need more control of where the menu appears, you can use `menu.showAtPosition({ x: 20, y: 20 })` to open the menu at a position relative to the top-left corner of the Obsidian window.
@@ -82,4 +82,4 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-For more information on handling events, refer to [Events](events.md).
+For more information on handling events, refer to [Events](../events.md).

@@ -1,12 +1,8 @@
----
-sidebar_position: 80
----
-
 # Editor
 
-The [`Editor`](../api/classes/Editor.md) class exposes operations for reading and manipulating an active Markdown document in edit mode.
+The [`Editor`](../reference/typescript/classes/Editor.md) class exposes operations for reading and manipulating an active Markdown document in edit mode.
 
-If you want to access the editor in a command, use the [editorCallback](./commands.md#editor-commands).
+If you want to access the editor in a command, use the [editorCallback](../user-interface/commands.md#editor-commands).
 
 If you want to use the editor elsewhere, you can access it from the active view:
 
@@ -28,7 +24,7 @@ Obsidian uses [CodeMirror](https://codemirror.net/) (CM) as the underlying text 
 
 ## Insert text at cursor position
 
-The [`replaceRange()`](../api/classes/Editor.md#replacerange) method replaces the text between two cursor positions. If you only give it one position, it inserts the new text between that position and the next.
+The [`replaceRange()`](../reference/typescript/classes/Editor.md#replacerange) method replaces the text between two cursor positions. If you only give it one position, it inserts the new text between that position and the next.
 
 The following command inserts today's date at the cursor position:
 
@@ -53,7 +49,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Replace current selection
 
-If you want to modify the selected text, use [`replaceSelection()`](../api/classes/Editor.md#replaceselection) to replace the current selection with a new text.
+If you want to modify the selected text, use [`replaceSelection()`](../reference/typescript/classes/Editor.md#replaceselection) to replace the current selection with a new text.
 
 The following command reads the current selection and converts it to uppercase:
 

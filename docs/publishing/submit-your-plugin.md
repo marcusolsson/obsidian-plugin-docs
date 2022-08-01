@@ -16,7 +16,7 @@ To follow this guide, make sure you have the following files at the root of your
 
 - A `README.md` that describes the purpose of the plugin, and how to use it.
 - A `LICENSE` that determines how others are allowed to use the plugin and its source code. If you need help to pick a license for your plugin, refer to [Choose a License](https://choosealicense.com/).
-- A `manifest.json` that describes your plugin. For more information, refer to [Manifest](manifest-reference.md).
+- A `manifest.json` that describes your plugin. For more information, refer to [Manifest](reference/manifest.md).
 
 ## Step 1 — Create a release
 
@@ -58,7 +58,7 @@ In this step, you'll submit your plugin to the Obsidian team for review.
    }
    ```
 
-   - `id`, `name`, `author`, and `description` determines how your plugin appears to the user, and should match the corresponding properties in your [plugin manifest](manifest-reference.md).
+   - `id`, `name`, `author`, and `description` determines how your plugin appears to the user, and should match the corresponding properties in your [plugin manifest](reference/manifest.md).
    - `id` is unique to your plugin. Search `community-plugins.json` to confirm that there's no existing plugin with the same id.
    - `repo` is the path to your GitHub repository. For example, if your GitHub repo is located at https://github.com/your-username/your-repo-name, the path is `your-username/your-repo-name`.
    - (Optional) `branch` lets you specify the Git branch you want to use. It defaults to `master`, if omitted.

@@ -2,7 +2,7 @@
 
 This example adds a command that opens a modal to insert a Markdown link. It uses the editor to set the current selection as the default link text, and then replaces the selection when user inserts the link.
 
-This example assumes knowledge of [commands](../guides/commands.md), [modals](../guides/modals.md), and the [editor](../guides/editor.md). If you have difficulties to understand this example, refer to the corresponding guides before you continue reading.
+This example assumes knowledge of [commands](../user-interface/commands.md), [modals](../user-interface/modals.md), and the [editor](../editor/index.md). If you have difficulties to understand this example, refer to the corresponding guides before you continue reading.
 
 Here's what you'll create:
 

@@ -1,15 +1,15 @@
 ---
-slug: /api
 sidebar_label: Overview
 ---
 
-# API reference
+# Obsidian TypeScript API
 
 :::warning
 This documentation has been generated from the [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
 
 The [script](https://github.com/marcusolsson/dts-docs) used to generate the documentation is still relatively untested. If you spot any errors or inconsistencies with the official API, let me know.
 :::
+
 ## Classes
 
 - [AbstractTextComponent](classes/AbstractTextComponent.md)
