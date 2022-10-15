@@ -93,7 +93,7 @@ When the user enables the plugin for the first time, none of the settings have b
 To understand how this work, let's look at the following code:
 
 ```ts
-Object.assign(DEFAULT_SETTINGS, await this.loadData())
+Object.assign({}, DEFAULT_SETTINGS, await this.loadData())
 ```
 
 `Object.assign()` is a JavaScript function that copies all properties from one object to another. Any properties that are returned by `loadData()` override the properties in `DEFAULT_SETTINGS`.
