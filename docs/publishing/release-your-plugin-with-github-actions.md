@@ -43,7 +43,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
           id: build
           run: |
             npm install
-            npm run build --if-present
+            npm run build
 
         # Package the required files into a zip
         - name: Package
