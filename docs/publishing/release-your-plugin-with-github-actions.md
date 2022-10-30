@@ -30,7 +30,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
         - name: Use Node.js
           uses: actions/setup-node@v1
           with:
-            node-version: "14.x" # You might need to adjust this value to your own version
+            node-version: "18.x" # You might need to adjust this value to your own version.
 
         # Get the version number and put it in an environment file
         - name: Get Version
