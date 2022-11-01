@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkobsidian_plugin_docs=self.webpackChunkobsidian_plugin_docs||[]).push([[8894],{18894:(s,i,n)=>{n.r(i)}}]);
