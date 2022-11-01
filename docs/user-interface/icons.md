@@ -4,8 +4,7 @@ Several of the UI components in the Obsidian API lets you configure an accompany
 
 ## Browse available icons
 
-If you'd like to see all available icons and their corresponding names, you can install the
-[Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) plugin by mgmeyers. While its main purpose is to replace the built-in icons with custom ones, it also serves as a list of what icons are available in Obsidian.
+Browse to [lucide.dev](https://lucide.dev/) to see all available icons and their corresponding names.
 
 ## Draw icons
 
@@ -17,8 +16,16 @@ import { Plugin, setIcon } from "obsidian";
 export default class ExamplePlugin extends Plugin {
   async onload() {
     const item = this.addStatusBarItem();
-    setIcon(item, "info", 14);
+    setIcon(item, "info");
   }
+}
+```
+
+To change the size of the icon, set the `--icon-size` CSS variable on the element containing the icon:
+
+```css
+div {
+  --icon-size: 18px;
 }
 ```
 
