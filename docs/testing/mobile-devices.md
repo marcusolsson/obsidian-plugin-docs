@@ -29,3 +29,39 @@ this.app.emulateMobile(!this.app.isMobile);
 ```
 
 :::
+
+## Platform-specific features
+
+To detect the platform your plugin is running on, you can use `Platform`:
+
+```ts
+import { Platform } from "obsidian";
+
+if (Platform.isIosApp) {
+  // ...
+}
+
+if (Platform.isAndroidApp) {
+  // ...
+}
+```
+
+## Disable your plugin on mobile devices
+
+If your plugin requires the Node.js or Electron API, you can prevent users from installing the plugin on mobile devices.
+
+To only support the desktop app, set `isDesktopOnly` to `true` in the [manifest.json](../reference/manifest.md).
+
+## Troubleshooting
+
+This section lists common issues when developing for mobile devices.
+
+### Node and Electron APIs
+
+The Node.js API and the Electron API aren't available on mobile devices. Any calls to these libraries result cause your plugin to crash.
+
+### Lookbehind in regular expressions
+
+Lookbehind in regular expressions is currently not supported on iOS. To implement a fallback for iOS users, refer to [Platform-specific features](#platform-specific-features).
+
+Refer to [Can I Use](https://caniuse.com/js-regexp-lookbehind) for an up-to-date status. Look for "Safari on iOS".
