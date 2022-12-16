@@ -1,9 +1,9 @@
 # debounce
 
 ```ts
-export function debounce<T extends unknown[]>(cb: (...args: [
+export function debounce<T extends unknown[], V>(cb: (...args: [
     ...T
-]) => any, timeout?: number, resetTimer?: boolean): Debouncer<T>;
+]) => V, timeout?: number, resetTimer?: boolean): Debouncer<T, V>;
 ```
 
 A standard debounce function.

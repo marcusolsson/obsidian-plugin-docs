@@ -75,6 +75,12 @@ onLoadFile(file: TFile): Promise<void>;
 onUnloadFile(file: TFile): Promise<void>;
 ```
 
+### onRename
+
+```ts
+onRename(file: TFile): Promise<void>;
+```
+
 ### canAcceptExtension
 
 ```ts

@@ -27,13 +27,13 @@ setDisabled(disabled: boolean): this;
 ### setTooltip
 
 ```ts
-setTooltip(tooltip: string): this;
+setTooltip(tooltip: string, options?: TooltipOptions): this;
 ```
 
 ### setIcon
 
 ```ts
-setIcon(icon: string): this;
+setIcon(icon: IconName): this;
 ```
 
 ### onClick

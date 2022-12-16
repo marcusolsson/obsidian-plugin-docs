@@ -1,6 +1,6 @@
 # MarkdownEditView
 
-Implements `MarkdownSubView`, `HoverParent`
+Implements `MarkdownSubView`, `HoverParent`, `MarkdownFileInfo`
 
 This is the editor for Obsidian Mobile as well as the upcoming WYSIWYG editor.
 
@@ -11,6 +11,12 @@ constructor(view: MarkdownView);
 ```
 
 ## Properties
+
+### app
+
+```ts
+app: App
+```
 
 ### hoverPopover
 

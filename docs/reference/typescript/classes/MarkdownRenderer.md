@@ -12,6 +12,12 @@ constructor(containerEl: HTMLElement);
 
 ## Properties
 
+### app
+
+```ts
+app: App
+```
+
 ### hoverPopover
 
 ```ts

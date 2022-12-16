@@ -72,6 +72,10 @@ on(name: 'changed', callback: (file: TFile, data: string, cache: CachedMetadata)
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+
+Note: This is not called when a file is renamed for performance reasons.
+You must hook the vault rename event for those.
+(Details: https://github.com/obsidianmd/obsidian-api/issues/77)
 Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
 but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
@@ -85,6 +89,10 @@ on(name: 'deleted', callback: (file: TFile, prevCache: CachedMetadata | null) =>
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+
+Note: This is not called when a file is renamed for performance reasons.
+You must hook the vault rename event for those.
+(Details: https://github.com/obsidianmd/obsidian-api/issues/77)
 Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
 but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
@@ -98,6 +106,10 @@ on(name: 'resolve', callback: (file: TFile) => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+
+Note: This is not called when a file is renamed for performance reasons.
+You must hook the vault rename event for those.
+(Details: https://github.com/obsidianmd/obsidian-api/issues/77)
 Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
 but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.
@@ -111,6 +123,10 @@ on(name: 'resolved', callback: () => any, ctx?: any): EventRef;
 ```
 
 Called when a file has been indexed, and its (updated) cache is now available.
+
+Note: This is not called when a file is renamed for performance reasons.
+You must hook the vault rename event for those.
+(Details: https://github.com/obsidianmd/obsidian-api/issues/77)
 Called when a file has been deleted. A best-effort previous version of the cached metadata is presented,
 but it could be null in case the file was not successfully cached previously.
 Called when a file has been resolved for `resolvedLinks` and `unresolvedLinks`.

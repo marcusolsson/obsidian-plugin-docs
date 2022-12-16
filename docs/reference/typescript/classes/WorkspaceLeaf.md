@@ -90,7 +90,7 @@ detach(): void;
 ### getIcon
 
 ```ts
-getIcon(): string;
+getIcon(): IconName;
 ```
 
 ### getDisplayText

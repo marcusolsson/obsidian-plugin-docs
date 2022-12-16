@@ -45,7 +45,7 @@ setWarning(): this;
 ### setTooltip
 
 ```ts
-setTooltip(tooltip: string): this;
+setTooltip(tooltip: string, options?: TooltipOptions): this;
 ```
 
 ### setButtonText
@@ -57,7 +57,7 @@ setButtonText(name: string): this;
 ### setIcon
 
 ```ts
-setIcon(icon: string): this;
+setIcon(icon: IconName): this;
 ```
 
 ### setClass

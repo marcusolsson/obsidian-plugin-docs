@@ -17,13 +17,13 @@ setTitle(title: string | DocumentFragment): this;
 ### setIcon
 
 ```ts
-setIcon(icon: string | null, size?: number): this;
+setIcon(icon: IconName | null): this;
 ```
 
-### setActive
+### setChecked
 
 ```ts
-setActive(active: boolean): this;
+setChecked(checked: boolean | null): this;
 ```
 
 ### setDisabled

@@ -93,7 +93,7 @@ setEphemeralState(state: any): void;
 ### getIcon
 
 ```ts
-getIcon(): string;
+getIcon(): IconName;
 ```
 
 ### onResize

@@ -67,7 +67,7 @@ setClass(cls: string): this;
 ### setTooltip
 
 ```ts
-setTooltip(tooltip: string): this;
+setTooltip(tooltip: string, options?: TooltipOptions): this;
 ```
 
 ### setHeading
@@ -128,6 +128,12 @@ addMomentFormat(cb: (component: MomentFormatComponent) => any): this;
 
 ```ts
 addDropdown(cb: (component: DropdownComponent) => any): this;
+```
+
+### addColorPicker
+
+```ts
+addColorPicker(cb: (component: ColorComponent) => any): this;
 ```
 
 ### addSlider

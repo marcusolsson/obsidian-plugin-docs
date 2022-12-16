@@ -2,6 +2,8 @@
 
 Extends `TextFileView`
 
+Implements `MarkdownFileInfo`
+
 ## Constructor
 
 ```ts
@@ -26,6 +28,12 @@ previewMode: MarkdownPreviewView
 
 ```ts
 currentMode: MarkdownSubView
+```
+
+### hoverPopover
+
+```ts
+hoverPopover: HoverPopover
 ```
 
 ## Methods

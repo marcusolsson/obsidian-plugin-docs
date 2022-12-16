@@ -76,6 +76,12 @@ writeBinary(normalizedPath: string, data: ArrayBuffer, options?: DataWriteOption
 append(normalizedPath: string, data: string, options?: DataWriteOptions): Promise<void>;
 ```
 
+### process
+
+```ts
+process(normalizedPath: string, fn: (data: string) => string, options?: DataWriteOptions): Promise<string>;
+```
+
 ### getResourcePath
 
 ```ts

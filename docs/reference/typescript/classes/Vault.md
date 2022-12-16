@@ -127,6 +127,14 @@ modifyBinary(file: TFile, data: ArrayBuffer, options?: DataWriteOptions): Promis
 append(file: TFile, data: string, options?: DataWriteOptions): Promise<void>;
 ```
 
+### process
+
+```ts
+process(file: TFile, fn: (data: string) => string, options?: DataWriteOptions): Promise<string>;
+```
+
+Atomically read, modify, and save the contents of a note.
+
 ### copy
 
 ```ts

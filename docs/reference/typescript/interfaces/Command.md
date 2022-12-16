@@ -63,7 +63,7 @@ the command to be hidden from the command palette.
 ### editorCallback
 
 ```ts
-editorCallback: (editor: Editor, view: MarkdownView) => any
+editorCallback: (editor: Editor, ctx: MarkdownView | MarkdownFileInfo) => any
 ```
 
 A command callback that is only triggered when the user is in an editor.
@@ -72,7 +72,7 @@ Overrides `callback` and `checkCallback`
 ### editorCheckCallback
 
 ```ts
-editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => boolean | void
+editorCheckCallback: (checking: boolean, editor: Editor, ctx: MarkdownView | MarkdownFileInfo) => boolean | void
 ```
 
 A command callback that is only triggered when the user is in an editor.

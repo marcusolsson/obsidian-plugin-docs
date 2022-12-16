@@ -33,3 +33,14 @@ generateMarkdownLink(file: TFile, sourcePath: string, subpath?: string, alias?: 
 ```
 
 Generate a markdown link based on the user's preferences.
+
+### processFrontMatter
+
+```ts
+processFrontMatter(file: TFile, fn: (frontMatter: any) => void): Promise<void>;
+```
+
+Atomically read, modify, and save the frontmatter of a note.
+The frontmatter is passed in as a JS object, and should be mutated directly to achieve the desired result.
+
+Remember to handle errors thrown by this method.

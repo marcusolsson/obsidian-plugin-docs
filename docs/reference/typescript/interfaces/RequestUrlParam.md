@@ -37,3 +37,6 @@ headers: Record<string, string>
 ```ts
 throw: boolean
 ```
+
+Whether to throw an error when the status code is &gt;= 400
+Defaults to true

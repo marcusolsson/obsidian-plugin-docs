@@ -70,14 +70,17 @@ layoutReady: boolean
 ### requestSaveLayout
 
 ```ts
-requestSaveLayout: () => void
+requestSaveLayout: Debouncer<[], Promise<void>>
 ```
 
-### requestSaveHistory
+### activeEditor
 
 ```ts
-requestSaveHistory: () => void
+activeEditor: MarkdownFileInfo
 ```
+
+A component managing the current editor. This can be null
+if the active view has no editor.
 
 ## Methods
 
@@ -108,12 +111,6 @@ getLayout(): any;
 createLeafInParent(parent: WorkspaceSplit, index: number): WorkspaceLeaf;
 ```
 
-### splitLeaf
-
-```ts
-splitLeaf(source: WorkspaceItem, newLeaf: WorkspaceItem, direction?: SplitDirection, before?: boolean): void;
-```
-
 ### createLeafBySplit
 
 ```ts
@@ -132,6 +129,12 @@ splitActiveLeaf(direction?: SplitDirection): WorkspaceLeaf;
 duplicateLeaf(leaf: WorkspaceLeaf, direction?: SplitDirection): Promise<WorkspaceLeaf>;
 ```
 
+### duplicateLeaf
+
+```ts
+duplicateLeaf(leaf: WorkspaceLeaf, leafType: PaneType | boolean, direction?: SplitDirection): Promise<WorkspaceLeaf>;
+```
+
 ### getUnpinnedLeaf
 
 ```ts
@@ -141,16 +144,40 @@ getUnpinnedLeaf(type?: string): WorkspaceLeaf;
 ### getLeaf
 
 ```ts
-getLeaf(newLeaf?: boolean, direction?: SplitDirection): WorkspaceLeaf;
+getLeaf(newLeaf?: 'split', direction?: SplitDirection): WorkspaceLeaf;
 ```
 
-Returns a leaf that can be used for navigation.
+Creates a new leaf in a leaf adjacent to the currently active leaf.
+If direction is `'vertical'`, the leaf will appear to the right.
+If direction is `'horizontal'`, the leaf will appear below the current leaf.
+If newLeaf is false (or not set) then an existing leaf which can be navigated
+is returned, or a new leaf will be created if there was no leaf available.
 
-If newLeaf is true, then a new leaf will be created in a preferred location within
-the root split and returned.
+If newLeaf is `'tab'` or `true` then a new leaf will be created in the preferred
+location within the root split and returned.
 
-If newLeaf is false (or not set), then an existing leaf which can be navigated will be returned,
-or a new leaf will be created if there was no leaf available.
+If newLeaf is `'split'` then a new leaf will be created adjacent to the currently active leaf.
+
+If newLeaf is `'window'` then a popout window will be created with a new leaf inside.
+
+### getLeaf
+
+```ts
+getLeaf(newLeaf?: PaneType | boolean): WorkspaceLeaf;
+```
+
+Creates a new leaf in a leaf adjacent to the currently active leaf.
+If direction is `'vertical'`, the leaf will appear to the right.
+If direction is `'horizontal'`, the leaf will appear below the current leaf.
+If newLeaf is false (or not set) then an existing leaf which can be navigated
+is returned, or a new leaf will be created if there was no leaf available.
+
+If newLeaf is `'tab'` or `true` then a new leaf will be created in the preferred
+location within the root split and returned.
+
+If newLeaf is `'split'` then a new leaf will be created adjacent to the currently active leaf.
+
+If newLeaf is `'window'` then a popout window will be created with a new leaf inside.
 
 ### moveLeafToPopout
 
@@ -173,13 +200,23 @@ Only works on the desktop app.
 ### openLinkText
 
 ```ts
-openLinkText(linktext: string, sourcePath: string, newLeaf?: boolean, openViewState?: OpenViewState): Promise<void>;
+openLinkText(linktext: string, sourcePath: string, newLeaf?: PaneType | boolean, openViewState?: OpenViewState): Promise<void>;
 ```
 
 ### setActiveLeaf
 
 ```ts
-setActiveLeaf(leaf: WorkspaceLeaf, pushHistory?: boolean, focus?: boolean): void;
+setActiveLeaf(leaf: WorkspaceLeaf, params?: {
+    focus?: boolean;
+}): void;
+```
+
+Sets the active leaf
+
+### setActiveLeaf
+
+```ts
+setActiveLeaf(leaf: WorkspaceLeaf, pushHistory: boolean, focus: boolean): void;
 ```
 
 Sets the active leaf
@@ -478,7 +515,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: 'editor-menu', callback: (menu: Menu, editor: Editor, view: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-menu', callback: (menu: Menu, editor: Editor, info: MarkdownView | MarkdownFileInfo) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -497,7 +534,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: 'editor-change', callback: (editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-change', callback: (editor: Editor, info: MarkdownView | MarkdownFileInfo) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -516,7 +553,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: 'editor-paste', callback: (evt: ClipboardEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-paste', callback: (evt: ClipboardEvent, editor: Editor, info: MarkdownView | MarkdownFileInfo) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.
@@ -535,7 +572,7 @@ Perform some best effort cleanup here.
 ### on
 
 ```ts
-on(name: 'editor-drop', callback: (evt: DragEvent, editor: Editor, markdownView: MarkdownView) => any, ctx?: any): EventRef;
+on(name: 'editor-drop', callback: (evt: DragEvent, editor: Editor, info: MarkdownView | MarkdownFileInfo) => any, ctx?: any): EventRef;
 ```
 
 Triggered when the CSS of the app has changed.

@@ -27,7 +27,7 @@ manifest: PluginManifest
 ### addRibbonIcon
 
 ```ts
-addRibbonIcon(icon: string, title: string, callback: (evt: MouseEvent) => any): HTMLElement;
+addRibbonIcon(icon: IconName, title: string, callback: (evt: MouseEvent) => any): HTMLElement;
 ```
 
 Adds a ribbon icon to the left bar.
@@ -57,6 +57,14 @@ addSettingTab(settingTab: PluginSettingTab): void;
 ```ts
 registerView(type: string, viewCreator: ViewCreator): void;
 ```
+
+### registerHoverLinkSource
+
+```ts
+registerHoverLinkSource(id: string, info: HoverLinkSource): void;
+```
+
+Register your view with the 'Page preview' core plugin as an emitter of the 'hover-link' on the event.
 
 ### registerExtensions
 

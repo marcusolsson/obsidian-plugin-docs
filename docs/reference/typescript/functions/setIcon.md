@@ -1,8 +1,10 @@
 # setIcon
 
 ```ts
-export function setIcon(parent: HTMLElement, iconId: string, size?: number): void;
+export function setIcon(parent: HTMLElement, iconId: IconName): void;
 ```
+
+Insert an SVG into the element from an iconId. Does nothing if no icon associated with the iconId.
 
 ## Parameters
 
@@ -10,4 +12,3 @@ export function setIcon(parent: HTMLElement, iconId: string, size?: number): voi
 |-----------|-------------|
 | `parent` | the HTML element to insert the icon |
 | `iconId` | the icon ID |
-| `size` | the pixel size for width and height, defaults to 16 |

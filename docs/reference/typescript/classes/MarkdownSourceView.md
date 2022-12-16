@@ -1,6 +1,6 @@
 # MarkdownSourceView
 
-Implements `MarkdownSubView`, `HoverParent`
+Implements `MarkdownSubView`, `HoverParent`, `MarkdownFileInfo`
 
 ## Constructor
 
@@ -9,6 +9,12 @@ constructor(view: MarkdownView);
 ```
 
 ## Properties
+
+### app
+
+```ts
+app: App
+```
 
 ### cmEditor
 

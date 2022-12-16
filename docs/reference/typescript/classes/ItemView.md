@@ -21,5 +21,5 @@ contentEl: HTMLElement
 ### addAction
 
 ```ts
-addAction(icon: string, title: string, callback: (evt: MouseEvent) => any, size?: number): HTMLElement;
+addAction(icon: IconName, title: string, callback: (evt: MouseEvent) => any): HTMLElement;
 ```
