@@ -21,7 +21,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## Plugin lifecycle
 
-[`onload()`](../reference/typescript/classes/Component.md#onload) runs whenever the user starts using the plugin in Obsidian. This is where you'll configure most of the plugin's capabilities.
+[`onload()`](../reference/typescript/classes/Component.md#onload) runs whenever the user starts using the plugin in Obsidian. This is where you'll configure most of the plugin's capabilities. This function is also called when the plugin is updated.
 
 [`onunload()`](../reference/typescript/classes/Component.md#onunload) runs when the plugin is disabled. Any resources that your plugin is using must be released here to avoid affecting the performance of Obsidian after your plugin has been disabled.
 
