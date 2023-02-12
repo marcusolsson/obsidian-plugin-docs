@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # Create your first plugin
 
-In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ), or [How to Create an Obsidian Plugin](https://www.youtube.com/watch?v=XaES2G3PVpg) by [Phibr0](https://github.com/phibr0) as part of [Obsidian Community Talks](https://www.youtube.com/@obsidiancommunitytalks9199).
+In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ) or [How to create a plugin for Obsidian](https://www.youtube.com/watch?v=XaES2G3PVpg) by [@phibr0](https://github.com/phibr0).
 
 :::warning Before you start
 **Don't develop plugins in your main vault.** When you develop a plugin, one mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
