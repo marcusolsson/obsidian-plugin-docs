@@ -18,6 +18,13 @@ If you run into a problem, it can be helpful to see how others have solved it. B
 - [luckman212/obsidian-plugin-downloader](https://github.com/luckman212/obsidian-plugin-downloader)
 - [claremacrae/obsidian-repos-downloader](https://github.com/claremacrae/obsidian-repos-downloader)
 
+## Search the code of all plugins remotely
+
+You can also dig through the code of all public Obsidian plugins without needing to download them on your device.
+
+- GitHub allows you to search source code using its native search tools, although this can be a bit finnicky.
+- [Sourcegraph](https://sourcegraph.com/search) is much more powerful and greatly simplifies the process of searching through all public repos.
+
 ## Beta testing
 
 Before you [publish](publishing/submit-your-plugin.md) your plugin, you may want to let users try it out first.
