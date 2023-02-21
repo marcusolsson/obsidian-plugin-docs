@@ -22,7 +22,7 @@ If you run into a problem, it can be helpful to see how others have solved it. B
 
 You can also dig through the code of all public Obsidian plugins without needing to download them on your device.
 
-- GitHub allows you to search source code using its native search tools, although this can be a bit finnicky.
+- GitHub allows you to search source code using its native search tools, although this can be a bit finicky.
 - [Sourcegraph](https://sourcegraph.com/search) is much more powerful and greatly simplifies the process of searching through all public repos.
 
 ## Beta testing
