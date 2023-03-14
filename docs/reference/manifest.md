@@ -14,4 +14,5 @@ This page describe the schema for the plugin manifest, `manifest.json`.
 | `name`          | string  | **Yes**  | The display name of your plugin.                       |
 | `version`       | string  | **Yes**  | The version of your plugin.                            |
 | `authorUrl`     | string  | No       | A URL to your own website.                             |
+| `fundingUrl`    | string  | No       | A URL to where the users can support your project.     |
 

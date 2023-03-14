@@ -44,6 +44,10 @@
       "type": "string",
       "description": "A URL to your own website."
     },
+    "fundingUrl": {
+      "type": "string",
+      "description": "A URL to where the users can support your project."
+    },
     "isDesktopOnly": {
       "type": "boolean",
       "description": "Whether your plugin uses NodeJS or Electron APIs."
