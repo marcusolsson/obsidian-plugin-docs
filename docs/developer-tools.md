@@ -22,8 +22,12 @@ If you run into a problem, it can be helpful to see how others have solved it. B
 
 You can also dig through the code of all public Obsidian plugins without needing to download them on your device.
 
-- GitHub allows you to search source code using its native search tools, although this can be a bit finicky.
-- [Sourcegraph](https://sourcegraph.com/search) is much more powerful and greatly simplifies the process of searching through all public repos.
+- GitHub allows you to search source code hosted on their site using its native search tools.
+- [Sourcegraph](https://sourcegraph.com/search) allows you to search source code in public repos across the web, including GitHub.
+
+By using advanced search tools to filter by language (TypeScript) and including "Obsidian" in the search, you can usually narrow your results down to code snippets from Obsidian plugins. It helps if you're searching for an example of some specific part of the Obsidian API. 
+
+For more general examples of how plugins are structured, you can simply locate and browse the repository of any plugin here on GitHub.
 
 ## Beta testing
 
