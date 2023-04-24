@@ -738,6 +738,7 @@ export interface DataAdapter {
      */
     append(normalizedPath: string, data: string, options?: DataWriteOptions): Promise<void>;
     /**
+     * To learn what is the different between `getBasePath`, `getFullPath`, `getRealPath`, `getFullRealPath`, visit [this forum thread](https://forum.obsidian.md/t/what-are-the-differences-between-these-adapter-methods-getbasepath-getfullpath-getrealpath-getfullrealpath/32622?u=ooker) 
      * @public
      */
     process(normalizedPath: string, fn: (data: string) => string, options?: DataWriteOptions): Promise<string>;
