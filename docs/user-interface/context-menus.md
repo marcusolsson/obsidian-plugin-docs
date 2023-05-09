@@ -9,7 +9,7 @@ export default class ExamplePlugin extends Plugin {
   async onload() {
     this.addRibbonIcon("dice", "Open menu", (event) => {
       // highlight-start
-      const menu = new Menu(this.app);
+      const menu = new Menu();
 
       menu.addItem((item) =>
         item
