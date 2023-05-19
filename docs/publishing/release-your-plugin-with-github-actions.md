@@ -39,7 +39,8 @@ The GitHub Action workflow was originally created and shared by [argentum](https
              cp main.js manifest.json styles.css ${{ env.PLUGIN_NAME }}
              zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
              ls
-             echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+             git_tag=$(git tag --sort version:refname | tail -n 1)
+             echo "tag_name=$git_tag" >> "$GITHUB_ENV"
 
          - name: Create Release
            id: create_release
