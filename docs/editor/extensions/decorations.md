@@ -69,11 +69,11 @@ import { EditorView, WidgetType } from "@codemirror/view";
 
 export class EmojiWidget extends WidgetType {
   toDOM(view: EditorView): HTMLElement {
-    const div = document.createElement("span");
+    const span = document.createElement("span");
 
-    div.innerText = "👉";
+    span.innerText = "👉";
 
-    return div;
+    return span;
   }
 }
 ```
