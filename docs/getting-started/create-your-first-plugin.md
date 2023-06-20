@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # Create your first plugin
 
-In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
+In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ) or [How to create a plugin for Obsidian](https://www.youtube.com/watch?v=XaES2G3PVpg) by [@phibr0](https://github.com/phibr0).
 
 :::warning Before you start
 **Don't develop plugins in your main vault.** When you develop a plugin, one mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
@@ -17,6 +17,8 @@ To complete this guide, you will need:
 - [Git](https://git-scm.com/) installed on your local machine.
 - A [GitHub](https://github.com) account.
 - A local development environment for [Node.js](https://Node.js.org/en/about/).
+
+If you wish to use Yarn instead of npm, you will also need [Yarn](https://yarnpkg.com/) installed on your local machine.
 
 ## Step 1 — Download the sample plugin
 
@@ -97,7 +99,7 @@ A plugin is also a Node.js package, which you can configure in the `package.json
 
 ## Step 5 — Update the source code
 
-In this step, you'll make a change to the source code and reload the plugin to reflect your change.
+In this step, you'll make a change to the source code.
 
 1. Open `main.ts` in your editor.
 1. Find the lines of code that adds a _ribbon icon_.
@@ -114,8 +116,33 @@ In this step, you'll make a change to the source code and reload the plugin to r
    new Notice('Hello, you!');
    ```
 
-1. Restart Obsidian to reload your plugin.
-1. Click the die icon in the sidebar. Make sure it says "Sample Plugin" when you hover it.
+1. Save the changes you have made.
+
+
+## Step 6 — Compile the updated source code
+
+If `dev` is still running in the background, your changes will be detected and re-compiled automatically, so you can skip this step.
+
+If `dev` is not still running in the background, you will need to follow these earlier steps to run it again and compile your changes:
+
+1. Navigate into the plugin folder.
+
+   ```bash
+   cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
+   ```
+
+1. Compile the source code. The following command generates a `main.js` that contains the compiled version of your plugin.
+
+   ```bash npm2yarn
+   npm run dev
+   ```
+
+## Step 7 — Reload the plugin
+
+1. Restart Obsidian or toggle your plugin off/on (disabled/enabled) to reload it.
+1. Find the correct die icon in the sidebar. It should say "Sample Plugin" when you hover over it.
+1. Click the die icon.
+1. You should see a notice pop up with the new text you added.
 
 ## Next steps
 
